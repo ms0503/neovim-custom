@@ -1,0 +1,24 @@
+[guihua-lua]
+fetch.github = "ray-x/guihua.lua"
+src.branch = "master"
+src.git = "https://github.com/ray-x/guihua.lua"
+
+[hlchunk-nvim]
+fetch.url = "https://github.com/shellRaining/hlchunk.nvim/archive/refs/tags/v$ver.tar.gz"
+src.github = "shellRaining/hlchunk.nvim"
+src.prefix = "v"
+
+[schemastore-nvim]
+fetch.github = "B0o/SchemaStore.nvim"
+src.branch = "main"
+src.git = "https://github.com/B0o/SchemaStore.nvim"
+
+[ts-error-translator-nvim]
+fetch.url = "https://github.com/dmmulroy/ts-error-translator.nvim/archive/refs/tags/v$ver.tar.gz"
+src.github = "dmmulroy/ts-error-translator.nvim"
+src.prefix = "v"
+
+[vimdoc-ja]
+fetch.github = "vim-jp/vimdoc-ja"
+src.branch = "master"
+src.git = "https://github.com/vim-jp/vimdoc-ja"
