@@ -17,7 +17,7 @@ local mode = {
         return " " .. self.mode_names[self.mode] .. " "
     end,
     static = {
-        mode_colord = {
+        mode_colors = {
             R = "red",
             S = "purple",
             V = "magenta",
