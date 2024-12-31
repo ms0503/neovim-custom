@@ -1,88 +1,88 @@
-local conditions = require('heirline.conditions')
-local get_icon = require('utils').get_icon
-local utils = require('heirline.utils')
+local conditions = require("heirline.conditions")
+local get_icon = require("utils").get_icon
+local utils = require("heirline.utils")
 
 local mode = {
     hl = function(self)
         local mode = self.mode:sub(1, 1)
         return {
             bg = self.mode_colors[mode],
-            fg = 'bg'
+            fg = "bg",
         }
     end,
     init = function(self)
         self.mode = vim.fn.mode(1)
     end,
     provider = function(self)
-        return ' ' .. self.mode_names[self.mode] .. ' '
+        return " " .. self.mode_names[self.mode] .. " "
     end,
     static = {
         mode_colord = {
-            R = 'red',
-            S = 'purple',
-            V = 'magenta',
-            [''] = 'purple',
-            [''] = 'magenta',
-            ['!'] = 'green1',
-            c = 'yellow',
-            i = 'green',
-            n = 'blue',
-            r = 'red',
-            s = 'purple',
-            t = 'green1',
-            v = 'magenta'
+            R = "red",
+            S = "purple",
+            V = "magenta",
+            [""] = "purple",
+            [""] = "magenta",
+            ["!"] = "green1",
+            c = "yellow",
+            i = "green",
+            n = "blue",
+            r = "red",
+            s = "purple",
+            t = "green1",
+            v = "magenta",
         },
         mode_names = {
-            R = 'R',
-            Rc = 'Rc',
-            Rv = 'Rv',
-            Rvc = 'Rv',
-            Rvx = 'Rv',
-            Rx = 'Rx',
-            S = 'S_',
-            V = 'V_',
-            Vs = 'Vs',
-            [''] = '^S',
-            [''] = '^V',
-            ['s'] = '^V',
-            ['!'] = '!',
-            ['no'] = 'N?',
-            ['r?'] = '?',
-            c = 'C',
-            cv = 'Ex',
-            i = 'I',
-            ic = 'Ic',
-            ix = 'Ix',
-            n = 'N',
-            niI = 'Ni',
-            niR = 'Nr',
-            niV = 'Nv',
-            no = 'N?',
-            noV = 'N?',
-            nov = 'N?',
-            nt = 'Nt',
-            r = '...',
-            rm = 'M',
-            s = 'S',
-            t = 'T',
-            v = 'V',
-            vs = 'Vs'
-        }
+            R = "R",
+            Rc = "Rc",
+            Rv = "Rv",
+            Rvc = "Rv",
+            Rvx = "Rv",
+            Rx = "Rx",
+            S = "S_",
+            V = "V_",
+            Vs = "Vs",
+            [""] = "^S",
+            [""] = "^V",
+            ["s"] = "^V",
+            ["!"] = "!",
+            ["no"] = "N?",
+            ["r?"] = "?",
+            c = "C",
+            cv = "Ex",
+            i = "I",
+            ic = "Ic",
+            ix = "Ix",
+            n = "N",
+            niI = "Ni",
+            niR = "Nr",
+            niV = "Nv",
+            no = "N?",
+            noV = "N?",
+            nov = "N?",
+            nt = "Nt",
+            r = "...",
+            rm = "M",
+            s = "S",
+            t = "T",
+            v = "V",
+            vs = "Vs",
+        },
     },
     update = {
-        'ModeChanged',
+        "ModeChanged",
         callback = vim.schedule_wrap(function()
-            vim.cmd('redrawstatus')
+            vim.cmd("redrawstatus")
         end),
-        pattern = '*:*'
-    }
+        pattern = "*:*",
+    },
 }
 
 local git_ctx = {
     condition = conditions.is_git_repo,
     hl = {
         bold = true,
-        fg = 'magenta'
+        fg = "magenta",
     },
     init = function(self)
         self.status_dict = vim.b.gitsigns_status_dict
@@ -90,62 +90,63 @@ local git_ctx = {
     end,
     {
         provider = function(self)
-            return ' ' .. get_icon('GitBranch') .. ' ' .. self.status_dict.head .. ' '
-        end
-    }
+            return " " .. get_icon("GitBranch") .. " " .. self.status_dict.head .. " "
+        end,
+    },
 }
 
 local filetype = {
     {
         hl = function(self)
             return {
-                fg = self.icon_color
+                fg = self.icon_color,
             }
         end,
         init = function(self)
             local filename = vim.api.nvim_buf_get_name(0)
-            local suffix = vim.fn.fnamemodify(filename, ':e')
-            self.icon, self.icon_color = require('nvim-web-devicons').get_icon_color(filename, suffix, { default = true })
+            local suffix = vim.fn.fnamemodify(filename, ":e")
+            self.icon, self.icon_color =
+                require("nvim-web-devicons").get_icon_color(filename, suffix, { default = true })
         end,
         provider = function(self)
-            return ' ' .. self.icon and (self.icon .. ' ')
-        end
+            return " " .. self.icon and (self.icon .. " ")
+        end,
     },
     {
         provider = function()
-            return vim.bo.filetype .. ' '
-        end
-    }
+            return vim.bo.filetype .. " "
+        end,
+    },
 }
 
 local git_st = {
     {
         hl = {
-            fg = 'green'
+            fg = "green",
         },
         provider = function(self)
             local count = self.status_dict.added or 0
-            return 0 < count and (get_icon('GitAdd') .. ' ' .. count .. ' ')
-        end
+            return 0 < count and (get_icon("GitAdd") .. " " .. count .. " ")
+        end,
     },
     {
         hl = {
-            fg = 'red'
+            fg = "red",
         },
         provider = function(self)
             local count = self.status_dict.removed or 0
-            return 0 < count and (get_icon('GitDelete') .. ' ' .. count .. ' ')
-        end
+            return 0 < count and (get_icon("GitDelete") .. " " .. count .. " ")
+        end,
     },
     {
         hl = {
-            fg = 'yellow'
+            fg = "yellow",
         },
         provider = function(self)
             local count = self.status_dict.changed or 0
-            return 0 < count and (get_icon('GitChange') .. ' ' count .. ' ')
-        end
-    }
+            return 0 < count and (get_icon("GitChange") .. " " .. count .. " ")
+        end,
+    },
 }
 
 local diag = {
@@ -157,50 +158,50 @@ local diag = {
         self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
     end,
     static = {
-        error_icon = get_icon('DiagnosticError'),
-        hint_icon = get_icon('DiagnosticHint'),
-        info_icon = get_icon('DiagnosticInfo'),
-        warn_icon = get_icon('DiagnosticWarn')
+        error_icon = get_icon("DiagnosticError"),
+        hint_icon = get_icon("DiagnosticHint"),
+        info_icon = get_icon("DiagnosticInfo"),
+        warn_icon = get_icon("DiagnosticWarn"),
     },
     update = {
-        'BufEnter',
-        'DiagnosticChanged'
+        "BufEnter",
+        "DiagnosticChanged",
     },
     {
         hl = {
-            fg = 'red1'
+            fg = "red1",
         },
         provider = function(self)
-            return 0 < self.errors and (self.error_icon .. ' ' .. self.errors .. ' ')
-        end
+            return 0 < self.errors and (self.error_icon .. " " .. self.errors .. " ")
+        end,
     },
     {
         hl = {
-            fg = 'yellow'
+            fg = "yellow",
         },
         provider = function(self)
-            return 0 < self.warnings and (self.warn_icon .. ' ' .. self.warnings .. ' ')
-        end
+            return 0 < self.warnings and (self.warn_icon .. " " .. self.warnings .. " ")
+        end,
     },
     {
         hl = {
-            fg = 'blue2'
+            fg = "blue2",
         },
         provider = function(self)
-            return 0 < self.info and (self.info_icon .. ' ' .. self.info .. ' ')
-        end
+            return 0 < self.info and (self.info_icon .. " " .. self.info .. " ")
+        end,
     },
     {
         hl = {
-            fg = 'teal'
+            fg = "teal",
         },
         provider = function(self)
-            return 0 < self.hints and (self.hint_icon .. ' ' .. self.hints .. ' ')
-        end
+            return 0 < self.hints and (self.hint_icon .. " " .. self.hints .. " ")
+        end,
     },
     {
-        provider = ' '
-    }
+        provider = " ",
+    },
 }
 
 local lsp = {
@@ -210,21 +211,21 @@ local lsp = {
         for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
             table.insert(names, server.name)
         end
-        return get_icon('ActiveLSP') .. ' ' .. table.concat(names, ', ') .. ' '
+        return get_icon("ActiveLSP") .. " " .. table.concat(names, ", ") .. " "
     end,
     update = {
-        'LspAttach',
-        'LspDetach'
-    }
+        "LspAttach",
+        "LspDetach",
+    },
 }
 
 local ruler = {
-    provider = '%l:%c %P '
+    provider = "%l:%c %P ",
 }
 
 local scroll = {
     hl = {
-        fg = 'yellow'
+        fg = "yellow",
     },
     provider = function(self)
         local curr_line = vim.api.nvim_win_get_cursor(0)[1]
@@ -242,25 +243,25 @@ local scroll = {
             "󰪢",
             "󰪣",
             "󰪣",
-            "󰪥"
-        }
-    }
+            "󰪥",
+        },
+    },
 }
 
 git_ctx = utils.insert(git_ctx, filetype, git_st)
 
 return {
     hl = {
-        bg = 'bg_dark',
-        fg = 'fg_dark'
+        bg = "bg_dark",
+        fg = "fg_dark",
     },
     mode,
     git_ctx,
     {
-        provider = '%='
+        provider = "%=",
     },
     diag,
     lsp,
     ruler,
-    scroll
+    scroll,
 }
