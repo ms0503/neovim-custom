@@ -19,14 +19,16 @@ let
       inherit pname version;
       installPhase = ''
         install -dm755 "$out"
-        find . -type f -exec substituteAllInPlace {} \;
+        for f in $(find . -type f); do
+          substituteAllInPlace "$f"
+        done
         cp -r ./ "$out"
       '';
       sqlite_library_path = "${sqlite.out}/lib/libsqlite3.so";
       src = ./config;
     }
   );
-  version = "latest";
+  version = "2024-12-30";
 in
 stdenvNoCC.mkDerivation {
   inherit pname version;

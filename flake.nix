@@ -48,44 +48,48 @@
           src = ./.;
         };
       });
-      devShells = forAllSystems (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-        };
-      in
-      {
-        default = pkgs.mkShell {
-          inherit (self.checks.${system}.pre-commit-check) shellHook;
-          packages = with pkgs; [
-            lua-language-server
-            nvfetcher
-            stylua
-          ];
-        };
-      });
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+          };
+        in
+        {
+          default = pkgs.mkShell {
+            inherit (self.checks.${system}.pre-commit-check) shellHook;
+            packages = with pkgs; [
+              lua-language-server
+              nvfetcher
+              stylua
+            ];
+          };
+        }
+      );
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
       overlays = import ./overlays.nix;
-      packages = forAllSystems (system:
-      let
-        makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
-        neovim-nightly = neovim-nightly-overlay.packages.${system}.default;
-        neovimConfig = pkgs.callPackage ./config.nix {
-          inherit plugins;
-        };
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            self.overlays.default
-          ];
-        };
-        plugins = import ./plugins.nix pkgs;
-        tools = import ./tools.nix pkgs;
-      in
-      {
-        config = neovimConfig;
-        default = makeNeovimWrapper tools;
-      });
+      packages = forAllSystems (
+        system:
+        let
+          makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
+          neovim-nightly = neovim-nightly-overlay.packages.${system}.default;
+          neovimConfig = pkgs.callPackage ./config.nix {
+            inherit plugins;
+          };
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [
+              self.overlays.default
+            ];
+          };
+          plugins = import ./plugins.nix pkgs;
+          tools = import ./tools.nix pkgs;
+        in
+        {
+          config = neovimConfig;
+          default = makeNeovimWrapper tools;
+        }
+      );
     };
 }
 # vim: et sts=2 sw=2 ts=2

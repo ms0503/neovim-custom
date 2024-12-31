@@ -36,7 +36,7 @@
     },
     "schemastore-nvim": {
         "cargoLocks": null,
-        "date": "2024-12-20",
+        "date": "2024-12-29",
         "extract": null,
         "name": "schemastore-nvim",
         "passthru": null,
@@ -48,11 +48,11 @@
             "name": null,
             "owner": "B0o",
             "repo": "SchemaStore.nvim",
-            "rev": "55d2ae33ce57de9fcd0cc3c8ee2f225ddbf2cd6a",
-            "sha256": "sha256-BNo+IKjFUaYbtdlvEwC0uZTlRf7Q8yYtNmet++PytEg=",
+            "rev": "e43f3e47991bc9f6cbc1d8b4d0f6a0d8d6c29284",
+            "sha256": "sha256-C0wqql9KmrhyzmOY55WBxkEmeIqo1uZRuLl/WFDgsSk=",
             "type": "github"
         },
-        "version": "55d2ae33ce57de9fcd0cc3c8ee2f225ddbf2cd6a"
+        "version": "e43f3e47991bc9f6cbc1d8b4d0f6a0d8d6c29284"
     },
     "ts-error-translator-nvim": {
         "cargoLocks": null,
@@ -71,7 +71,7 @@
     },
     "vimdoc-ja": {
         "cargoLocks": null,
-        "date": "2024-12-19",
+        "date": "2024-12-29",
         "extract": null,
         "name": "vimdoc-ja",
         "passthru": null,
@@ -83,10 +83,10 @@
             "name": null,
             "owner": "vim-jp",
             "repo": "vimdoc-ja",
-            "rev": "950159b26b6ea81d7b2ee3192fe6f3174a076a5b",
-            "sha256": "sha256-7ePBKE0LTkP5P3ODuFjkzZnu2xK7T2tRrsVbL0VNtv0=",
+            "rev": "e0eddbe28ab12ea331cd4935fc7387429a689575",
+            "sha256": "sha256-cOGbHdUgmFyMKdnzPFP6XNiHFI/XIAgbuQBWC+Cq9QA=",
             "type": "github"
         },
-        "version": "950159b26b6ea81d7b2ee3192fe6f3174a076a5b"
+        "version": "e0eddbe28ab12ea331cd4935fc7387429a689575"
     }
 }
