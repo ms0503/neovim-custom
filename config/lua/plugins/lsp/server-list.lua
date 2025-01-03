@@ -30,7 +30,7 @@ return {
     'marksman',
     'mesonlsp',
     'nginx_language_server',
-    'nil',
+    'nil_ls',
     'nushell',
     'ocamllsp',
     'omnisharp',
