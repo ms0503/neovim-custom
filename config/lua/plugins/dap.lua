@@ -1,16 +1,16 @@
 return {
     {
         dir = '@nvim_dap@',
-        name = 'nvim-dap'
+        name = 'nvim-dap',
     },
     {
         config = true,
         dependencies = {
             dir = '@nvim_dap@',
-            name = 'nvim-dap'
+            name = 'nvim-dap',
         },
         dir = '@nvim_dap_go@',
-        name = 'nvim-dap-go'
+        name = 'nvim-dap-go',
     },
     {
         config = function()
@@ -18,35 +18,35 @@ return {
         end,
         dependencies = {
             dir = '@nvim_dap@',
-            name = 'nvim-dap'
+            name = 'nvim-dap',
         },
         dir = '@nvim_dap_python@',
-        name = 'nvim-dap-python'
+        name = 'nvim-dap-python',
     },
     {
         dependencies = {
             {
                 dir = '@nvim_dap@',
-                name = 'nvim-dap'
+                name = 'nvim-dap',
             },
             {
                 dir = '@nvim_nio@',
-                name = 'nvim-nio'
-            }
+                name = 'nvim-nio',
+            },
         },
         dir = '@nvim_dap_ui@',
-        name = 'nvim-dap-ui'
+        name = 'nvim-dap-ui',
     },
     {
         dependencies = {
             {
                 dir = '@nvim_dap@',
-                name = 'nvim-dap'
+                name = 'nvim-dap',
             },
             {
                 dir = '@nvim_treesitter@',
-                name = 'nvim-treesitter'
-            }
+                name = 'nvim-treesitter',
+            },
         },
         dir = '@nvim_dap_virtual_text@',
         name = 'nvim-dap-virtual-text',
@@ -59,7 +59,9 @@ return {
                 if options.virt_text_pos == 'inline' then
                     return ' = ' .. variable.value:gsub('%s+', ' ')
                 else
-                    return variable.name .. ' = ' .. variable.value:gsub('%s+', ' ')
+                    return variable.name
+                        .. ' = '
+                        .. variable.value:gsub('%s+', ' ')
                 end
             end,
             enabled = true,
@@ -70,7 +72,7 @@ return {
             show_stop_reason = true,
             virt_lines = false,
             virt_text_pos = 'inline',
-            virt_text_win_col = nil
-        }
-    }
+            virt_text_win_col = nil,
+        },
+    },
 }

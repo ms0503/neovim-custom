@@ -1,7 +1,7 @@
-local formatter = require("plugins.lsp.formatter")
-local lsp = require("plugins.lsp.lsp")
-local misc = require("plugins.lsp.misc")
-local ui = require("plugins.lsp.ui")
+local formatter = require('plugins.lsp.formatter')
+local lsp = require('plugins.lsp.lsp')
+local misc = require('plugins.lsp.misc')
+local ui = require('plugins.lsp.ui')
 
 table.unpack = table.unpack or unpack
 

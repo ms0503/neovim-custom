@@ -36,7 +36,7 @@
     },
     "schemastore-nvim": {
         "cargoLocks": null,
-        "date": "2024-12-29",
+        "date": "2025-01-01",
         "extract": null,
         "name": "schemastore-nvim",
         "passthru": null,
@@ -48,11 +48,11 @@
             "name": null,
             "owner": "B0o",
             "repo": "SchemaStore.nvim",
-            "rev": "e43f3e47991bc9f6cbc1d8b4d0f6a0d8d6c29284",
-            "sha256": "sha256-C0wqql9KmrhyzmOY55WBxkEmeIqo1uZRuLl/WFDgsSk=",
+            "rev": "fa47222e29d6f6e80eddcdd0f125c27edf274ad5",
+            "sha256": "sha256-Q/MD8cmYfZGJ0n13oixSPcNFq/VkmaKsLF4JbwFEilU=",
             "type": "github"
         },
-        "version": "e43f3e47991bc9f6cbc1d8b4d0f6a0d8d6c29284"
+        "version": "fa47222e29d6f6e80eddcdd0f125c27edf274ad5"
     },
     "ts-error-translator-nvim": {
         "cargoLocks": null,
@@ -69,9 +69,29 @@
         },
         "version": "1.2.0"
     },
+    "vim-jb-lua": {
+        "cargoLocks": null,
+        "date": "2025-01-03",
+        "extract": null,
+        "name": "vim-jb-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ms0503",
+            "repo": "vim-jb.lua",
+            "rev": "7bba4a7227c1c1c02629a1c51a7cec6237b8b896",
+            "sha256": "sha256-iqi9oxOtEsMWvnOXQSji5rSXM18f9kP44mqwqUOfRH0=",
+            "type": "github"
+        },
+        "version": "7bba4a7227c1c1c02629a1c51a7cec6237b8b896"
+    },
     "vimdoc-ja": {
         "cargoLocks": null,
-        "date": "2024-12-29",
+        "date": "2025-01-02",
         "extract": null,
         "name": "vimdoc-ja",
         "passthru": null,
@@ -83,10 +103,10 @@
             "name": null,
             "owner": "vim-jp",
             "repo": "vimdoc-ja",
-            "rev": "e0eddbe28ab12ea331cd4935fc7387429a689575",
-            "sha256": "sha256-cOGbHdUgmFyMKdnzPFP6XNiHFI/XIAgbuQBWC+Cq9QA=",
+            "rev": "8dcdc439f162133876bcb4e0164eebec158b88b0",
+            "sha256": "sha256-SFK4M/QP1V0tuLdgYHkwdc1nHclsWUti5oITnlyTekk=",
             "type": "github"
         },
-        "version": "e0eddbe28ab12ea331cd4935fc7387429a689575"
+        "version": "8dcdc439f162133876bcb4e0164eebec158b88b0"
     }
 }

@@ -18,6 +18,12 @@ fetch.url = "https://github.com/dmmulroy/ts-error-translator.nvim/archive/refs/t
 src.github = "dmmulroy/ts-error-translator.nvim"
 src.prefix = "v"
 
+[vim-jb-lua]
+fetch.github = "ms0503/vim-jb.lua"
+src.branch = "main"
+src.git = "https://github.com/ms0503/vim-jb.lua"
+
+
 [vimdoc-ja]
 fetch.github = "vim-jp/vimdoc-ja"
 src.branch = "master"

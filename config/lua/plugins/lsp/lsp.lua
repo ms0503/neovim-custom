@@ -4,17 +4,34 @@ return {
             local lspconfig = require('lspconfig')
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.textDocument.completion.completionItem.snippetSupport = true
-            vim.lsp.handlers['textDocument/publishDiagnostics'] = function(err, result, ctx, config)
-                require('ts-error-translator').translate_diagnostics(err, result, ctx, config)
-                vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx, config)
+            capabilities.textDocument.completion.completionItem.snippetSupport =
+                true
+            vim.lsp.handlers['textDocument/publishDiagnostics'] = function(
+                err,
+                result,
+                ctx,
+                config
+            )
+                require('ts-error-translator').translate_diagnostics(
+                    err,
+                    result,
+                    ctx,
+                    config
+                )
+                vim.lsp.diagnostic.on_publish_diagnostics(
+                    err,
+                    result,
+                    ctx,
+                    config
+                )
             end
             local server_list = require('plugins.lsp.server-list')
             for _, server in ipairs(server_list) do
                 lspconfig[server].setup({})
             end
             local node_root_dir = lspconfig.util.root_pattern('package.json')
-            local is_node_repo = node_root_dir(vim.api.nvim_buf_get_name(0)) ~= nil
+            local is_node_repo = node_root_dir(vim.api.nvim_buf_get_name(0))
+                ~= nil
             if is_node_repo then
                 lspconfig.ts_ls.setup({})
             else
@@ -26,22 +43,22 @@ return {
                                 hosts = {
                                     ['https://cdn.nest.land'] = true,
                                     ['https://crux.land'] = true,
-                                    ['https://deno.land'] = true
-                                }
-                            }
+                                    ['https://deno.land'] = true,
+                                },
+                            },
                         },
-                        unstable = true
-                    }
+                        unstable = true,
+                    },
                 })
             end
             lspconfig.eslint.setup({
                 settings = {
-                    format = true
-                }
+                    format = true,
+                },
             })
             lspconfig.biome.setup({})
             lspconfig.cssls.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.jsonls.setup({
                 capabilities = capabilities,
@@ -49,21 +66,21 @@ return {
                     json = {
                         schemas = require('schemastore').json.schemas(),
                         validate = {
-                            enable = true
-                        }
-                    }
-                }
+                            enable = true,
+                        },
+                    },
+                },
             })
             lspconfig.yamlls.setup({
                 settings = {
                     yaml = {
                         schemaStore = {
                             enable = false,
-                            url = ''
+                            url = '',
                         },
-                        schemas = require('schemastore').yaml.schemas()
-                    }
-                }
+                        schemas = require('schemastore').yaml.schemas(),
+                    },
+                },
             })
             lspconfig.clangd.setup({
                 capabilities = capabilities,
@@ -72,47 +89,47 @@ return {
                     'cpp',
                     'cuda',
                     'objc',
-                    'objcpp'
-                }
+                    'objcpp',
+                },
             })
             lspconfig.lua_ls.setup({
                 settings = {
                     Lua = {
                         diagnostics = {
                             globals = {
-                                'vim'
-                            }
-                        }
-                    }
-                }
+                                'vim',
+                            },
+                        },
+                    },
+                },
             })
             lspconfig.tinymist.setup({
                 offset_encoding = 'utf-8',
                 settings = {
-                    formatterMode = 'typstyle'
-                }
+                    formatterMode = 'typstyle',
+                },
             })
         end,
         dependencies = {
             {
                 config = true,
                 dir = '@neoconf_nvim@',
-                name = 'neoconf.nvim'
+                name = 'neoconf.nvim',
             },
             {
                 dir = '@schemastore_nvim@',
-                name = 'schemastore.nvim'
+                name = 'schemastore.nvim',
             },
             {
                 dir = '@ts_error_translator_nvim@',
-                name = 'ts-error-translator.nvim'
-            }
+                name = 'ts-error-translator.nvim',
+            },
         },
         dir = '@nvim_lspconfig@',
         event = {
             'BufNewFile',
-            'BufReadPre'
+            'BufReadPre',
         },
-        name = 'nvim-lspconfig'
-    }
+        name = 'nvim-lspconfig',
+    },
 }

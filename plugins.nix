@@ -22,12 +22,10 @@ let
       }
     ) { } pkgList;
   plugins = with vimPlugins; [
-    CopilotChat-nvim
     aerial-nvim
     better-escape-nvim
     cmp-buffer
     cmp-cmdline
-    cmp-cmdline-history
     cmp-git
     cmp-nvim-lsp
     cmp-path
@@ -35,8 +33,6 @@ let
     cmp_luasnip
     comment-nvim
     conform-nvim
-    copilot-cmp
-    copilot-lua
     crates-nvim
     dial-nvim
     diffview-nvim
@@ -93,10 +89,10 @@ let
     telescope-nvim
     tiny-inline-diagnostic-nvim
     toggleterm-nvim
-    tokyonight-nvim
     trouble-nvim
     ts-error-translator-nvim
     typescript-tools-nvim
+    vim-jb-lua
     vimdoc-ja
     which-key-nvim
   ];

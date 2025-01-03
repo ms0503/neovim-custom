@@ -1,8 +1,8 @@
 return {
     {
-        dir = "@crates_nvim@",
-        event = "BufRead Cargo.toml",
-        name = "crates.nvim",
+        dir = '@crates_nvim@',
+        event = 'BufRead Cargo.toml',
+        name = 'crates.nvim',
         opts = {
             lsp = {
                 actions = true,
@@ -13,37 +13,37 @@ return {
         },
     },
     {
-        dir = "@rustaceanvim@",
+        dir = '@rustaceanvim@',
         init = function()
             vim.g.rustaceanvim = {
                 server = {
                     cmd = function()
                         return {
-                            "rust-analyzer",
+                            'rust-analyzer',
                         }
                     end,
                 },
             }
         end,
         lazy = false,
-        name = "rustaceanvim",
+        name = 'rustaceanvim',
     },
     {
-        config = true,
         dependencies = {
-            dir = "@nvim_treesitter@",
-            name = "nvim-treesitter",
+            dir = '@nvim_treesitter@',
+            name = 'nvim-treesitter',
         },
-        dir = "@tailwind_tools_nvim@",
+        dir = '@tailwind_tools_nvim@',
         ft = {
-            "html",
-            "javascript",
-            "javascriptreact",
-            "svelte",
-            "typescript",
-            "typescriptreact",
-            "vue",
+            'html',
+            'javascript',
+            'javascriptreact',
+            'svelte',
+            'typescript',
+            'typescriptreact',
+            'vue',
         },
-        name = "tailwind-tools.nvim",
+        name = 'tailwind-tools.nvim',
+        opts = {},
     },
 }

@@ -2,56 +2,56 @@ local get_icon = require('utils').get_icon
 return {
     {
         dir = '@dressing_nvim@',
-        name = 'dressing.nvim'
+        name = 'dressing.nvim',
     },
     {
         dir = '@fidget_nvim@',
-        name = 'fidget.nvim'
+        name = 'fidget.nvim',
     },
     {
         dependencies = {
             dir = '@nvim_treesitter@',
-            name = 'nvim-treesitter'
+            name = 'nvim-treesitter',
         },
         dir = '@hlchunk_nvim@',
         event = 'BufRead',
         name = 'hlchunk.nvim',
         opts = {
             blank = {
-                enable = false
+                enable = false,
             },
             chunk = {
                 enable = true,
-                use_treesitter = false
+                use_treesitter = false,
             },
             line_num = {
-                enable = false
-            }
-        }
+                enable = false,
+            },
+        },
     },
     {
         dir = '@mini_icons@',
-        name = 'mini.icons'
+        name = 'mini.icons',
     },
     {
         dir = '@nvim_web_devicons@',
-        name = 'nvim-web-devicons'
+        name = 'nvim-web-devicons',
     },
     {
         cmd = 'Neotree',
         dependencies = {
             {
                 dir = '@nui_nvim@',
-                name = 'nui.nvim'
+                name = 'nui.nvim',
             },
             {
                 dir = '@nvim_web_devicons@',
-                name = 'nvim-web-devicons'
+                name = 'nvim-web-devicons',
             },
             {
                 dir = '@plenary_nvim@',
-                name = 'plenary.nvim'
-            }
+                name = 'plenary.nvim',
+            },
         },
         dir = '@neo_tree_nvim@',
         name = 'neo-tree.nvim',
@@ -59,25 +59,25 @@ return {
             close_if_last_window = true,
             default_component_configs = {
                 container = {
-                    enable_character_fade = true
+                    enable_character_fade = true,
                 },
                 indent = {
-                    padding = 0
+                    padding = 0,
                 },
                 icon = {
                     default = get_icon('DefaultFile'),
                     folder_closed = get_icon('FolderClosed'),
                     folder_empty = get_icon('FolderEmpty'),
                     folder_empty_open = get_icon('FolderEmpty'),
-                    folder_open = get_icon('FolderOpen')
+                    folder_open = get_icon('FolderOpen'),
                 },
                 modified = {
-                    symbol = get_icon('FileModified')
+                    symbol = get_icon('FileModified'),
                 },
                 name = {
                     highlight = 'NeoTreeFileName',
                     trailing_slash = false,
-                    use_git_status_colors = true
+                    use_git_status_colors = true,
                 },
                 git_status = {
                     symbols = {
@@ -89,54 +89,58 @@ return {
                         renamed = get_icon('GitRenamed'),
                         staged = get_icon('GitStaged'),
                         unstaged = get_icon('GitUnstaged'),
-                        untracked = get_icon('GitUntracked')
-                    }
+                        untracked = get_icon('GitUntracked'),
+                    },
                 },
                 file_size = {
                     enabled = true,
-                    required_width = 64
+                    required_width = 64,
                 },
                 type = {
                     enabled = true,
-                    required_width = 122
+                    required_width = 122,
                 },
                 last_modified = {
                     enabled = true,
-                    required_width = 88
+                    required_width = 88,
                 },
                 created = {
                     enabled = true,
-                    required_width = 110
+                    required_width = 110,
                 },
                 symlink_target = {
-                    enabled = false
-                }
+                    enabled = false,
+                },
             },
             filesystem = {
                 filtered_items = {
                     hide_by_pattern = {
-                        '*.meta'
+                        '*.meta',
                     },
                     hide_dotfiles = false,
                     hide_gitignored = false,
                     hide_hidden = false,
                     never_show = {
                         '.DS_Store',
-                        'thumbs.db'
-                    }
-                }
+                        'thumbs.db',
+                    },
+                },
             },
             window = {
                 mappings = {
-                    ['<Space>'] = false
+                    ['<Space>'] = false,
                 },
-                width = 30
-            }
-        }
+                width = 30,
+            },
+        },
     },
     {
         config = function()
-            local colors = require('tokyonight.colors').setup()
+            local color_table = require('vim-jb.util').GetColors('dark')
+            local colors = {}
+            for k, v in pairs(color_table) do
+                colors[k] = v.gui
+            end
             require('scrollbar').setup({
                 excluded_buftypes = {
                     'TelescopePrompt',
@@ -144,40 +148,40 @@ return {
                     'noice',
                     'notify',
                     'prompt',
-                    'terminal'
+                    'terminal',
                 },
                 handle = {
-                    color = colors.bg_highlight
+                    color = colors.folded, -- #393b40
                 },
                 handlers = {
                     ale = true,
                     gitsigns = true,
-                    search = true
+                    search = true,
                 },
                 hide_if_all_visible = true,
                 marks = {
                     Error = {
-                        color = colors.error
+                        color = colors.err, -- #f75464
                     },
                     Hint = {
-                        color = colors.hint
+                        color = colors.number, -- #2aacb8
                     },
                     Info = {
-                        color = colors.info
+                        color = colors.link, -- #548af7
                     },
                     Misc = {
-                        color = colors.purple
+                        color = colors.const, -- #c77dbb
                     },
                     Search = {
-                        color = colors.orange
+                        color = colors.type, -- #cc7832
                     },
                     Warn = {
-                        color = colors.warning
-                    }
-                }
+                        color = colors.warning, -- #f2c55c
+                    },
+                },
             })
             require('scrollbar.handlers.search').setup({
-                calm_down = true
+                calm_down = true,
             })
         end,
         dependencies = {
@@ -187,27 +191,57 @@ return {
                     local map = vim.api.nvim_set_keymap
                     local opts = {
                         noremap = true,
-                        silent = true
+                        silent = true,
                     }
-                    map('n', '#', [[#<Cmd>lua require('hlslens').start()<Cr>]], opts)
-                    map('n', '*', [[*<Cmd>lua require('hlslens').start()<Cr>]], opts)
+                    map(
+                        'n',
+                        '#',
+                        [[#<Cmd>lua require('hlslens').start()<Cr>]],
+                        opts
+                    )
+                    map(
+                        'n',
+                        '*',
+                        [[*<Cmd>lua require('hlslens').start()<Cr>]],
+                        opts
+                    )
                     map('n', '<Leader>l', '<Cmd>noh<Cr>', opts)
-                    map('n', 'N', [[<Cmd>execute('normal! ' . v:count1 . 'N')<Cr><Cmd>lua require('hlslens').start()<Cr>]], opts)
-                    map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<Cr>]], opts)
-                    map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<Cr>]], opts)
-                    map('n', 'n', [[<Cmd>execute('normal! ' . v:count1 . 'n')<Cr><Cmd>lua require('hlslens').start()<Cr>]], opts)
+                    map(
+                        'n',
+                        'N',
+                        [[<Cmd>execute('normal! ' . v:count1 . 'N')<Cr><Cmd>lua require('hlslens').start()<Cr>]],
+                        opts
+                    )
+                    map(
+                        'n',
+                        'g#',
+                        [[g#<Cmd>lua require('hlslens').start()<Cr>]],
+                        opts
+                    )
+                    map(
+                        'n',
+                        'g*',
+                        [[g*<Cmd>lua require('hlslens').start()<Cr>]],
+                        opts
+                    )
+                    map(
+                        'n',
+                        'n',
+                        [[<Cmd>execute('normal! ' . v:count1 . 'n')<Cr><Cmd>lua require('hlslens').start()<Cr>]],
+                        opts
+                    )
                 end,
                 dir = '@nvim_hlslens@',
-                name = 'nvim-hlslens'
+                name = 'nvim-hlslens',
             },
             {
-                dir = '@tokyonight_nvim@',
-                name = 'tokyonight.nvim'
-            }
+                dir = '@vim_jb_lua@',
+                name = 'vim-jb.lua',
+            },
         },
         dir = '@nvim_scrollbar@',
         event = 'BufReadPost',
-        name = 'nvim-scrollbar'
+        name = 'nvim-scrollbar',
     },
     {
         cmd = 'ToggleTerm',
@@ -216,14 +250,14 @@ return {
         opts = {
             direction = 'float',
             float_opts = {
-                border = 'curved'
+                border = 'curved',
             },
             open_mapping = {
                 [[<C-\>]],
-                '<C-¥>'
+                '<C-¥>',
             },
             shading_factor = 2,
-            size = 10
-        }
-    }
+            size = 10,
+        },
+    },
 }

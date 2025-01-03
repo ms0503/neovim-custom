@@ -9,17 +9,17 @@ return {
             defaults = {
                 file_ignore_patterns = {
                     '.git',
-                    'node_modules'
+                    'node_modules',
                 },
                 mappings = {
                     i = {
-                        ['<C-h>'] = 'which_key'
+                        ['<C-h>'] = 'which_key',
                     },
                     n = {
-                        ['q'] = telescope_actions.close
-                    }
-                }
-            }
+                        ['q'] = telescope_actions.close,
+                    },
+                },
+            },
         })
         map('n', '<Leader>fb', telescope_builtin.buffers, { noremap = true })
         map('n', '<Leader>ff', telescope_builtin.find_files, { noremap = true })
@@ -31,37 +31,37 @@ return {
                     vim.wo.wrap = false
                 end
             end,
-            pattern = 'TelescopePreviewerLoaded'
+            pattern = 'TelescopePreviewerLoaded',
         })
     end,
     dependencies = {
         {
             dir = '@plenary_nvim@',
-            name = 'plenary.nvim'
+            name = 'plenary.nvim',
         },
         {
             dir = '@telescope_file_browser_nvim@',
-            name = 'telescope-file-browser.nvim'
+            name = 'telescope-file-browser.nvim',
         },
         {
             dir = '@nvim_treesitter@',
-            name = 'nvim-treesitter'
+            name = 'nvim-treesitter',
         },
         {
             dir = '@nvim_web_devicons@',
-            name = 'nvim-web-devicons'
+            name = 'nvim-web-devicons',
         },
         {
             config = true,
             dependencies = {
                 {
                     dir = '@mini_icons@',
-                    name = 'mini.icons'
+                    name = 'mini.icons',
                 },
                 {
                     dir = '@nvim_web_devicons@',
-                    name = 'nvim-web-devicons'
-                }
+                    name = 'nvim-web-devicons',
+                },
             },
             dir = '@which_key_nvim@',
             event = 'VeryLazy',
@@ -71,12 +71,12 @@ return {
                     function()
                         require('which-key').show({ global = false })
                     end,
-                    desc = 'Buffer Local Keymaps (which-key)'
-                }
+                    desc = 'Buffer Local Keymaps (which-key)',
+                },
             },
-            name = 'which-key.nvim'
-        }
+            name = 'which-key.nvim',
+        },
     },
     dir = '@telescope_nvim@',
-    name = 'telescope.nvim'
+    name = 'telescope.nvim',
 }

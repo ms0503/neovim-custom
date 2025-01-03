@@ -10,18 +10,24 @@ return {
             local conform = require('conform')
             local neoconf = require('neoconf')
 
-            local biome_for_project = merge_table_immutable(require('conform.formatters.biome'), { require_cwd = true })
-            local prettier_for_project = merge_table_immutable(require('conform.formatters.prettier'), { require_cwd = true })
+            local biome_for_project = merge_table_immutable(
+                require('conform.formatters.biome'),
+                { require_cwd = true }
+            )
+            local prettier_for_project = merge_table_immutable(
+                require('conform.formatters.prettier'),
+                { require_cwd = true }
+            )
             local prettier_like_formatters = {
                 'biome_for_project',
                 'prettier_for_project',
                 'prettier',
-                stop_after_first = true
+                stop_after_first = true,
             }
             local function js_like_formatters()
                 if neoconf.get('formatter.eslint.enable') then
                     return {
-                        lsp_format = 'fallback'
+                        lsp_format = 'fallback',
                     }
                 end
                 local clients = vim.lsp.get_clients()
@@ -31,7 +37,7 @@ return {
                             'biome_for_project',
                             'prettier_for_project',
                             'deno_fmt',
-                            stop_after_first = true
+                            stop_after_first = true,
                         }
                     end
                 end
@@ -39,17 +45,20 @@ return {
                     'biome_for_project',
                     'prettier_for_project',
                     'prettier',
-                    stop_after_first = true
+                    stop_after_first = true,
                 }
             end
             conform.setup({
                 default_format_opts = {
-                    lsp_format = 'fallback'
+                    lsp_format = 'fallback',
                 },
                 format_on_save = function(bufnr)
-                    if not vim.g.disable_autoformat and not vim.b[bufnr].disable_autoformat then
+                    if
+                        not vim.g.disable_autoformat
+                        and not vim.b[bufnr].disable_autoformat
+                    then
                         return {
-                            timeout_ms = 2500
+                            timeout_ms = 2500,
                         }
                     end
                 end,
@@ -57,8 +66,8 @@ return {
                     biome_for_project = biome_for_project,
                     prettier_for_project = prettier_for_project,
                     stylua = {
-                        require_cwd = true
-                    }
+                        require_cwd = true,
+                    },
                 },
                 formatters_by_ft = {
                     angular = { 'prettier' },
@@ -87,8 +96,8 @@ return {
                     typescriptreact = js_like_formatters,
                     typst = { 'typstyle' },
                     vue = { 'prettier' },
-                    yaml = { 'prettier' }
-                }
+                    yaml = { 'prettier' },
+                },
             })
             vim.api.nvim_create_user_command('FormatDisable', function(args)
                 if args.bang then
@@ -98,27 +107,27 @@ return {
                 end
             end, {
                 bang = true,
-                desc = 'Disable autoformat-on-save'
+                desc = 'Disable autoformat-on-save',
             })
             vim.api.nvim_create_user_command('FormatEnable', function(args)
                 vim.b.disable_autoformat = false
                 vim.g.disable_autoformat = false
             end, {
-                desc = 'Re-enable autoformat-on-save'
+                desc = 'Re-enable autoformat-on-save',
             })
             autocmd('BufWritePre', {
                 callback = function(args)
                     conform.format({ bufnr = args.buf })
                 end,
-                pattern = '*'
+                pattern = '*',
             })
         end,
         dependencies = {
             dir = '@neoconf_nvim@',
-            name = 'neoconf.nvim'
+            name = 'neoconf.nvim',
         },
         dir = '@conform_nvim@',
         event = 'BufWritePre',
-        name = 'conform.nvim'
-    }
+        name = 'conform.nvim',
+    },
 }

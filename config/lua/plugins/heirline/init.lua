@@ -1,26 +1,31 @@
 return {
     dependencies = {
         {
-            dir = "@nvim_web_devicons@",
-            name = "nvim-web-devicons",
+            dir = '@nvim_web_devicons@',
+            name = 'nvim-web-devicons',
         },
         {
-            dir = "@tokyonight_nvim@",
-            name = "tokyonight.nvim",
+            dir = '@vim_jb_lua@',
+            name = 'vim-jb.lua',
         },
     },
-    dir = "@heirline_nvim@",
-    event = "BufEnter",
-    name = "heirline.nvim",
+    dir = '@heirline_nvim@',
+    event = 'BufEnter',
+    name = 'heirline.nvim',
     opts = function()
         return {
             opts = {
-                colors = require("tokyonight.colors").setup({
-                    style = "night",
-                }),
+                colors = function()
+                    local color_table = require('vim-jb.util').GetColors('dark')
+                    local colors = {}
+                    for k, v in pairs(color_table) do
+                        colors[k] = v.gui
+                    end
+                    return colors
+                end,
             },
-            statusline = require("plugins.heirline.statusline"),
-            tabline = require("plugins.heirline.tabline"),
+            statusline = require('plugins.heirline.statusline'),
+            tabline = require('plugins.heirline.tabline'),
         }
     end,
 }

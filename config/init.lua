@@ -8,18 +8,18 @@ vim.opt.runtimepath:prepend(configpath)
 
 require('lazy').setup({
     defaults = {
-        lazy = true
+        lazy = true,
     },
     install = {
-        missing = false
+        missing = false,
     },
     performance = {
         reset_packpath = false,
         rtp = {
-            reset = false
-        }
+            reset = false,
+        },
     },
-    spec = 'plugins'
+    spec = 'plugins',
 })
 require('base')
 require('keymaps')
