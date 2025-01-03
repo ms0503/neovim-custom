@@ -19,6 +19,10 @@ require('lazy').setup({
             reset = false,
         },
     },
+    rocks = {
+        enabled = false,
+        hererocks = false,
+    },
     spec = 'plugins',
 })
 require('base')

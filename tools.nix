@@ -34,6 +34,7 @@ pkgs:
   bash-language-server
   dockerfile-language-server-nodejs
   graphql-language-service-cli
+  neovim
   prettier
   typescript-language-server
   vscode-langservers-extracted
@@ -41,7 +42,14 @@ pkgs:
 ++ (with pkgs.ocamlPackages; [
   ocaml-lsp
 ])
-++ (with pkgs.python312Packages; [
+++ (with pkgs.perlPackages; [
+  NeovimExt
+])
+++ (with pkgs.python3Packages; [
   debugpy
+  pynvim
+])
+++ (with pkgs.rubyPackages; [
+  neovim
 ])
 # vim: et sts=2 sw=2 ts=2

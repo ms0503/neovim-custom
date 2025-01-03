@@ -10,6 +10,8 @@ let
   };
 in
 {
+  nodePackages = import ./nodePackages pkgs;
+  rubyPackages = import ./rubyPackages.nix pkgs;
   vimPlugins =
     (import ./vimPlugins {
       inherit (pkgs) vimUtils;

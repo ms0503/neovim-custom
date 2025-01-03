@@ -54,15 +54,33 @@
           pkgs = import nixpkgs {
             inherit system;
           };
+          scripts = with pkgs; [
+            (writeScriptBin "update-srcs" ''
+              if [[ ! -f $PWD/flake.nix ]]; then
+                printf "Please run in flake root\n"
+                exit 1
+              fi
+              ${pkgs.nvfetcher}/bin/nvfetcher
+              ${pkgs.node2nix}/bin/node2nix \
+                -i pkgs/nodePackages/pkg-list.json \
+                -o pkgs/nodePackages/pkgs.nix \
+                -c pkgs/nodePackages/cmp.nix \
+                -e pkgs/nodePackages/node-env.nix \
+                --pkg-name nodejs
+            '')
+          ];
         in
         {
           default = pkgs.mkShell {
             inherit (self.checks.${system}.pre-commit-check) shellHook;
-            packages = with pkgs; [
-              lua-language-server
-              nvfetcher
-              stylua
-            ];
+            packages =
+              scripts
+              ++ (with pkgs; [
+                lua-language-server
+                node2nix
+                nvfetcher
+                stylua
+              ]);
           };
         }
       );
