@@ -1,5 +1,13 @@
 {
   inputs = {
+    build-gradle-application = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:raphiz/buildGradleApplication";
+    };
+    fenix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/fenix";
+    };
     flake-compat.url = "github:edolstra/flake-compat";
     git-hooks = {
       inputs = {
@@ -21,7 +29,9 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/release-24.11";
   };
   outputs =
-    inputs@{
+    {
+      build-gradle-application,
+      fenix,
       git-hooks,
       neovim-nightly-overlay,
       nixpkgs,
@@ -97,6 +107,8 @@
           pkgs = import nixpkgs {
             inherit system;
             overlays = [
+              build-gradle-application.overlays.default
+              fenix.overlays.default
               self.overlays.default
             ];
           };

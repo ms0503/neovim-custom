@@ -5,28 +5,28 @@ return {
     'awk_ls',
     'bashls',
     'bazelrc_lsp',
-    -- 'biome',
+    'biome',
     'buf_ls',
     'bzl',
-    -- 'clangd',
+    -- 'clangd', -- configured in plugins.lsp.lsp
     'cmake',
     'css_variables',
-    -- 'cssls',
+    -- 'cssls', -- configured in plugins.lsp.lsp
     'cssmodules_ls',
-    -- 'denols',
+    -- 'denols', -- configured in plugins.lsp.lsp
     'docker_compose_language_service',
     'dockerls',
-    -- 'eslint',
+    -- 'eslint', -- configured in plugins.lsp.lsp
     'gopls',
-    'gradle_ls',
+    -- 'gradle_ls',
     'graphql',
-    'groovyls',
+    -- 'groovyls',
     'hls',
     'html',
     'java_language_server',
-    -- 'jsonls',
+    -- 'jsonls', -- configured in plugins.lsp.lsp
     'kotlin_language_server',
-    -- 'lua_ls',
+    -- 'lua_ls', -- configured in plugins.lsp.lsp
     'marksman',
     'mesonlsp',
     'nginx_language_server',
@@ -35,9 +35,9 @@ return {
     'ocamllsp',
     'omnisharp',
     'phpactor',
-    'pkgbuild_language_server',
-    'powershell_es',
-    'prismals',
+    -- 'pkgbuild_language_server',
+    -- 'powershell_es',
+    -- 'prismals',
     'pyright',
     'ruff',
     'rust_analyzer',
@@ -45,9 +45,9 @@ return {
     'taplo',
     'tailwindcss',
     'terraformls',
-    -- 'tinymist',
-    -- 'ts_ls',
+    -- 'tinymist', -- configured in plugins.lsp.lsp
+    -- 'ts_ls', -- configured in plugins.lsp.lsp
     'vuels',
-    -- 'yamlls',
+    -- 'yamlls', -- configured in plugins.lsp.lsp
     'zls',
 }

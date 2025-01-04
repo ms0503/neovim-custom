@@ -56,7 +56,6 @@ return {
                     format = true,
                 },
             })
-            lspconfig.biome.setup({})
             lspconfig.cssls.setup({
                 capabilities = capabilities,
             })

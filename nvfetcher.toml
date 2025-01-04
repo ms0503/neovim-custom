@@ -1,3 +1,27 @@
+[bazelrc-lsp]
+fetch.url = "https://github.com/salesforce-misc/bazelrc-lsp/archive/refs/tags/v$ver.tar.gz"
+src.github = "salesforce-misc/bazelrc-lsp"
+src.prefix = "v"
+
+[bzl_darwin]
+fetch.url = "https://get.bzl.io/darwin_amd64/$ver/bzl"
+src.github = "stackb/bazel-stack-vscode"
+src.prefix = "v"
+
+[bzl_linux]
+fetch.url = "https://get.bzl.io/linux_amd64/$ver/bzl"
+src.github = "stackb/bazel-stack-vscode"
+src.prefix = "v"
+
+[cmake-language-server]
+fetch.url = "https://github.com/regen100/cmake-language-server/archive/refs/tags/v$ver.tar.gz"
+src.github = "regen100/cmake-language-server"
+src.prefix = "v"
+
+[gradle-language-server]
+fetch.url = "https://github.com/microsoft/vscode-gradle/archive/refs/tags/$ver.tar.gz"
+src.github = "microsoft/vscode-gradle"
+
 [guihua-lua]
 fetch.github = "ray-x/guihua.lua"
 src.branch = "master"
@@ -22,7 +46,6 @@ src.prefix = "v"
 fetch.github = "ms0503/vim-jb.lua"
 src.branch = "main"
 src.git = "https://github.com/ms0503/vim-jb.lua"
-
 
 [vimdoc-ja]
 fetch.github = "vim-jp/vimdoc-ja"

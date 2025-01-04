@@ -174,6 +174,15 @@ let
         sha512 = "TFYA4jnP7PVbmlBIfhlSe+WKxs9dklXMTEGcBCIvLhE/Tn3H6Gk1norupVW7m5Cnd4bLcr08AytbyV/xj7f/kQ==";
       };
     };
+    "minimist-1.2.6" = {
+      name = "minimist";
+      packageName = "minimist";
+      version = "1.2.6";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz";
+        sha512 = "Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==";
+      };
+    };
     "ms-2.1.3" = {
       name = "ms";
       packageName = "ms";
@@ -181,6 +190,33 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz";
         sha512 = "6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==";
+      };
+    };
+    "node-addon-api-7.1.1" = {
+      name = "node-addon-api";
+      packageName = "node-addon-api";
+      version = "7.1.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-7.1.1.tgz";
+        sha512 = "5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==";
+      };
+    };
+    "node-addon-api-8.3.0" = {
+      name = "node-addon-api";
+      packageName = "node-addon-api";
+      version = "8.3.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.3.0.tgz";
+        sha512 = "8VOpLHFrOQlAH+qA0ZzuGRlALRA6/LVh8QJldbrC4DY0hXoMP0l4Acq8TzFC018HztWiRqyCEj2aTWY2UvnJUg==";
+      };
+    };
+    "node-gyp-build-4.8.4" = {
+      name = "node-gyp-build";
+      packageName = "node-gyp-build";
+      version = "4.8.4";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz";
+        sha512 = "LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==";
       };
     };
     "one-time-1.0.0" = {
@@ -255,6 +291,24 @@ let
         sha512 = "uuVGNWzgJ4yhRaNSiubPY7OjISw4sw4E5Uv0wbjp+OzcbmVU/rsT8ujgcXJhn9ypzsgr5vlzpPqP+MBBKcGvbg==";
       };
     };
+    "tree-sitter-0.21.1" = {
+      name = "tree-sitter";
+      packageName = "tree-sitter";
+      version = "0.21.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/tree-sitter/-/tree-sitter-0.21.1.tgz";
+        sha512 = "7dxoA6kYvtgWw80265MyqJlkRl4yawIjO7S5MigytjELkX43fV2WsAXzsNfO7sBpPPCF5Gp0+XzHk0DwLCq3xQ==";
+      };
+    };
+    "tree-sitter-awk-0.7.2" = {
+      name = "tree-sitter-awk";
+      packageName = "tree-sitter-awk";
+      version = "0.7.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/tree-sitter-awk/-/tree-sitter-awk-0.7.2.tgz";
+        sha512 = "Y9qGrM9a/AkeglOMSYzM0Tek5rox9WZmlV1/l3wyBJaMdpeMGsC3z4Jn+OvuevJO78gtmW1SuXfCva1f4veuTg==";
+      };
+    };
     "triple-beam-1.4.1" = {
       name = "triple-beam";
       packageName = "triple-beam";
@@ -271,6 +325,60 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz";
         sha512 = "EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==";
+      };
+    };
+    "vscode-jsonrpc-6.0.0" = {
+      name = "vscode-jsonrpc";
+      packageName = "vscode-jsonrpc";
+      version = "6.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/vscode-jsonrpc/-/vscode-jsonrpc-6.0.0.tgz";
+        sha512 = "wnJA4BnEjOSyFMvjZdpiOwhSq9uDoK8e/kpRJDTaMYzwlkrhG1fwDIZI94CLsLzlCK5cIbMMtFlJlfR57Lavmg==";
+      };
+    };
+    "vscode-languageserver-7.0.0" = {
+      name = "vscode-languageserver";
+      packageName = "vscode-languageserver";
+      version = "7.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/vscode-languageserver/-/vscode-languageserver-7.0.0.tgz";
+        sha512 = "60HTx5ID+fLRcgdHfmz0LDZAXYEV68fzwG0JWwEPBode9NuMYTIxuYXPg4ngO8i8+Ou0lM7y6GzaYWbiDL0drw==";
+      };
+    };
+    "vscode-languageserver-protocol-3.16.0" = {
+      name = "vscode-languageserver-protocol";
+      packageName = "vscode-languageserver-protocol";
+      version = "3.16.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.16.0.tgz";
+        sha512 = "sdeUoAawceQdgIfTI+sdcwkiK2KU+2cbEYA0agzM2uqaUy2UpnnGHtWTHVEtS0ES4zHU0eMFRGN+oQgDxlD66A==";
+      };
+    };
+    "vscode-languageserver-textdocument-1.0.12" = {
+      name = "vscode-languageserver-textdocument";
+      packageName = "vscode-languageserver-textdocument";
+      version = "1.0.12";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.12.tgz";
+        sha512 = "cxWNPesCnQCcMPeenjKKsOCKQZ/L6Tv19DTRIGuLWe32lyzWhihGVJ/rcckZXJxfdKCFvRLS3fpBIsV/ZGX4zA==";
+      };
+    };
+    "vscode-languageserver-types-3.16.0" = {
+      name = "vscode-languageserver-types";
+      packageName = "vscode-languageserver-types";
+      version = "3.16.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/vscode-languageserver-types/-/vscode-languageserver-types-3.16.0.tgz";
+        sha512 = "k8luDIWJWyenLc5ToFQQMaSrqCHiLwyKPHKPQZ5zz21vM+vIVUSvsRpcbiECH4WR88K2XZqc4ScRcZ7nk/jbeA==";
+      };
+    };
+    "web-tree-sitter-0.22.1" = {
+      name = "web-tree-sitter";
+      packageName = "web-tree-sitter";
+      version = "0.22.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.22.1.tgz";
+        sha512 = "3wfVqI6KredBmIo8Z1kycbcUIhPLzvqvuD1Y2GA6eRjYJOCypqy7Pv4P0Dm0JToi/oloBwvXfr7+7p42DgbC4Q==";
       };
     };
     "winston-3.14.1" = {
@@ -294,6 +402,44 @@ let
   };
 in
 {
+  awk-language-server = nodeEnv.buildNodePackage {
+    name = "awk-language-server";
+    packageName = "awk-language-server";
+    version = "0.10.6";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/awk-language-server/-/awk-language-server-0.10.6.tgz";
+      sha512 = "DLmBrsTRsUOF/0dKz/Mzu02hd5o7FkG+Rv1dh7Gc7Mm/wH5Ofzb+XVzy5fqC3hlQGY8fvFrxZjT6eOOm+lYmZA==";
+    };
+    dependencies = [
+      sources."minimist-1.2.6"
+      sources."node-addon-api-7.1.1"
+      sources."node-gyp-build-4.8.4"
+      (
+        sources."tree-sitter-0.21.1"
+        // {
+          dependencies = [
+            sources."node-addon-api-8.3.0"
+          ];
+        }
+      )
+      sources."tree-sitter-awk-0.7.2"
+      sources."vscode-jsonrpc-6.0.0"
+      sources."vscode-languageserver-7.0.0"
+      sources."vscode-languageserver-protocol-3.16.0"
+      sources."vscode-languageserver-textdocument-1.0.12"
+      sources."vscode-languageserver-types-3.16.0"
+      sources."web-tree-sitter-0.22.1"
+    ];
+    buildInputs = globalBuildInputs;
+    meta = {
+      description = "AWK Language Server";
+      homepage = "https://github.com/Beaglefoot/awk-language-server#readme";
+      license = "MIT";
+    };
+    production = true;
+    bypassCache = true;
+    reconstructLock = true;
+  };
   neovim = nodeEnv.buildNodePackage {
     name = "neovim";
     packageName = "neovim";
