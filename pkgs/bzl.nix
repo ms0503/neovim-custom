@@ -5,6 +5,7 @@
 }:
 stdenvNoCC.mkDerivation {
   inherit (sources.${system}) src version;
+  dontUnpack = true;
   installPhase = ''
     runHook preInstall
     install -Dm555 "$src" "$out/bin/bzl"
