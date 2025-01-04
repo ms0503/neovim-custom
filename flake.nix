@@ -27,6 +27,10 @@
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/release-24.11";
+    treefmt-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:numtide/treefmt-nix";
+    };
   };
   outputs =
     {
@@ -36,6 +40,7 @@
       neovim-nightly-overlay,
       nixpkgs,
       self,
+      treefmt-nix,
       ...
     }:
     let
@@ -48,22 +53,28 @@
       forAllSystems = nixpkgs.lib.genAttrs allSystems;
     in
     {
-      checks = forAllSystems (system: {
-        pre-commit-check = git-hooks.lib.${system}.run {
-          hooks = {
-            actionlint.enable = true;
-            nixfmt-rfc-style.enable = true;
-            stylua.enable = true;
+      checks = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+          treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
+        in
+        {
+          formatting = treefmtEval.config.build.check self;
+          pre-commit-check = git-hooks.lib.${system}.run {
+            hooks = {
+              actionlint.enable = true;
+              nixfmt-rfc-style.enable = true;
+              stylua.enable = true;
+            };
+            src = ./.;
           };
-          src = ./.;
-        };
-      });
+        }
+      );
       devShells = forAllSystems (
         system:
         let
-          pkgs = import nixpkgs {
-            inherit system;
-          };
+          pkgs = import nixpkgs { inherit system; };
           scripts = with pkgs; [
             (writeScriptBin "update-srcs" ''
               if [[ ! -f $PWD/flake.nix ]]; then
@@ -94,7 +105,14 @@
           };
         }
       );
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+          treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
+        in
+        treefmtEval.config.build.wrapper
+      );
       overlays = import ./overlays.nix;
       packages = forAllSystems (
         system:
