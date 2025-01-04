@@ -4,14 +4,12 @@ src.github = "salesforce-misc/bazelrc-lsp"
 src.prefix = "v"
 
 [bzl_darwin]
-fetch.url = "https://get.bzl.io/darwin_amd64/$ver/bzl"
-src.github = "stackb/bazel-stack-vscode"
-src.prefix = "v"
+fetch.url = "https://get.bzl.io/darwin_amd64/v$ver/bzl"
+src.manual = "1.5.1"
 
 [bzl_linux]
-fetch.url = "https://get.bzl.io/linux_amd64/$ver/bzl"
-src.github = "stackb/bazel-stack-vscode"
-src.prefix = "v"
+fetch.url = "https://get.bzl.io/linux_amd64/v$ver/bzl"
+src.manual = "1.5.1"
 
 [cmake-language-server]
 fetch.url = "https://github.com/regen100/cmake-language-server/archive/refs/tags/v$ver.tar.gz"

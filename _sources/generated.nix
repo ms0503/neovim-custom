@@ -6,6 +6,46 @@
   dockerTools,
 }:
 {
+  bazelrc-lsp = {
+    pname = "bazelrc-lsp";
+    version = "0.1.2";
+    src = fetchurl {
+      url = "https://github.com/salesforce-misc/bazelrc-lsp/archive/refs/tags/v0.1.2.tar.gz";
+      sha256 = "sha256-mGwZkgrs8GPEFvD5Mk+iObnXLrDuZmS3Z2eBBj6T1Ew=";
+    };
+  };
+  bzl_darwin = {
+    pname = "bzl_darwin";
+    version = "1.5.1";
+    src = fetchurl {
+      url = "https://get.bzl.io/darwin_amd64/v1.5.1/bzl";
+      sha256 = "sha256-NcvXCUECIXDLR4sNoqhCiaQVQJv2qQc5he4240ffDXE=";
+    };
+  };
+  bzl_linux = {
+    pname = "bzl_linux";
+    version = "1.5.1";
+    src = fetchurl {
+      url = "https://get.bzl.io/linux_amd64/v1.5.1/bzl";
+      sha256 = "sha256-yLpNjvxjs3796uG8yG5FoCve72Svv66wtIssxMEpsOI=";
+    };
+  };
+  cmake-language-server = {
+    pname = "cmake-language-server";
+    version = "0.1.10";
+    src = fetchurl {
+      url = "https://github.com/regen100/cmake-language-server/archive/refs/tags/v0.1.10.tar.gz";
+      sha256 = "sha256-j6rzvOgRtN5bBgoLnrZksYtQYxDU6Wtrd/lY27JLNjk=";
+    };
+  };
+  gradle-language-server = {
+    pname = "gradle-language-server";
+    version = "3.16.4";
+    src = fetchurl {
+      url = "https://github.com/microsoft/vscode-gradle/archive/refs/tags/3.16.4.tar.gz";
+      sha256 = "sha256-XXRRAT8ehvQTx2Sl8mPqIX6nrkBaBQVW4emrkTSmF3I=";
+    };
+  };
   guihua-lua = {
     pname = "guihua-lua";
     version = "d783191eaa75215beae0c80319fcce5e6b3beeda";
