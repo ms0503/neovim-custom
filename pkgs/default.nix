@@ -10,9 +10,8 @@ let
   };
 in
 {
-  bazelrc-lsp = pkgs.rustPlatform.buildRustPackage {
-    inherit (sources.bazelrc-lsp) pname src version;
-    cargoHash = "sha256-mBXXftmwEKq1ClgLwrWzKE5PdV6WnMCso4fso4ANS+k=";
+  bazelrc-lsp = pkgs.callPackage ./bazelrc-lsp.nix {
+    source = sources.bazelrc-lsp;
   };
   bzl = pkgs.callPackage ./bzl.nix {
     sources = {
