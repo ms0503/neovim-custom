@@ -1,8 +1,5 @@
-{ ... }:
-{
+_: {
   programs = {
-    jsonfmt.enable = true;
-    mdformat.enable = true;
     nixfmt.enable = true;
     shellcheck.enable = true;
     shfmt = {
@@ -12,4 +9,7 @@
     stylua.enable = true;
     taplo.enable = true;
   };
+  settings.formatter.nixfmt.excludes = [
+    "_sources/generated.nix"
+  ];
 }

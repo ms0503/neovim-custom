@@ -1,7 +1,10 @@
 {
   inputs = {
     build-gradle-application = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:raphiz/buildGradleApplication";
     };
     fenix = {
@@ -9,119 +12,54 @@
       url = "github:nix-community/fenix";
     };
     flake-compat.url = "github:edolstra/flake-compat";
+    flake-parts = {
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+      url = "github:hercules-ci/flake-parts";
+    };
     git-hooks = {
       inputs = {
-        flake-compat.follows = "flake-compat";
+        flake-compat.follows = "";
         nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "nixpkgs-stable";
       };
       url = "github:cachix/git-hooks.nix";
     };
     neovim-nightly-overlay = {
       inputs = {
-        flake-compat.follows = "flake-compat";
-        git-hooks.follows = "git-hooks";
+        flake-compat.follows = "";
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "";
         nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "";
       };
       url = "github:nix-community/neovim-nightly-overlay";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/release-24.11";
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
     };
   };
   outputs =
-    {
+    inputs@{
       build-gradle-application,
       fenix,
+      flake-parts,
       git-hooks,
-      neovim-nightly-overlay,
       nixpkgs,
       self,
       treefmt-nix,
       ...
     }:
-    let
-      allSystems = [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      flake.overlays = import ./overlays.nix;
+      imports = [
+        git-hooks.flakeModule
+        treefmt-nix.flakeModule
       ];
-      forAllSystems = nixpkgs.lib.genAttrs allSystems;
-    in
-    {
-      checks = forAllSystems (
-        system:
+      perSystem =
+        { inputs', system, ... }:
         let
-          pkgs = import nixpkgs { inherit system; };
-          treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
-        in
-        {
-          formatting = treefmtEval.config.build.check self;
-          pre-commit-check = git-hooks.lib.${system}.run {
-            hooks = {
-              actionlint.enable = true;
-              nixfmt-rfc-style.enable = true;
-              stylua.enable = true;
-            };
-            src = ./.;
-          };
-        }
-      );
-      devShells = forAllSystems (
-        system:
-        let
-          pkgs = import nixpkgs { inherit system; };
-          scripts = with pkgs; [
-            (writeScriptBin "update-srcs" ''
-              if [[ ! -f $PWD/flake.nix ]]; then
-                printf "Please run in flake root\n"
-                exit 1
-              fi
-              ${pkgs.nvfetcher}/bin/nvfetcher
-              ${pkgs.node2nix}/bin/node2nix \
-                -i pkgs/nodePackages/pkg-list.json \
-                -o pkgs/nodePackages/pkgs.nix \
-                -c pkgs/nodePackages/cmp.nix \
-                -e pkgs/nodePackages/node-env.nix \
-                --pkg-name nodejs
-            '')
-          ];
-        in
-        {
-          default = pkgs.mkShell {
-            inherit (self.checks.${system}.pre-commit-check) shellHook;
-            packages =
-              scripts
-              ++ (with pkgs; [
-                lua-language-server
-                node2nix
-                nvfetcher
-                stylua
-              ]);
-          };
-        }
-      );
-      formatter = forAllSystems (
-        system:
-        let
-          pkgs = import nixpkgs { inherit system; };
-          treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
-        in
-        treefmtEval.config.build.wrapper
-      );
-      overlays = import ./overlays.nix;
-      packages = forAllSystems (
-        system:
-        let
-          makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
-          neovim-nightly = neovim-nightly-overlay.packages.${system}.default;
-          neovimConfig = pkgs.callPackage ./config.nix {
-            inherit plugins;
-          };
+          inherit (inputs') neovim-nightly-overlay;
           pkgs = import nixpkgs {
             inherit system;
             overlays = [
@@ -130,14 +68,80 @@
               self.overlays.default
             ];
           };
-          plugins = import ./plugins.nix pkgs;
-          tools = import ./tools.nix pkgs;
         in
         {
-          config = neovimConfig;
-          default = makeNeovimWrapper tools;
-        }
-      );
+          _module.args.pkgs = pkgs;
+          devShells.default =
+            let
+              scripts = with pkgs; [
+                (writeScriptBin "update-srcs" ''
+                  if [[ ! -f $PWD/flake.nix ]]; then
+                    printf "Please run in flake root\n"
+                    exit 1
+                  fi
+                  ${pkgs.nvfetcher}/bin/nvfetcher
+                  ${pkgs.node2nix}/bin/node2nix \
+                    -i pkgs/nodePackages/pkg-list.json \
+                    -o pkgs/nodePackages/pkgs.nix \
+                    -c pkgs/nodePackages/cmp.nix \
+                    -e pkgs/nodePackages/node-env.nix \
+                    --pkg-name nodejs
+                '')
+              ];
+            in
+            pkgs.mkShell {
+              packages =
+                scripts
+                ++ (with pkgs; [
+                  lua-language-server
+                  node2nix
+                  nvfetcher
+                  stylua
+                ]);
+            };
+          packages =
+            let
+              makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
+              neovim-nightly = neovim-nightly-overlay.packages.default;
+              neovimConfig = pkgs.callPackage ./config.nix {
+                inherit plugins;
+              };
+              plugins = import ./plugins.nix pkgs;
+              tools = import ./tools.nix pkgs;
+            in
+            {
+              config = neovimConfig;
+              default = makeNeovimWrapper tools;
+            };
+          pre-commit = {
+            check.enable = true;
+            settings = {
+              hooks = {
+                actionlint.enable = true;
+                check-json.enable = true;
+                check-toml.enable = true;
+                editorconfig-checker = {
+                  enable = true;
+                  excludes = [
+                    "flake.lock"
+                    "_sources"
+                  ];
+                };
+                luacheck.enable = true;
+                markdownlint.enable = true;
+                yamlfmt.enable = true;
+                yamllint.enable = true;
+              };
+              src = ./.;
+            };
+          };
+          treefmt = import ./treefmt.nix;
+        };
+      systems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
     };
 }
-# vim: et sts=2 sw=2 ts=2
