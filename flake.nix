@@ -57,7 +57,12 @@
         treefmt-nix.flakeModule
       ];
       perSystem =
-        { inputs', system, ... }:
+        {
+          config,
+          inputs',
+          system,
+          ...
+        }:
         let
           inherit (inputs') neovim-nightly-overlay;
           pkgs = import nixpkgs {
@@ -98,6 +103,9 @@
                   nvfetcher
                   stylua
                 ]);
+              shellHook = ''
+                ${config.pre-commit.installationScript}
+              '';
             };
           packages =
             let
