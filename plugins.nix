@@ -85,6 +85,7 @@ let
     smart-splits-nvim
     sort-nvim
     sqlite-lua
+    statuscol-nvim
     tailwind-tools-nvim
     telescope-file-browser-nvim
     telescope-nvim

@@ -244,6 +244,59 @@ return {
         name = 'nvim-scrollbar',
     },
     {
+        dir = '@statuscol_nvim@',
+        event = 'BufReadPre',
+        name = 'statuscol.nvim',
+        opts = function()
+            local builtin = require('statuscol.builtin')
+            return {
+                bt_ignore = {
+                    'nofile',
+                    'terminal',
+                },
+                relculright = true,
+                segments = {
+                    {
+                        click = 'v:lua.ScFa',
+                        text = {
+                            builtin.foldfunc,
+                        },
+                    },
+                    {
+                        click = 'v:lua.ScFa',
+                        text = {
+                            ' ',
+                        },
+                    },
+                    {
+                        sign = {
+                            auto = true,
+                            maxwidth = 2,
+                            namespace = {
+                                'diagnostic/signs',
+                            },
+                        },
+                    },
+                    {
+                        text = {
+                            builtin.lnumfunc,
+                        },
+                    },
+                    {
+                        sign = {
+                            colwidth = 1,
+                            maxwidth = 1,
+                            namespace = {
+                                'gitsigns',
+                            },
+                            wrap = true,
+                        },
+                    },
+                },
+            }
+        end,
+    },
+    {
         cmd = 'ToggleTerm',
         dir = '@toggleterm_nvim@',
         name = 'toggleterm.nvim',
