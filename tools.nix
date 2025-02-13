@@ -3,7 +3,6 @@ pkgs:
   arduino-language-server
   astro-language-server
   autotools-language-server
-  bazelrc-lsp
   biome
   buf
   clang-tools

@@ -1,19 +1,4 @@
 {
-    "bazelrc-lsp": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "bazelrc-lsp",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-54GjDe0xf7BCZilvTc2ZcL7oz+UIAoi3swcbz7VNdP8=",
-            "type": "url",
-            "url": "https://github.com/salesforce-misc/bazelrc-lsp/archive/refs/tags/v0.2.2.tar.gz"
-        },
-        "version": "0.2.2"
-    },
     "bzl_darwin": {
         "cargoLocks": null,
         "date": null,
@@ -58,21 +43,6 @@
             "url": "https://github.com/regen100/cmake-language-server/archive/refs/tags/v0.1.11.tar.gz"
         },
         "version": "0.1.11"
-    },
-    "gradle-language-server": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "gradle-language-server",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-XXRRAT8ehvQTx2Sl8mPqIX6nrkBaBQVW4emrkTSmF3I=",
-            "type": "url",
-            "url": "https://github.com/microsoft/vscode-gradle/archive/refs/tags/3.16.4.tar.gz"
-        },
-        "version": "3.16.4"
     },
     "guihua-lua": {
         "cargoLocks": null,
@@ -189,3 +159,4 @@
         "version": "7e381730febb695fb58c9d6c8fd867226180ca2d"
     }
 }
+
