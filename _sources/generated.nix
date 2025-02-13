@@ -72,15 +72,15 @@
   };
   vim-jb-lua = {
     pname = "vim-jb-lua";
-    version = "7bba4a7227c1c1c02629a1c51a7cec6237b8b896";
+    version = "c3ab5d8039e137070fc48a2e9b7931d9dedaa9fa";
     src = fetchFromGitHub {
       owner = "ms0503";
       repo = "vim-jb.lua";
-      rev = "7bba4a7227c1c1c02629a1c51a7cec6237b8b896";
+      rev = "c3ab5d8039e137070fc48a2e9b7931d9dedaa9fa";
       fetchSubmodules = false;
-      sha256 = "sha256-iqi9oxOtEsMWvnOXQSji5rSXM18f9kP44mqwqUOfRH0=";
+      sha256 = "sha256-TuQgrhN/4hDn3iKF2jPWdq4KBchx1CMo8hM9tcKRMM4=";
     };
-    date = "2025-01-03";
+    date = "2025-02-13";
   };
   vimdoc-ja = {
     pname = "vimdoc-ja";

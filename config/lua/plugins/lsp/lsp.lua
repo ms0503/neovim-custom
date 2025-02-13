@@ -2,7 +2,6 @@ return {
     {
         config = function()
             local lspconfig = require('lspconfig')
-
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport =
                 true
@@ -15,15 +14,9 @@ return {
                 require('ts-error-translator').translate_diagnostics(
                     err,
                     result,
-                    ctx,
-                    config
+                    ctx
                 )
-                vim.lsp.diagnostic.on_publish_diagnostics(
-                    err,
-                    result,
-                    ctx,
-                    config
-                )
+                vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx)
             end
             local server_list = require('plugins.lsp.server-list')
             for _, server in ipairs(server_list) do
@@ -111,7 +104,6 @@ return {
         end,
         dependencies = {
             {
-                config = true,
                 dir = '@neoconf_nvim@',
                 name = 'neoconf.nvim',
             },
