@@ -91,6 +91,7 @@ let
     telescope-nvim
     tiny-inline-diagnostic-nvim
     toggleterm-nvim
+    transparent-nvim
     trouble-nvim
     ts-error-translator-nvim
     typescript-tools-nvim
