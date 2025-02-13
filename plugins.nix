@@ -1,4 +1,4 @@
-pkgs@{ lib, vimPlugins, ... }:
+{ lib, vimPlugins, ... }:
 let
   normalizePname =
     pname:
@@ -23,6 +23,7 @@ let
     ) { } pkgList;
   plugins = with vimPlugins; [
     aerial-nvim
+    alpha-nvim
     better-escape-nvim
     cmp-buffer
     cmp-cmdline
