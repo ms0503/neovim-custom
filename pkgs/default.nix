@@ -10,9 +10,6 @@ let
   };
 in
 {
-  bazelrc-lsp = pkgs.callPackage ./bazelrc-lsp.nix {
-    source = sources.bazelrc-lsp;
-  };
   bzl = pkgs.callPackage ./bzl.nix {
     sources = {
       x86_64-darwin = sources.bzl_darwin;

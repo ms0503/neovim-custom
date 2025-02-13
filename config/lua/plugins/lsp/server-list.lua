@@ -4,7 +4,6 @@ return {
     'autotools_ls',
     'awk_ls',
     'bashls',
-    'bazelrc_lsp',
     'biome',
     'buf_ls',
     'bzl',
@@ -18,7 +17,6 @@ return {
     'dockerls',
     -- 'eslint', -- configured in plugins.lsp.lsp
     'gopls',
-    -- 'gradle_ls',
     'graphql',
     -- 'groovyls',
     'hls',
