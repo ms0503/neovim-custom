@@ -135,7 +135,6 @@
                     "_sources"
                   ];
                 };
-                luacheck.enable = true;
                 markdownlint.enable = true;
                 yamlfmt.enable = true;
                 yamllint.enable = true;
