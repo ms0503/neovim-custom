@@ -329,6 +329,7 @@ return {
         name = 'transparent.nvim',
         opts = {
             extra_groups = {
+                'FloatBorder',
                 'TabLineFill',
                 'WinBar',
             },
