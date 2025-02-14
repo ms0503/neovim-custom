@@ -119,7 +119,10 @@
             in
             {
               config = neovimConfig;
-              default = makeNeovimWrapper tools;
+              default = pkgs.callPackage (makeNeovimWrapper tools) {
+                viAlias = false;
+                vimAlias = false;
+              };
             };
           pre-commit = {
             check.enable = true;
