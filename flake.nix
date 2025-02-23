@@ -33,7 +33,7 @@
       };
       url = "github:nix-community/neovim-nightly-overlay";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
@@ -110,7 +110,25 @@
           packages =
             let
               makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
-              neovim-nightly = neovim-nightly-overlay.packages.default;
+              neovim-nightly = neovim-nightly-overlay.packages.default.override (prev: {
+                tree-sitter = prev.tree-sitter.override (prev: {
+                  rustPlatform = prev.rustPlatform // {
+                    buildRustPackage =
+                      args:
+                      pkgs.rustPlatform.buildRustPackage (
+                        args
+                        // {
+                          cargoHash = "sha256-TthRC6d1tEuao8vSptqxXtR0XRPIkUdmwiFN7bRAelU=";
+                          src = pkgs.fetchurl {
+                            hash = "sha256-JnkfaRghkv7xec1YUBwyJgERWII1V6hv5CaCy0oThSM=";
+                            url = "https://github.com/tree-sitter/tree-sitter/archive/v0.25.2.tar.gz";
+                          };
+                          version = "bundled";
+                        }
+                      );
+                  };
+                });
+              });
               neovimConfig = pkgs.callPackage ./config.nix {
                 inherit plugins;
               };
