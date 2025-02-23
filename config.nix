@@ -40,4 +40,3 @@ stdenvNoCC.mkDerivation {
   neovim_custom_config_path = preprocessed;
   src = preprocessed;
 }
-# vim: et sts=2 sw=2 ts=2

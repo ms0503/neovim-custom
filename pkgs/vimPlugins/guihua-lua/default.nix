@@ -15,4 +15,3 @@ vimUtils.buildVimPlugin {
     ./fix-fzy-lua-native.patch
   ];
 }
-# vim: et sts=2 sw=2 ts=2

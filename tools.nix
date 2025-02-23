@@ -74,4 +74,3 @@ pkgs:
   neovim
 ])
 ++ pkgs.lib.optional (pkgs.system == "x86_64-darwin" || pkgs.system == "x86_64-linux") pkgs.bzl
-# vim: et sts=2 sw=2 ts=2
