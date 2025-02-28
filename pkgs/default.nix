@@ -1,13 +1,24 @@
 { pkgs }:
 let
-  sources = import ../_sources/generated.nix {
-    inherit (pkgs)
-      dockerTools
-      fetchFromGitHub
-      fetchgit
-      fetchurl
-      ;
-  };
+  sources =
+    builtins.mapAttrs
+      (
+        _: pkg:
+        let
+          version = if (builtins.hasAttr "date" pkg) then pkg.date else pkg.version;
+        in
+        pkg // { inherit version; }
+      )
+      (
+        import ../_sources/generated.nix {
+          inherit (pkgs)
+            dockerTools
+            fetchFromGitHub
+            fetchgit
+            fetchurl
+            ;
+        }
+      );
 in
 {
   bzl = pkgs.callPackage ./bzl.nix {
@@ -29,7 +40,6 @@ in
         "bzl_darwin"
         "bzl_linux"
         "cmake-language-server"
-        "gradle-language-server"
         "guihua-lua"
       ];
     })

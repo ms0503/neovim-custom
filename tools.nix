@@ -54,7 +54,6 @@ pkgs:
   bash-language-server
   css-variables-language-server
   dockerfile-language-server-nodejs
-  graphql-language-service-cli
   neovim
   prettier
   typescript-language-server

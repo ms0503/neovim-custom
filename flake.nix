@@ -1,17 +1,13 @@
 {
   inputs = {
-    build-gradle-application = {
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
-      url = "github:raphiz/buildGradleApplication";
-    };
     fenix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/fenix";
     };
-    flake-compat.url = "github:edolstra/flake-compat";
+    flake-compat = {
+      flake = false;
+      url = "github:edolstra/flake-compat";
+    };
     flake-parts = {
       inputs.nixpkgs-lib.follows = "nixpkgs";
       url = "github:hercules-ci/flake-parts";
@@ -33,7 +29,11 @@
       };
       url = "github:nix-community/neovim-nightly-overlay";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    systems = {
+      flake = false;
+      url = "github:nix-systems/default";
+    };
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
@@ -41,12 +41,12 @@
   };
   outputs =
     inputs@{
-      build-gradle-application,
       fenix,
       flake-parts,
       git-hooks,
       nixpkgs,
       self,
+      systems,
       treefmt-nix,
       ...
     }:
@@ -68,7 +68,6 @@
           pkgs = import nixpkgs {
             inherit system;
             overlays = [
-              build-gradle-application.overlays.default
               fenix.overlays.default
               self.overlays.default
             ];
@@ -110,25 +109,7 @@
           packages =
             let
               makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
-              neovim-nightly = neovim-nightly-overlay.packages.default.override (prev: {
-                tree-sitter = prev.tree-sitter.override (prev: {
-                  rustPlatform = prev.rustPlatform // {
-                    buildRustPackage =
-                      args:
-                      pkgs.rustPlatform.buildRustPackage (
-                        args
-                        // {
-                          cargoHash = "sha256-TthRC6d1tEuao8vSptqxXtR0XRPIkUdmwiFN7bRAelU=";
-                          src = pkgs.fetchurl {
-                            hash = "sha256-JnkfaRghkv7xec1YUBwyJgERWII1V6hv5CaCy0oThSM=";
-                            url = "https://github.com/tree-sitter/tree-sitter/archive/v0.25.2.tar.gz";
-                          };
-                          version = "bundled";
-                        }
-                      );
-                  };
-                });
-              });
+              neovim-nightly = neovim-nightly-overlay.packages.default;
               neovimConfig = pkgs.callPackage ./config.nix {
                 inherit plugins;
               };
@@ -152,8 +133,9 @@
                 editorconfig-checker = {
                   enable = true;
                   excludes = [
-                    "flake.lock"
+                    "Cargo.lock"
                     "_sources"
+                    "flake.lock"
                   ];
                 };
                 markdownlint.enable = true;
@@ -165,11 +147,6 @@
           };
           treefmt = import ./treefmt.nix;
         };
-      systems = [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
-      ];
+      systems = import systems;
     };
 }

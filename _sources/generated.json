@@ -60,6 +60,7 @@
             "repo": "guihua.lua",
             "rev": "d783191eaa75215beae0c80319fcce5e6b3beeda",
             "sha256": "sha256-XpUsbj1boDfbyE8C6SdOvZdkd97682VVC81fvQ5WA/4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "d783191eaa75215beae0c80319fcce5e6b3beeda"
@@ -81,7 +82,7 @@
     },
     "schemastore-nvim": {
         "cargoLocks": null,
-        "date": "2025-02-23",
+        "date": "2025-02-27",
         "extract": null,
         "name": "schemastore-nvim",
         "passthru": null,
@@ -93,11 +94,12 @@
             "name": null,
             "owner": "B0o",
             "repo": "SchemaStore.nvim",
-            "rev": "a72f390eafa06abed53427a29bf073d69199d9cf",
-            "sha256": "sha256-M8VQBmUR6CS51q5NTgqzArjd9itmQ9GlAvilSoxCk98=",
+            "rev": "9f548557c1ef2ea24a4e24940cf0011c448112ae",
+            "sha256": "sha256-I7Q2H4PR6R2BOR7wFFgisj5e+2DkbsLlG89d+S/yavg=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a72f390eafa06abed53427a29bf073d69199d9cf"
+        "version": "9f548557c1ef2ea24a4e24940cf0011c448112ae"
     },
     "ts-error-translator-nvim": {
         "cargoLocks": null,
@@ -130,6 +132,7 @@
             "repo": "vim-jb.lua",
             "rev": "c3ab5d8039e137070fc48a2e9b7931d9dedaa9fa",
             "sha256": "sha256-TuQgrhN/4hDn3iKF2jPWdq4KBchx1CMo8hM9tcKRMM4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "c3ab5d8039e137070fc48a2e9b7931d9dedaa9fa"
@@ -150,6 +153,7 @@
             "repo": "vimdoc-ja",
             "rev": "22cad01dfe0347b7fe5bd03294b6817d51334fff",
             "sha256": "sha256-JpzFXZEzb/Uy2B3qkb3f0Dsjz8maaQ/Rej5zrFL+jn8=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "22cad01dfe0347b7fe5bd03294b6817d51334fff"

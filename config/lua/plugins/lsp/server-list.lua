@@ -17,7 +17,6 @@ return {
     'dockerls',
     -- 'eslint', -- configured in plugins.lsp.lsp
     'gopls',
-    'graphql',
     -- 'groovyls',
     'hls',
     'html',
