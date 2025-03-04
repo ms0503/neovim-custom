@@ -135,6 +135,13 @@ return {
         },
     },
     {
+        dir = '@nvim_notify@',
+        name = 'nvim-notify',
+        opts = {
+            background_colour = require('vim-jb.util').GetColors('dark').editor.gui,
+        },
+    },
+    {
         dependencies = {
             dir = '@nvim_treesitter@',
             name = 'nvim-treesitter',

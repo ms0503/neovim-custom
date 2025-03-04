@@ -20,6 +20,9 @@ in
 { viAlias, vimAlias }:
 stdenvNoCC.mkDerivation {
   inherit (neovim) version;
+  meta = neovim.meta // {
+    mainProgram = "nvim";
+  };
   pname = "${neovim.pname}-wrapped";
   installPhase =
     ''
