@@ -688,13 +688,13 @@ let
         sha512 = "6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==";
       };
     };
-    "nanoid-3.3.8" = {
+    "nanoid-3.3.9" = {
       name = "nanoid";
       packageName = "nanoid";
-      version = "3.3.8";
+      version = "3.3.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz";
-        sha512 = "WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==";
+        url = "https://registry.npmjs.org/nanoid/-/nanoid-3.3.9.tgz";
+        sha512 = "SppoicMGpZvbF1l3z4x7No3OlIjP7QJvC9XR7AhZr1kL133KHnKPztkKDc+Ir4aJ/1VhTySrtKhrsycmrMQfvg==";
       };
     };
     "needle-3.3.1" = {
@@ -1244,7 +1244,7 @@ in
       sources."mime-1.6.0"
       sources."mime-db-1.52.0"
       sources."mime-types-2.1.35"
-      sources."nanoid-3.3.8"
+      sources."nanoid-3.3.9"
       sources."needle-3.3.1"
       sources."parse-node-version-1.0.1"
       sources."picocolors-1.1.1"
@@ -1297,7 +1297,7 @@ in
       sources."lilconfig-3.1.3"
       sources."lodash.camelcase-4.3.0"
       sources."minimist-1.2.8"
-      sources."nanoid-3.3.8"
+      sources."nanoid-3.3.9"
       sources."picocolors-1.1.1"
       sources."postcss-8.5.3"
       sources."postcss-less-6.0.0"
