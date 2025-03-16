@@ -319,6 +319,7 @@ return {
             local self = require('transparent')
             local autocmd = vim.api.nvim_create_autocmd
             self.clear_prefix('NeoTree')
+            self.clear_prefix('Stl')
             autocmd('VimEnter', {
                 callback = function()
                     vim.cmd('TransparentEnable')
@@ -330,6 +331,7 @@ return {
         opts = {
             extra_groups = {
                 'FloatBorder',
+                'Folded',
                 'TabLineFill',
                 'WinBar',
             },
