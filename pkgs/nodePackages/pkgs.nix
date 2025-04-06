@@ -445,13 +445,13 @@ let
         sha512 = "6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==";
       };
     };
-    "immutable-5.0.3" = {
+    "immutable-5.1.1" = {
       name = "immutable";
       packageName = "immutable";
-      version = "5.0.3";
+      version = "5.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/immutable/-/immutable-5.0.3.tgz";
-        sha512 = "P8IdPQHq3lA1xVeBRi5VPqUm5HDgKnx0Ru51wZz5mjxHr5n3RWhjIpOFU7ybkUxfB+5IToy+OLaHYDBIWsv+uw==";
+        url = "https://registry.npmjs.org/immutable/-/immutable-5.1.1.tgz";
+        sha512 = "3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==";
       };
     };
     "inherits-2.0.4" = {
@@ -553,13 +553,13 @@ let
         sha512 = "Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==";
       };
     };
-    "less-4.2.2" = {
+    "less-4.3.0" = {
       name = "less";
       packageName = "less";
-      version = "4.2.2";
+      version = "4.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/less/-/less-4.2.2.tgz";
-        sha512 = "tkuLHQlvWUTeQ3doAqnHbNn8T6WX1KA8yvbKG9x4VtKtIjHsVKQZCH11zRgAfbDAXC2UNIg/K9BYAAcEzUIrNg==";
+        url = "https://registry.npmjs.org/less/-/less-4.3.0.tgz";
+        sha512 = "X9RyH9fvemArzfdP8Pi3irr7lor2Ok4rOttDXBhlwDg+wKQsXOXgHWduAJE1EsF7JJx0w0bcO6BC6tCKKYnXKA==";
       };
     };
     "lilconfig-3.1.3" = {
@@ -688,13 +688,13 @@ let
         sha512 = "6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==";
       };
     };
-    "nanoid-3.3.10" = {
+    "nanoid-3.3.11" = {
       name = "nanoid";
       packageName = "nanoid";
-      version = "3.3.10";
+      version = "3.3.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/nanoid/-/nanoid-3.3.10.tgz";
-        sha512 = "vSJJTG+t/dIKAUhUDw/dLdZ9s//5OxcHqLaDWWrW4Cdq7o6tdLIczUkMXt2MBNmk6sJRZBZRXVixs7URY1CmIg==";
+        url = "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz";
+        sha512 = "N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==";
       };
     };
     "needle-3.3.1" = {
@@ -895,13 +895,13 @@ let
         sha512 = "YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==";
       };
     };
-    "sass-1.85.1" = {
+    "sass-1.86.3" = {
       name = "sass";
       packageName = "sass";
-      version = "1.85.1";
+      version = "1.86.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/sass/-/sass-1.85.1.tgz";
-        sha512 = "Uk8WpxM5v+0cMR0XjX9KfRIacmSG86RH4DCCZjLU2rFh5tyutt9siAXJ7G+YfxQ99Q6wrRMbMlVl6KqUms71ag==";
+        url = "https://registry.npmjs.org/sass/-/sass-1.86.3.tgz";
+        sha512 = "iGtg8kus4GrsGLRDLRBRHY9dNVA78ZaS7xr01cWnS7PEMQyFtTqBiyCrfpTYTZXRWM94akzckYjh8oADfFNTzw==";
       };
     };
     "sax-1.4.1" = {
@@ -1228,14 +1228,14 @@ in
       sources."hasown-2.0.2"
       sources."iconv-lite-0.6.3"
       sources."image-size-0.5.5"
-      sources."immutable-5.0.3"
+      sources."immutable-5.1.1"
       sources."is-extglob-2.1.1"
       sources."is-glob-4.0.3"
       sources."is-number-7.0.0"
       sources."is-what-3.14.1"
       sources."isarray-1.0.0"
       sources."isobject-2.1.0"
-      sources."less-4.2.2"
+      sources."less-4.3.0"
       sources."line-column-1.0.2"
       sources."make-dir-2.1.0"
       sources."math-intrinsics-1.1.0"
@@ -1244,7 +1244,7 @@ in
       sources."mime-1.6.0"
       sources."mime-db-1.52.0"
       sources."mime-types-2.1.35"
-      sources."nanoid-3.3.10"
+      sources."nanoid-3.3.11"
       sources."needle-3.3.1"
       sources."parse-node-version-1.0.1"
       sources."picocolors-1.1.1"
@@ -1259,7 +1259,7 @@ in
       sources."reusify-1.1.0"
       sources."run-parallel-1.2.0"
       sources."safer-buffer-2.1.2"
-      sources."sass-1.85.1"
+      sources."sass-1.86.3"
       sources."sax-1.4.1"
       sources."semver-5.7.2"
       sources."source-map-0.6.1"
@@ -1297,7 +1297,7 @@ in
       sources."lilconfig-3.1.3"
       sources."lodash.camelcase-4.3.0"
       sources."minimist-1.2.8"
-      sources."nanoid-3.3.10"
+      sources."nanoid-3.3.11"
       sources."picocolors-1.1.1"
       sources."postcss-8.5.3"
       sources."postcss-less-6.0.0"
