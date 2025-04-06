@@ -43,11 +43,9 @@
     inputs@{
       fenix,
       flake-parts,
-      git-hooks,
       nixpkgs,
       self,
       systems,
-      treefmt-nix,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } (
@@ -72,30 +70,16 @@
               ms0503.neovim.package = config.packages.default;
             }
           );
-          overlays = import ./overlays.nix;
         };
         imports = [
-          git-hooks.flakeModule
-          treefmt-nix.flakeModule
+          ./treefmt.nix
+          ./git-hooks.nix
+          ./pkgs
+          ./neovim.nix
         ];
         perSystem =
+          { config, pkgs, ... }:
           {
-            config,
-            inputs',
-            system,
-            ...
-          }:
-          let
-            pkgs = import nixpkgs {
-              inherit system;
-              overlays = [
-                fenix.overlays.default
-                self.overlays.default
-              ];
-            };
-          in
-          {
-            _module.args.pkgs = pkgs;
             devShells.default =
               let
                 scripts = with pkgs; [
@@ -127,46 +111,6 @@
                   ${config.pre-commit.installationScript}
                 '';
               };
-            packages =
-              let
-                makeNeovimWrapper = import ./wrapper.nix neovim-nightly pkgs;
-                neovim-nightly = inputs'.neovim-nightly-overlay.packages.default;
-                neovimConfig = pkgs.callPackage ./config.nix {
-                  inherit plugins;
-                };
-                plugins = import ./plugins.nix pkgs;
-                tools = import ./tools.nix pkgs;
-              in
-              {
-                config = neovimConfig;
-                default = pkgs.callPackage (makeNeovimWrapper tools) {
-                  viAlias = false;
-                  vimAlias = false;
-                };
-              };
-            pre-commit = {
-              check.enable = true;
-              settings = {
-                hooks = {
-                  actionlint.enable = true;
-                  check-json.enable = true;
-                  check-toml.enable = true;
-                  editorconfig-checker = {
-                    enable = true;
-                    excludes = [
-                      "Cargo.lock"
-                      "_sources"
-                      "flake.lock"
-                    ];
-                  };
-                  markdownlint.enable = true;
-                  yamlfmt.enable = true;
-                  yamllint.enable = true;
-                };
-                src = ./.;
-              };
-            };
-            treefmt = import ./treefmt.nix;
           };
         systems = import systems;
       }

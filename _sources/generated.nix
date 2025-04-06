@@ -17,14 +17,6 @@
       sha256 = "sha256-yLpNjvxjs3796uG8yG5FoCve72Svv66wtIssxMEpsOI=";
     };
   };
-  cmake-language-server = {
-    pname = "cmake-language-server";
-    version = "0.1.11";
-    src = fetchurl {
-      url = "https://github.com/regen100/cmake-language-server/archive/refs/tags/v0.1.11.tar.gz";
-      sha256 = "sha256-Z8CuR0nTZ/Xzx5+WmuE1X22sbCh6ybv7Lirc++V/cBM=";
-    };
-  };
   guihua-lua = {
     pname = "guihua-lua";
     version = "d783191eaa75215beae0c80319fcce5e6b3beeda";
@@ -36,14 +28,6 @@
       sha256 = "sha256-XpUsbj1boDfbyE8C6SdOvZdkd97682VVC81fvQ5WA/4=";
     };
     date = "2024-11-02";
-  };
-  hlchunk-nvim = {
-    pname = "hlchunk-nvim";
-    version = "1.3.0";
-    src = fetchurl {
-      url = "https://github.com/shellRaining/hlchunk.nvim/archive/refs/tags/v1.3.0.tar.gz";
-      sha256 = "sha256-eYwifigTRrXrW6xpFqLlqYFAftt64yweRGvvAvE7o5U=";
-    };
   };
   schemastore-nvim = {
     pname = "schemastore-nvim";

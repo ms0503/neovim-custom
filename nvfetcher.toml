@@ -6,20 +6,10 @@ src.manual = "1.5.1"
 fetch.url = "https://get.bzl.io/linux_amd64/v$ver/bzl"
 src.manual = "1.5.1"
 
-[cmake-language-server]
-fetch.url = "https://github.com/regen100/cmake-language-server/archive/refs/tags/v$ver.tar.gz"
-src.github = "regen100/cmake-language-server"
-src.prefix = "v"
-
 [guihua-lua]
 fetch.github = "ray-x/guihua.lua"
 src.branch = "master"
 src.git = "https://github.com/ray-x/guihua.lua"
-
-[hlchunk-nvim]
-fetch.url = "https://github.com/shellRaining/hlchunk.nvim/archive/refs/tags/v$ver.tar.gz"
-src.github = "shellRaining/hlchunk.nvim"
-src.prefix = "v"
 
 [schemastore-nvim]
 fetch.github = "B0o/SchemaStore.nvim"

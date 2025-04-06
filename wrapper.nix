@@ -5,12 +5,11 @@ pkgs@{
   stdenvNoCC,
   ...
 }:
-extraPackages:
+plugins: extraPackages:
 let
   nvimConfig = callPackage ./config.nix {
     inherit plugins;
   };
-  plugins = import ./plugins.nix pkgs;
   wrapper = pkgs.writeScriptBin "nvim" ''
     #!/usr/bin/env sh
     PATH=$PATH:${lib.makeBinPath extraPackages}

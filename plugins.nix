@@ -1,4 +1,5 @@
-{ lib, vimPlugins, ... }:
+{ lib, ... }@pkgs:
+myPkgs:
 let
   normalizePname =
     pname:
@@ -99,5 +100,6 @@ let
     vimdoc-ja
     which-key-nvim
   ];
+  vimPlugins = pkgs.vimPlugins // myPkgs.vimPlugins;
 in
 pkgListToAttr plugins

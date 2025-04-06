@@ -29,21 +29,6 @@
         },
         "version": "1.5.1"
     },
-    "cmake-language-server": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "cmake-language-server",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-Z8CuR0nTZ/Xzx5+WmuE1X22sbCh6ybv7Lirc++V/cBM=",
-            "type": "url",
-            "url": "https://github.com/regen100/cmake-language-server/archive/refs/tags/v0.1.11.tar.gz"
-        },
-        "version": "0.1.11"
-    },
     "guihua-lua": {
         "cargoLocks": null,
         "date": "2024-11-02",
@@ -64,21 +49,6 @@
             "type": "github"
         },
         "version": "d783191eaa75215beae0c80319fcce5e6b3beeda"
-    },
-    "hlchunk-nvim": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "hlchunk-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-eYwifigTRrXrW6xpFqLlqYFAftt64yweRGvvAvE7o5U=",
-            "type": "url",
-            "url": "https://github.com/shellRaining/hlchunk.nvim/archive/refs/tags/v1.3.0.tar.gz"
-        },
-        "version": "1.3.0"
     },
     "schemastore-nvim": {
         "cargoLocks": null,
