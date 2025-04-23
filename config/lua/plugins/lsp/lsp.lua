@@ -46,6 +46,12 @@ return {
             end
             lspconfig.eslint.setup({
                 settings = {
+                    codeActionOnSave = {
+                        enable = true,
+                    },
+                    experimental = {
+                        useFlatConfig = true,
+                    },
                     format = true,
                 },
             })
