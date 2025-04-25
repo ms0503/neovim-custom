@@ -34,7 +34,6 @@ in
     pyright
     ripgrep
     ruff
-    ruff-lsp
     shellcheck
     shfmt
     sqlite
