@@ -17,6 +17,9 @@
       };
       settings.formatter.nixfmt.excludes = [
         "_sources/generated.nix"
+        "pkgs/nodePackages/cmp.nix"
+        "pkgs/nodePackages/node-env.nix"
+        "pkgs/nodePackages/pkgs.nix"
       ];
     };
   };
