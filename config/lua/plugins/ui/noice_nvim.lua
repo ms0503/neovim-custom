@@ -1,3 +1,6 @@
+-- Modern UI for messages, cmdline and popup
+-- repo: https://github.com/folke/noice.nvim
+
 return {
     dependencies = {
         {

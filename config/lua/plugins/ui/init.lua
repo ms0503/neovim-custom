@@ -1,0 +1,12 @@
+return {
+    require('plugins.ui.fidget_nvim'),
+    require('plugins.ui.hlchunk_nvim'),
+    require('plugins.ui.mini_icons'),
+    require('plugins.ui.noice_nvim'),
+    require('plugins.ui.nvim-highlight-colors'),
+    require('plugins.ui.nvim-scrollbar'),
+    require('plugins.ui.nvim-web-devicons'),
+    require('plugins.ui.statuscol_nvim'),
+    require('plugins.ui.transparent_nvim'),
+    require('plugins.ui.vim-jb_lua'),
+}

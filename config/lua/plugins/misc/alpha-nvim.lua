@@ -1,8 +1,12 @@
+-- Programmable dashboard
+-- repo: https://github.com/goolord/alpha-nvim
+
 local get_icon = require('utils').get_icon
+
 return {
     dir = '@alpha_nvim@',
     event = 'VimEnter',
-    name = 'alpha.nvim',
+    name = 'alpha-nvim',
     opts = function()
         local button = require('alpha.themes.dashboard').button
         local theme = require('alpha.themes.theta')

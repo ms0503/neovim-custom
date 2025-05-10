@@ -1,3 +1,6 @@
+-- Completions
+-- repo: https://github.com/hrsh7th/nvim-cmp
+
 return {
     config = function()
         local cmp = require('cmp')

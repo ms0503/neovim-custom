@@ -1,3 +1,6 @@
+-- Fuzzy picker
+-- repo: https://github.com/nvim-telescope/telescope.nvim
+
 return {
     cmd = 'Telescope',
     config = function()
