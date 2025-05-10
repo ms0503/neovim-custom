@@ -1,5 +1,6 @@
 return {
     require('plugins.ui.fidget_nvim'),
+    require('plugins.ui.heirline'),
     require('plugins.ui.hlchunk_nvim'),
     require('plugins.ui.mini_icons'),
     require('plugins.ui.noice_nvim'),

@@ -24,8 +24,8 @@ return {
                     return colors
                 end,
             },
-            statusline = require('plugins.heirline.statusline'),
-            tabline = require('plugins.heirline.tabline'),
+            statusline = require('plugins.ui.heirline.statusline'),
+            tabline = require('plugins.ui.heirline.tabline'),
         }
     end,
 }
