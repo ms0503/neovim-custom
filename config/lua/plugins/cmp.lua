@@ -28,7 +28,6 @@ return {
                 { name = 'buffer' },
                 { name = 'vsnip' },
                 { name = 'path' },
-                { name = 'cmdline' },
             },
             window = {
                 completion = cmp.config.window.bordered(),
