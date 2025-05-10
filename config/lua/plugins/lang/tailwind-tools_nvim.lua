@@ -1,3 +1,6 @@
+-- TailwindCSS integration
+-- repo: https://github.com/lockasRanarison/tailwind-tools.nvim
+
 return {
     dependencies = {
         dir = '@nvim_treesitter@',

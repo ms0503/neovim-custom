@@ -1,3 +1,6 @@
+-- Better statusline and tabline
+-- repo: https://github.com/rebelot/heirline.nvim
+
 return {
     dependencies = {
         {

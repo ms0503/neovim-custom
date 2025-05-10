@@ -8,6 +8,8 @@ return {
     require('plugins.ui.nvim-scrollbar'),
     require('plugins.ui.nvim-web-devicons'),
     require('plugins.ui.statuscol_nvim'),
+    require('plugins.ui.tiny-inline-diagnostic_nvim'),
     require('plugins.ui.transparent_nvim'),
+    require('plugins.ui.trouble_nvim'),
     require('plugins.ui.vim-jb_lua'),
 }

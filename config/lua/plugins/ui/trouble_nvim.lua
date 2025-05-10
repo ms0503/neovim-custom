@@ -1,3 +1,6 @@
+-- Pretty lists
+-- repo: https://github.com/folke/trouble.nvim
+
 return {
     cmd = 'Trouble',
     config = true,

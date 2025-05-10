@@ -1,3 +1,6 @@
+-- Powerful formatter
+-- repo: https://github.com/stevearc/conform.nvim
+
 local function merge_table_immutable(orig, over)
     return setmetatable(over, { __index = orig })
 end

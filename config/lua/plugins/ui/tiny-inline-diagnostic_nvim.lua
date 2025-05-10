@@ -1,3 +1,6 @@
+-- Inline diagnostic messages
+-- repo: https://github.com/rachartier/tiny-inline-diagnostic.nvim
+
 return {
     config = function()
         vim.diagnostic.config({ virtual_text = false })

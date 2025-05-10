@@ -1,3 +1,6 @@
+-- LSP configurations
+-- repo: https://github.com/neovim/nvim-lspconfig
+
 local server_list = {
     'arduino_language_server',
     'astro',

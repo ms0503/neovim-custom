@@ -1,3 +1,6 @@
+-- Rust integration
+-- repo: https://github.com/mrcjkb/rustaceanvim
+
 return {
     dir = '@rustaceanvim@',
     init = function()

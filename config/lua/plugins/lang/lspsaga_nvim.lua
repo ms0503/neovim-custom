@@ -1,3 +1,6 @@
+-- LSP frontend
+-- repo: https://github.com/nvimdev/lspsaga.nvim
+
 local get_icon = require('utils').get_icon
 
 return {
