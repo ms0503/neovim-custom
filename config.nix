@@ -28,7 +28,7 @@ let
       src = ./config;
     }
   );
-  version = "2025-05-11";
+  version = "2025-05-12";
 in
 stdenvNoCC.mkDerivation {
   inherit pname version;

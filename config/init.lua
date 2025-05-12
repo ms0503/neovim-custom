@@ -26,5 +26,6 @@ require('lazy').setup({
     spec = 'plugins',
 })
 require('base')
+require('cmds')
 require('keymaps')
 require('autocmds')
