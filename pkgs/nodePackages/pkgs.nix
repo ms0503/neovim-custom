@@ -310,13 +310,13 @@ let
         sha512 = "6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==";
       };
     };
-    "immutable-5.1.1" = {
+    "immutable-5.1.2" = {
       name = "immutable";
       packageName = "immutable";
-      version = "5.1.1";
+      version = "5.1.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/immutable/-/immutable-5.1.1.tgz";
-        sha512 = "3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==";
+        url = "https://registry.npmjs.org/immutable/-/immutable-5.1.2.tgz";
+        sha512 = "qHKXW1q6liAk1Oys6umoaZbDRqjcjgSrbnrifHsfsttza7zcvRAsL7mMV6xWcyhwQy7Xj5v4hhbr6b+iDYwlmQ==";
       };
     };
     "is-extglob-2.1.1" = {
@@ -625,13 +625,13 @@ let
         sha512 = "YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==";
       };
     };
-    "sass-1.87.0" = {
+    "sass-1.89.0" = {
       name = "sass";
       packageName = "sass";
-      version = "1.87.0";
+      version = "1.89.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/sass/-/sass-1.87.0.tgz";
-        sha512 = "d0NoFH4v6SjEK7BoX810Jsrhj7IQSYHAHLi/iSpgqKc7LaIDshFRlSg5LOymf9FqQhxEHs2W5ZQXlvy0KD45Uw==";
+        url = "https://registry.npmjs.org/sass/-/sass-1.89.0.tgz";
+        sha512 = "ld+kQU8YTdGNjOLfRWBzewJpU5cwEv/h5yyqlSeJcj6Yh8U4TDA9UA5FPicqDz/xgRPWRSYIQNiFks21TbA9KQ==";
       };
     };
     "sax-1.4.1" = {
@@ -850,7 +850,7 @@ in
       sources."hasown-2.0.2"
       sources."iconv-lite-0.6.3"
       sources."image-size-0.5.5"
-      sources."immutable-5.1.1"
+      sources."immutable-5.1.2"
       sources."is-extglob-2.1.1"
       sources."is-glob-4.0.3"
       sources."is-number-7.0.0"
@@ -881,7 +881,7 @@ in
       sources."reusify-1.1.0"
       sources."run-parallel-1.2.0"
       sources."safer-buffer-2.1.2"
-      sources."sass-1.87.0"
+      sources."sass-1.89.0"
       sources."sax-1.4.1"
       sources."semver-5.7.2"
       sources."source-map-0.6.1"
