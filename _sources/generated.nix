@@ -31,15 +31,15 @@
   };
   schemastore-nvim = {
     pname = "schemastore-nvim";
-    version = "8563ed7d7e9f5e94949a7fa8d99fa318bf4e71d9";
+    version = "60aa5b633fca5407e95315eaab70fcc102ac4cc8";
     src = fetchFromGitHub {
       owner = "B0o";
       repo = "SchemaStore.nvim";
-      rev = "8563ed7d7e9f5e94949a7fa8d99fa318bf4e71d9";
+      rev = "60aa5b633fca5407e95315eaab70fcc102ac4cc8";
       fetchSubmodules = false;
-      sha256 = "sha256-b2d7F21JIhNj4aq5swqSUwgMZ62Cp5W/+rijay/z5lk=";
+      sha256 = "sha256-aErRyLmifUOC4lEozOnlZPgABMVs9WCxVHkqdH3rgJc=";
     };
-    date = "2025-06-04";
+    date = "2025-06-11";
   };
   ts-error-translator-nvim = {
     pname = "ts-error-translator-nvim";
@@ -63,14 +63,14 @@
   };
   vimdoc-ja = {
     pname = "vimdoc-ja";
-    version = "b880d8f503b07ea4dcc6b22f402cece21c85e338";
+    version = "66fa6b7e27fd7b97259497f18f8cd500df79a20e";
     src = fetchFromGitHub {
       owner = "vim-jp";
       repo = "vimdoc-ja";
-      rev = "b880d8f503b07ea4dcc6b22f402cece21c85e338";
+      rev = "66fa6b7e27fd7b97259497f18f8cd500df79a20e";
       fetchSubmodules = false;
-      sha256 = "sha256-GyVx0yXXlhpXu0cTGeHg4/2zaG/KOXz99CkdE2AOAEw=";
+      sha256 = "sha256-QTlAShTcOAQY81cZEBL74KqudIkPQGszeV0kN7AWR6o=";
     };
-    date = "2025-06-04";
+    date = "2025-06-10";
   };
 }
