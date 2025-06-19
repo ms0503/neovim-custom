@@ -490,13 +490,13 @@ let
         sha512 = "5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==";
       };
     };
-    "node-addon-api-8.3.1" = {
+    "node-addon-api-8.4.0" = {
       name = "node-addon-api";
       packageName = "node-addon-api";
-      version = "8.3.1";
+      version = "8.4.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.3.1.tgz";
-        sha512 = "lytcDEdxKjGJPTLEfW4mYMigRezMlyJY8W4wxJK8zE533Jlb8L8dRuObJFWg2P+AuOIxoCgKF+2Oq4d4Zd0OUA==";
+        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.4.0.tgz";
+        sha512 = "D9DI/gXHvVmjHS08SVch0Em8G5S1P+QWtU31appcKT/8wFSPRcdHadIFSAntdMMVM5zz+/DL+bL/gz3UDppqtg==";
       };
     };
     "node-gyp-build-4.8.4" = {
@@ -544,13 +544,13 @@ let
         sha512 = "uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==";
       };
     };
-    "postcss-8.5.5" = {
+    "postcss-8.5.6" = {
       name = "postcss";
       packageName = "postcss";
-      version = "8.5.5";
+      version = "8.5.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/postcss/-/postcss-8.5.5.tgz";
-        sha512 = "d/jtm+rdNT8tpXuHY5MMtcbJFBkhXE6593XVR9UoGCH8jSFGci7jGvMGH5RYd5PBJW+00NZQt6gf7CbagJCrhg==";
+        url = "https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz";
+        sha512 = "3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==";
       };
     };
     "postcss-less-6.0.0" = {
@@ -786,7 +786,7 @@ in
       sources."node-gyp-build-4.8.4"
       (sources."tree-sitter-0.21.1" // {
         dependencies = [
-          sources."node-addon-api-8.3.1"
+          sources."node-addon-api-8.4.0"
         ];
       })
       sources."tree-sitter-awk-0.7.2"
@@ -872,7 +872,7 @@ in
       sources."picocolors-1.1.1"
       sources."picomatch-2.3.1"
       sources."pify-4.0.1"
-      sources."postcss-8.5.5"
+      sources."postcss-8.5.6"
       sources."postcss-less-6.0.0"
       sources."postcss-scss-4.0.9"
       sources."prr-1.0.1"
