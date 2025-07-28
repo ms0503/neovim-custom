@@ -202,13 +202,13 @@ let
         sha512 = "gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==";
       };
     };
-    "form-data-4.0.3" = {
+    "form-data-4.0.4" = {
       name = "form-data";
       packageName = "form-data";
-      version = "4.0.3";
+      version = "4.0.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/form-data/-/form-data-4.0.3.tgz";
-        sha512 = "qsITQPfmvMOSAdeyZ+12I1c+CKSstAFAwu+97zrnWAbIr5u8wfsExUzCesVLC8NgHuRUqNN4Zy6UPWUTRGslcA==";
+        url = "https://registry.npmjs.org/form-data/-/form-data-4.0.4.tgz";
+        sha512 = "KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==";
       };
     };
     "function-bind-1.1.2" = {
@@ -373,13 +373,13 @@ let
         sha512 = "+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA==";
       };
     };
-    "less-4.3.0" = {
+    "less-4.4.0" = {
       name = "less";
       packageName = "less";
-      version = "4.3.0";
+      version = "4.4.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/less/-/less-4.3.0.tgz";
-        sha512 = "X9RyH9fvemArzfdP8Pi3irr7lor2Ok4rOttDXBhlwDg+wKQsXOXgHWduAJE1EsF7JJx0w0bcO6BC6tCKKYnXKA==";
+        url = "https://registry.npmjs.org/less/-/less-4.4.0.tgz";
+        sha512 = "kdTwsyRuncDfjEs0DlRILWNvxhDG/Zij4YLO4TMJgDLW+8OzpfkdPnRgrsRuY1o+oaxJGWsps5f/RVBgGmmN0w==";
       };
     };
     "line-column-1.0.2" = {
@@ -490,13 +490,13 @@ let
         sha512 = "5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==";
       };
     };
-    "node-addon-api-8.4.0" = {
+    "node-addon-api-8.5.0" = {
       name = "node-addon-api";
       packageName = "node-addon-api";
-      version = "8.4.0";
+      version = "8.5.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.4.0.tgz";
-        sha512 = "D9DI/gXHvVmjHS08SVch0Em8G5S1P+QWtU31appcKT/8wFSPRcdHadIFSAntdMMVM5zz+/DL+bL/gz3UDppqtg==";
+        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz";
+        sha512 = "/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==";
       };
     };
     "node-gyp-build-4.8.4" = {
@@ -786,7 +786,7 @@ in
       sources."node-gyp-build-4.8.4"
       (sources."tree-sitter-0.21.1" // {
         dependencies = [
-          sources."node-addon-api-8.4.0"
+          sources."node-addon-api-8.5.0"
         ];
       })
       sources."tree-sitter-awk-0.7.2"
@@ -838,7 +838,7 @@ in
       sources."fastq-1.19.1"
       sources."fill-range-7.1.1"
       sources."follow-redirects-1.15.9"
-      sources."form-data-4.0.3"
+      sources."form-data-4.0.4"
       sources."function-bind-1.1.2"
       sources."get-intrinsic-1.3.0"
       sources."get-proto-1.0.1"
@@ -857,7 +857,7 @@ in
       sources."is-what-3.14.1"
       sources."isarray-1.0.0"
       sources."isobject-2.1.0"
-      sources."less-4.3.0"
+      sources."less-4.4.0"
       sources."line-column-1.0.2"
       sources."make-dir-2.1.0"
       sources."math-intrinsics-1.1.0"
