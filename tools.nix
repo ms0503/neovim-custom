@@ -7,7 +7,7 @@ in
   [
     arduino-language-server
     astro-language-server
-    autotools-language-server
+    # autotools-language-server # https://github.com/NixOS/nixpkgs/issues/425798
     biome
     buf
     clang-tools
