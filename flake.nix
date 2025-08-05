@@ -56,7 +56,7 @@
             { config, ... }:
             _: {
               imports = [
-                ./modules/home-manager.nix
+                ./nix/modules/home-manager.nix
               ];
               ms0503.neovim.package = config.packages.default;
             }
@@ -65,17 +65,17 @@
             { config, ... }:
             _: {
               imports = [
-                ./modules/nixos.nix
+                ./nix/modules/nixos.nix
               ];
               ms0503.neovim.package = config.packages.default;
             }
           );
         };
         imports = [
-          ./treefmt.nix
-          ./git-hooks.nix
-          ./pkgs
-          ./neovim.nix
+          ./nix/treefmt.nix
+          ./nix/git-hooks.nix
+          ./nix/pkgs
+          ./nix/neovim.nix
         ];
         perSystem =
           { config, pkgs, ... }:

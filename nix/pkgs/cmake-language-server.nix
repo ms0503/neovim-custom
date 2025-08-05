@@ -7,16 +7,15 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   inherit (source) pname src version;
-  buildInputs =
-    [
-      cmake
-      cmake-format
-    ]
-    ++ (with python3Packages; [
-      pdm-backend
-      pygls
-      pyparsing
-    ]);
+  buildInputs = [
+    cmake
+    cmake-format
+  ]
+  ++ (with python3Packages; [
+    pdm-backend
+    pygls
+    pyparsing
+  ]);
   buildPhase = ''
     runHook preBuild
     PDM_BUILD_SCM_VERSION="${finalAttrs.version}" python -m build --wheel --no-isolation

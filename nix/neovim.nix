@@ -24,6 +24,5 @@ _: {
             vimAlias = false;
           };
         };
-
     };
 }

@@ -15,12 +15,17 @@
         stylua.enable = true;
         taplo.enable = true;
       };
-      settings.formatter.nixfmt.excludes = [
-        "_sources/generated.nix"
-        "pkgs/nodePackages/cmp.nix"
-        "pkgs/nodePackages/node-env.nix"
-        "pkgs/nodePackages/pkgs.nix"
-      ];
+      settings.formatter = {
+        nixfmt.excludes = [
+          "_sources/generated.nix"
+          "nix/pkgs/nodePackages/cmp.nix"
+          "nix/pkgs/nodePackages/node-env.nix"
+          "nix/pkgs/nodePackages/pkgs.nix"
+        ];
+        shellcheck.excludes = [
+          ".envrc"
+        ];
+      };
     };
   };
 }

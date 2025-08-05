@@ -23,30 +23,29 @@ stdenvNoCC.mkDerivation {
     mainProgram = "nvim";
   };
   pname = "${neovim.pname}-wrapped";
-  installPhase =
-    ''
-      runHook preInstall
-      install -dm755 "$out/bin"
-      ln -s "$src/bin/nvim" "$out/bin/nvim"
-    ''
-    + (
-      if viAlias then
-        ''
-          ln -s "$src/bin/nvim" "$out/bin/vi"
-        ''
-      else
-        ""
-    )
-    + (
-      if vimAlias then
-        ''
-          ln -s "$src/bin/nvim" "$out/bin/vim"
-        ''
-      else
-        ""
-    )
-    + ''
-      runHook postInstall
-    '';
+  installPhase = ''
+    runHook preInstall
+    install -dm755 "$out/bin"
+    ln -s "$src/bin/nvim" "$out/bin/nvim"
+  ''
+  + (
+    if viAlias then
+      ''
+        ln -s "$src/bin/nvim" "$out/bin/vi"
+      ''
+    else
+      ""
+  )
+  + (
+    if vimAlias then
+      ''
+        ln -s "$src/bin/nvim" "$out/bin/vim"
+      ''
+    else
+      ""
+  )
+  + ''
+    runHook postInstall
+  '';
   src = wrapper;
 }

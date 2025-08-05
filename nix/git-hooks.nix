@@ -29,9 +29,8 @@
             yamlfmt.enable = true;
             yamllint.enable = true;
           };
-          src = ./.;
+          src = ../.;
         };
       };
-
     };
 }

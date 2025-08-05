@@ -25,7 +25,7 @@ let
         cp -r ./ "$out"
       '';
       sqlite_library_path = "${sqlite.out}/lib/libsqlite3.so";
-      src = ./config;
+      src = ../nvim;
     }
   );
   version = "2025-05-19";
