@@ -1,5 +1,6 @@
 return {
     require('plugins.lang.crates_nvim'),
+    require('plugins.lang.flutter-tools_nvim'),
     require('plugins.lang.go_nvim'),
     require('plugins.lang.hmts_nvim'),
     require('plugins.lang.lspkind_nvim'),

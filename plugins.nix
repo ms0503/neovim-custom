@@ -40,6 +40,7 @@ let
     diffview-nvim
     dressing-nvim
     fidget-nvim
+    flutter-tools-nvim
     fzf-lua
     gitlinker-nvim
     gitsigns-nvim
