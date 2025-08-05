@@ -14,7 +14,7 @@ _: {
                 pkg // { inherit version; }
               )
               (
-                import ../_sources/generated.nix {
+                import ../../_sources/generated.nix {
                   inherit (pkgs)
                     dockerTools
                     fetchFromGitHub
