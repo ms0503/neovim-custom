@@ -5,7 +5,7 @@ return {
     cmd = 'Telescope',
     config = function()
         local autocmd = vim.api.nvim_create_autocmd
-        local map = vim.keymap.map
+        local map = vim.keymap.set
         local telescope_actions = require('telescope.actions')
         local telescope_builtin = require('telescope.builtin')
         require('telescope').setup({
