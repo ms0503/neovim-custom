@@ -51,7 +51,7 @@ in
   ++ (with haskellPackages; [
     fourmolu
   ])
-  ++ (with nodePackages; [
+  ++ (with nodePackages_latest; [
     "@astrojs/language-server"
     "@tailwindcss/language-server"
     bash-language-server

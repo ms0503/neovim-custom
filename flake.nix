@@ -90,11 +90,11 @@
                     fi
                     ${pkgs.nvfetcher}/bin/nvfetcher
                     ${pkgs.node2nix}/bin/node2nix \
-                      -i pkgs/nodePackages/pkg-list.json \
-                      -o pkgs/nodePackages/pkgs.nix \
-                      -c pkgs/nodePackages/cmp.nix \
-                      -e pkgs/nodePackages/node-env.nix \
-                      --pkg-name nodejs
+                      -i nix/pkgs/nodePackages/pkg-list.json \
+                      -o nix/pkgs/nodePackages/pkgs.nix \
+                      -c nix/pkgs/nodePackages/cmp.nix \
+                      -e nix/pkgs/nodePackages/node-env.nix \
+                      --pkg-name nodejs_latest
                   '')
                 ];
               in
