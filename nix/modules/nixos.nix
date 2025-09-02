@@ -4,6 +4,7 @@ let
     mkEnableOption
     mkIf
     mkOption
+    optionalAttrs
     types
     ;
   cfg = config.ms0503.neovim;
@@ -16,7 +17,7 @@ in
           inherit (cfg) viAlias vimAlias;
         })
       ];
-      variables = mkIf cfg.defaultEditor {
+      variables = optionalAttrs cfg.defaultEditor {
         EDITOR = "nvim";
       };
     };
