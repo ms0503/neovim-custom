@@ -7,10 +7,14 @@
 }:
 let
   envVars = plugins // {
-    treesitter_parsers = lib.pipe (builtins.attrValues vimPlugins.nvim-treesitter-parsers) [
-      (builtins.map builtins.toString)
-      (builtins.concatStringsSep ",")
-    ];
+    treesitter_parsers =
+      lib.pipe
+        (lib.filterAttrs (key: _: !(lib.hasPrefix "override" key)) vimPlugins.nvim-treesitter-parsers)
+        [
+          (builtins.attrValues)
+          (builtins.map builtins.toString)
+          (builtins.concatStringsSep ",")
+        ];
   };
   pname = "neovim-custom-config";
   preprocessed = stdenvNoCC.mkDerivation (
