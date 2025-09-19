@@ -535,13 +535,13 @@ let
         sha512 = "5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==";
       };
     };
-    "sass-1.91.0" = {
+    "sass-1.92.1" = {
       name = "sass";
       packageName = "sass";
-      version = "1.91.0";
+      version = "1.92.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/sass/-/sass-1.91.0.tgz";
-        sha512 = "aFOZHGf+ur+bp1bCHZ+u8otKGh77ZtmFyXDo4tlYvT7PWql41Kwd8wdkPqhhT+h2879IVblcHFglIMofsFd1EA==";
+        url = "https://registry.npmjs.org/sass/-/sass-1.92.1.tgz";
+        sha512 = "ffmsdbwqb3XeyR8jJR6KelIXARM9bFQe8A6Q3W4Klmwy5Ckd5gz7jgUNHo4UOqutU5Sk1DtKLbpDP0nLCg1xqQ==";
       };
     };
     "source-map-js-1.2.1" = {
@@ -754,7 +754,7 @@ in
       sources."readdirp-4.1.2"
       sources."reusify-1.1.0"
       sources."run-parallel-1.2.0"
-      sources."sass-1.91.0"
+      sources."sass-1.92.1"
       sources."source-map-js-1.2.1"
       sources."to-regex-range-5.0.1"
       sources."tslib-2.8.1"
