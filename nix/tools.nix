@@ -4,9 +4,11 @@ let
 in
 let
   # https://github.com/nixos/nixpkgs/issues/437024
-  cmake-language-server' = pkgs.cmake-language-server.override {
-    pygls = pygls';
-  };
+  cmake-language-server' = pkgs.cmake-language-server.override (prev: {
+    python3Packages = prev.python3Packages // {
+      pygls = pygls';
+    };
+  });
   lsprotocol' = pkgs.python3Packages.lsprotocol.overridePythonAttrs {
     src = pkgs.fetchFromGitHub {
       hash = "sha256-PHjLKazMaT6W4Lve1xNxm6hEwqE3Lr2m5L7Q03fqb68=";
@@ -79,7 +81,7 @@ in
     "@astrojs/language-server"
     "@tailwindcss/language-server"
     bash-language-server
-    dockerfile-language-server-nodejs
+    dockerfile-language-server
     neovim
     prettier
     typescript-language-server
