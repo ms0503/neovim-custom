@@ -1,14 +1,18 @@
 {
   source,
+  vimPlugins,
   vimUtils,
 }:
 vimUtils.buildVimPlugin {
   inherit (source) pname src version;
+  buildInputs = with vimPlugins; [
+    nvim-treesitter
+  ];
   buildPhase = ''
     runHook preBuild
-    cd lua/fzy
+    pushd lua/fzy
     make
-    cd ../..
+    popd
     runHook postBuild
   '';
   patches = [

@@ -44,7 +44,7 @@
             })
             // {
               guihua-lua = (
-                import ./vimPlugins/guihua-lua {
+                pkgs.callPackage ./vimPlugins/guihua-lua {
                   inherit (pkgs) vimUtils;
                   source = sources.guihua-lua;
                 }
