@@ -2,42 +2,16 @@ pkgs: myPkgs: inputs':
 let
   fenixPkgs = inputs'.fenix.packages;
 in
-let
-  # https://github.com/nixos/nixpkgs/issues/437024
-  cmake-language-server' = pkgs.cmake-language-server.override (prev: {
-    python3Packages = prev.python3Packages // {
-      pygls = pygls';
-    };
-  });
-  lsprotocol' = pkgs.python3Packages.lsprotocol.overridePythonAttrs {
-    src = pkgs.fetchFromGitHub {
-      hash = "sha256-PHjLKazMaT6W4Lve1xNxm6hEwqE3Lr2m5L7Q03fqb68=";
-      owner = "microsoft";
-      repo = "lsprotocol";
-      tag = "2023.0.1";
-    };
-    version = "2023.0.1";
-  };
-  nginx-language-server' = pkgs.nginx-language-server.override {
-    python3Packages = pkgs.python3Packages // {
-      lsprotocol = lsprotocol';
-      pygls = pygls';
-    };
-  };
-  pygls' = pkgs.python3Packages.pygls.override {
-    lsprotocol = lsprotocol';
-  };
-in
 (
   with pkgs;
   [
     arduino-language-server
     astro-language-server
-    # autotools-language-server # https://github.com/NixOS/nixpkgs/issues/425798
+    autotools-language-server
     biome
     buf
     clang-tools
-    cmake-language-server'
+    cmake-language-server
     delve
     deno
     docker-compose-language-service
@@ -50,7 +24,7 @@ in
     lua-language-server
     marksman
     mesonlsp
-    nginx-language-server'
+    nginx-language-server
     nil
     nixfmt-rfc-style
     nushell

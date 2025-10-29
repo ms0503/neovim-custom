@@ -21,11 +21,8 @@
     };
     neovim-nightly-overlay = {
       inputs = {
-        flake-compat.follows = "";
         flake-parts.follows = "flake-parts";
-        git-hooks.follows = "";
         nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "";
       };
       url = "github:nix-community/neovim-nightly-overlay";
     };
