@@ -19,34 +19,34 @@
   };
   guihua-lua = {
     pname = "guihua-lua";
-    version = "1ce3c7e8e2264c0788bf928b1b6696b4f6fbb20f";
+    version = "ef44ba40f12e56c1c9fa45967f2b4d142e4b97a0";
     src = fetchFromGitHub {
       owner = "ray-x";
       repo = "guihua.lua";
-      rev = "1ce3c7e8e2264c0788bf928b1b6696b4f6fbb20f";
+      rev = "ef44ba40f12e56c1c9fa45967f2b4d142e4b97a0";
       fetchSubmodules = false;
-      sha256 = "sha256-RNg1PDxIbz5C48dpuhaMZ90+pbEjDQz30qD/aGZNQmM=";
+      sha256 = "sha256-9iFqh12orsGnQniDloO+aXoBYuTqOW4pGHi3LBB2m4Q=";
     };
-    date = "2025-10-27";
+    date = "2025-11-13";
   };
   schemastore-nvim = {
     pname = "schemastore-nvim";
-    version = "4341619da06779ae310ee9c3d6d70edfefed7152";
+    version = "8b92ea89835b8e5dbc779a675ebb0e5fcb9a1993";
     src = fetchFromGitHub {
       owner = "B0o";
       repo = "SchemaStore.nvim";
-      rev = "4341619da06779ae310ee9c3d6d70edfefed7152";
+      rev = "8b92ea89835b8e5dbc779a675ebb0e5fcb9a1993";
       fetchSubmodules = false;
-      sha256 = "sha256-obGnux+K0blHROEOAy7Ct18vxiO4Qez8XJB5l23KgMs=";
+      sha256 = "sha256-+Z1foMyKMxyMmYqmyu1KWiyL4Fc0Zm2SYV7RoZ9Ut2I=";
     };
-    date = "2025-10-24";
+    date = "2025-12-19";
   };
   ts-error-translator-nvim = {
     pname = "ts-error-translator-nvim";
-    version = "1.2.0";
+    version = "2.0.1";
     src = fetchurl {
-      url = "https://github.com/dmmulroy/ts-error-translator.nvim/archive/refs/tags/v1.2.0.tar.gz";
-      sha256 = "sha256-lM/fbs5iGBBnPcKsKolpvamJjZxDC+x69OBAoUIz4lE=";
+      url = "https://github.com/dmmulroy/ts-error-translator.nvim/archive/refs/tags/v2.0.1.tar.gz";
+      sha256 = "sha256-SSLrY2+0shDy/gvZeFmMGlLEZdtbMQT7XBS0WvF8X98=";
     };
   };
   vim-jb-lua = {
@@ -63,14 +63,14 @@
   };
   vimdoc-ja = {
     pname = "vimdoc-ja";
-    version = "9a45d72c64fc8dd0c4695409c627d0cfdff2e280";
+    version = "cc5ef2b39e28e4b56e027fbf312bcf37bd03ab8c";
     src = fetchFromGitHub {
       owner = "vim-jp";
       repo = "vimdoc-ja";
-      rev = "9a45d72c64fc8dd0c4695409c627d0cfdff2e280";
+      rev = "cc5ef2b39e28e4b56e027fbf312bcf37bd03ab8c";
       fetchSubmodules = false;
-      sha256 = "sha256-oSAX7xuGKUAK0oBWC8qyLpyIj6rsZ0Xc37uwuF01pkE=";
+      sha256 = "sha256-Cp2Ins6ylPIxTGxcGszFsd08J4BQIO464STE9aD6hyw=";
     };
-    date = "2025-10-29";
+    date = "2025-12-21";
   };
 }
