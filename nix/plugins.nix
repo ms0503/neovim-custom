@@ -1,4 +1,4 @@
-{ lib, ... }@pkgs:
+{ lib, neovimUtils, ... }@pkgs:
 myPkgs:
 let
   normalizePname =
@@ -49,6 +49,7 @@ let
     heirline-nvim
     hlchunk-nvim
     hmts-nvim
+    jsregexp
     lazy-nvim
     lazydev-nvim
     lspkind-nvim

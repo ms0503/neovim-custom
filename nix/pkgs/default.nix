@@ -41,6 +41,17 @@
                   source = sources.guihua-lua;
                 }
               );
+              jsregexp = pkgs.stdenvNoCC.mkDerivation {
+                inherit (pkgs.luajitPackages.jsregexp) pname version;
+                installPhase = ''
+                  runHook preInstall
+                  install -dm755 "$out/lua/jsregexp"
+                  ln -s "$src/share/lua/5.1/jsregexp.lua" "$out/lua/jsregexp.lua"
+                  ln -s "$src/lib/lua/5.1/jsregexp/core.so" "$out/lua/jsregexp/core.so"
+                  runHook postInstall
+                '';
+                src = pkgs.luajitPackages.jsregexp;
+              };
             };
         };
     };

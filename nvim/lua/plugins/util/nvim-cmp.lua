@@ -114,6 +114,10 @@ return {
         },
         {
             dependencies = {
+                dependencies = {
+                    dir = '@jsregexp@',
+                    name = 'jsregexp',
+                },
                 dir = '@luasnip@',
                 name = 'luasnip',
             },
