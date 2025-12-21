@@ -25,20 +25,12 @@
               );
         in
         {
-          bzl = pkgs.callPackage ./bzl.nix {
-            sources = {
-              x86_64-darwin = sources.bzl_darwin;
-              x86_64-linux = sources.bzl_linux;
-            };
-          };
           nodePackages = import ./nodePackages pkgs;
           rubyPackages = import ./rubyPackages.nix pkgs;
           vimPlugins =
             (import ./vimPlugins {
               inherit (pkgs) vimUtils;
               sources = builtins.removeAttrs sources [
-                "bzl_darwin"
-                "bzl_linux"
                 "guihua-lua"
               ];
             })

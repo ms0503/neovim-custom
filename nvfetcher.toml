@@ -1,11 +1,3 @@
-[bzl_darwin]
-fetch.url = "https://get.bzl.io/darwin_amd64/v$ver/bzl"
-src.manual = "1.5.1"
-
-[bzl_linux]
-fetch.url = "https://get.bzl.io/linux_amd64/v$ver/bzl"
-src.manual = "1.5.1"
-
 [guihua-lua]
 fetch.github = "ray-x/guihua.lua"
 src.branch = "master"

@@ -15,7 +15,6 @@ local server_list = function(capabilities)
         bashls = {},
         biome = {},
         buf_ls = {},
-        bzl = {},
         clangd = {
             capabilities = capabilities,
             filetypes = {

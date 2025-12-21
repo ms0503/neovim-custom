@@ -81,7 +81,6 @@ in
   ++ (with rubyPackages; [
     neovim
   ])
-  ++ pkgs.lib.optional (pkgs.system == "x86_64-darwin" || pkgs.system == "x86_64-linux") bzl
 )
 ++ (with fenixPkgs; [
   rust-analyzer

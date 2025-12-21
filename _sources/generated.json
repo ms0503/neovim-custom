@@ -1,34 +1,4 @@
 {
-    "bzl_darwin": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "bzl_darwin",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-NcvXCUECIXDLR4sNoqhCiaQVQJv2qQc5he4240ffDXE=",
-            "type": "url",
-            "url": "https://get.bzl.io/darwin_amd64/v1.5.1/bzl"
-        },
-        "version": "1.5.1"
-    },
-    "bzl_linux": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "bzl_linux",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-yLpNjvxjs3796uG8yG5FoCve72Svv66wtIssxMEpsOI=",
-            "type": "url",
-            "url": "https://get.bzl.io/linux_amd64/v1.5.1/bzl"
-        },
-        "version": "1.5.1"
-    },
     "guihua-lua": {
         "cargoLocks": null,
         "date": "2025-11-13",
