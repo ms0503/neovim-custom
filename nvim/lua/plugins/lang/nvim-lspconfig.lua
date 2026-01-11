@@ -135,15 +135,6 @@ return {
         local server_list = server_list(capabilities)
         capabilities.textDocument.completion.completionItem.snippetSupport =
             true
-        vim.lsp.handlers['textDocument/publishDiagnostics'] = function(
-            err,
-            result,
-            ctx,
-            config
-        )
-            ts_error_translator.translate_diagnostics(err, result, ctx)
-            vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx)
-        end
         for name, opts in pairs(server_list) do
             vim.lsp.config(name, opts)
         end
