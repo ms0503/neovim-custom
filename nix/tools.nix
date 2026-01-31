@@ -26,7 +26,7 @@ in
     mesonlsp
     nginx-language-server
     nil
-    nixfmt-rfc-style
+    nixfmt
     nushell
     ocamlformat
     omnisharp-roslyn

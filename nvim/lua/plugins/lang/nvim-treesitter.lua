@@ -4,7 +4,7 @@
 return {
     config = function()
         vim.opt.runtimepath:append('@treesitter_parsers@')
-        require('nvim-treesitter.configs').setup({
+        require('nvim-treesitter').setup({
             auto_install = false,
             ensure_installed = {},
             highlight = {
