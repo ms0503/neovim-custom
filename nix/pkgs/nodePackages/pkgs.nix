@@ -58,13 +58,13 @@ let
         sha512 = "Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==";
       };
     };
-    "axios-1.13.2" = {
+    "axios-1.13.4" = {
       name = "axios";
       packageName = "axios";
-      version = "1.13.2";
+      version = "1.13.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/axios/-/axios-1.13.2.tgz";
-        sha512 = "VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==";
+        url = "https://registry.npmjs.org/axios/-/axios-1.13.4.tgz";
+        sha512 = "1wVkUaAO6WyaYtCkcYCOx12ZgpGf9Zif+qXa4n+oYzK558YryKqiL6UWwd5DqiH3VRW0GYhTZQ/vlgJrCoNQlg==";
       };
     };
     "braces-3.0.3" = {
@@ -184,13 +184,13 @@ let
         sha512 = "7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==";
       };
     };
-    "fastq-1.19.1" = {
+    "fastq-1.20.1" = {
       name = "fastq";
       packageName = "fastq";
-      version = "1.19.1";
+      version = "1.20.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz";
-        sha512 = "GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==";
+        url = "https://registry.npmjs.org/fastq/-/fastq-1.20.1.tgz";
+        sha512 = "GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==";
       };
     };
     "fill-range-7.1.1" = {
@@ -571,13 +571,13 @@ let
         sha512 = "5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==";
       };
     };
-    "sass-1.97.1" = {
+    "sass-1.97.3" = {
       name = "sass";
       packageName = "sass";
-      version = "1.97.1";
+      version = "1.97.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/sass/-/sass-1.97.1.tgz";
-        sha512 = "uf6HoO8fy6ClsrShvMgaKUn14f2EHQLQRtpsZZLeU/Mv0Q1K5P0+x2uvH6Cub39TVVbWNSrraUhDAoFph6vh0A==";
+        url = "https://registry.npmjs.org/sass/-/sass-1.97.3.tgz";
+        sha512 = "fDz1zJpd5GycprAbu4Q2PV/RprsRtKC/0z82z0JLgdytmcq0+ujJbJ/09bPGDxCLkKY3Np5cRAOcWiVkLXJURg==";
       };
     };
     "source-map-js-1.2.1" = {
@@ -777,7 +777,7 @@ in
       sources."async-function-1.0.0"
       sources."async-generator-function-1.0.0"
       sources."asynckit-0.4.0"
-      sources."axios-1.13.2"
+      sources."axios-1.13.4"
       sources."braces-3.0.3"
       sources."call-bind-apply-helpers-1.0.2"
       sources."chokidar-4.0.3"
@@ -791,7 +791,7 @@ in
       sources."es-object-atoms-1.1.1"
       sources."es-set-tostringtag-2.1.0"
       sources."fast-glob-3.3.3"
-      sources."fastq-1.19.1"
+      sources."fastq-1.20.1"
       sources."fill-range-7.1.1"
       sources."follow-redirects-1.15.11"
       sources."form-data-4.0.5"
@@ -830,7 +830,7 @@ in
       sources."readdirp-4.1.2"
       sources."reusify-1.1.0"
       sources."run-parallel-1.2.0"
-      sources."sass-1.97.1"
+      sources."sass-1.97.3"
       sources."source-map-js-1.2.1"
       sources."to-regex-range-5.0.1"
       sources."tslib-2.8.1"
