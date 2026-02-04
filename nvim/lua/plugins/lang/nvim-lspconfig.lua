@@ -130,7 +130,6 @@ end
 return {
     config = function()
         local lspconfig = require('lspconfig')
-        local ts_error_translator = require('ts-error-translator')
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         local server_list = server_list(capabilities)
         capabilities.textDocument.completion.completionItem.snippetSupport =

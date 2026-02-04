@@ -67,7 +67,7 @@ local icons = {
 ---
 ---@generic T
 ---@param arr T[]
----@param filterFn fun(v:any, i:number, arr:T[]):bool
+---@param filterFn fun(v:any, i:number, arr:T[]):boolean
 ---@return T[]
 function M.filter(arr, filterFn)
     local result = {}
