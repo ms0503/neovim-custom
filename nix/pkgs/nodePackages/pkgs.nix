@@ -58,13 +58,13 @@ let
         sha512 = "Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==";
       };
     };
-    "axios-1.13.4" = {
+    "axios-1.13.5" = {
       name = "axios";
       packageName = "axios";
-      version = "1.13.4";
+      version = "1.13.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/axios/-/axios-1.13.4.tgz";
-        sha512 = "1wVkUaAO6WyaYtCkcYCOx12ZgpGf9Zif+qXa4n+oYzK558YryKqiL6UWwd5DqiH3VRW0GYhTZQ/vlgJrCoNQlg==";
+        url = "https://registry.npmjs.org/axios/-/axios-1.13.5.tgz";
+        sha512 = "cz4ur7Vb0xS4/KUN0tPWe44eqxrIu31me+fbang3ijiNscE129POzipJJA6zniq2C/Z6sJCjMimjS8Lc/GAs8Q==";
       };
     };
     "braces-3.0.3" = {
@@ -765,10 +765,10 @@ in
   css-variables-language-server = nodeEnv.buildNodePackage {
     name = "css-variables-language-server";
     packageName = "css-variables-language-server";
-    version = "2.8.3";
+    version = "2.8.4";
     src = fetchurl {
-      url = "https://registry.npmjs.org/css-variables-language-server/-/css-variables-language-server-2.8.3.tgz";
-      sha512 = "fJraz0bUJZQXToehaQ/pT4I4AAjUC4Qjxao2mN6P1KUYh7/pcT/yWn2jLeeT+7wQY+QrYIDsy8nnbkmH8xBBMQ==";
+      url = "https://registry.npmjs.org/css-variables-language-server/-/css-variables-language-server-2.8.4.tgz";
+      sha512 = "94gvSxVKZEKsp1/sxHkD0S0qHwbo5D30HsOPHQtPGSS5+LPZAFgNmuH8Ux1WT7mE5A2avsQKGKSbZU1aRp8lJQ==";
     };
     dependencies = [
       sources."@nodelib/fs.scandir-2.1.5"
@@ -777,7 +777,7 @@ in
       sources."async-function-1.0.0"
       sources."async-generator-function-1.0.0"
       sources."asynckit-0.4.0"
-      sources."axios-1.13.4"
+      sources."axios-1.13.5"
       sources."braces-3.0.3"
       sources."call-bind-apply-helpers-1.0.2"
       sources."chokidar-4.0.3"
