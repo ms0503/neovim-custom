@@ -32,7 +32,7 @@ let
       src = ../nvim;
     }
   );
-  version = "2025-05-19";
+  version = "latest";
 in
 stdenvNoCC.mkDerivation {
   inherit pname version;
