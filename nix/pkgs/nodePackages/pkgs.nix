@@ -58,13 +58,13 @@ let
         sha512 = "Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==";
       };
     };
-    "axios-1.13.5" = {
+    "axios-1.13.6" = {
       name = "axios";
       packageName = "axios";
-      version = "1.13.5";
+      version = "1.13.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/axios/-/axios-1.13.5.tgz";
-        sha512 = "cz4ur7Vb0xS4/KUN0tPWe44eqxrIu31me+fbang3ijiNscE129POzipJJA6zniq2C/Z6sJCjMimjS8Lc/GAs8Q==";
+        url = "https://registry.npmjs.org/axios/-/axios-1.13.6.tgz";
+        sha512 = "ChTCHMouEe2kn713WHbQGcuYrr6fXTBiu460OTwWrWob16g1bXn4vtz07Ope7ewMozJAnEquLk5lWQWtBig9DQ==";
       };
     };
     "braces-3.0.3" = {
@@ -103,13 +103,13 @@ let
         sha512 = "FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==";
       };
     };
-    "copy-anything-2.0.6" = {
+    "copy-anything-3.0.5" = {
       name = "copy-anything";
       packageName = "copy-anything";
-      version = "2.0.6";
+      version = "3.0.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/copy-anything/-/copy-anything-2.0.6.tgz";
-        sha512 = "1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==";
+        url = "https://registry.npmjs.org/copy-anything/-/copy-anything-3.0.5.tgz";
+        sha512 = "yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==";
       };
     };
     "culori-4.0.2" = {
@@ -301,13 +301,13 @@ let
         sha512 = "0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==";
       };
     };
-    "immutable-5.1.4" = {
+    "immutable-5.1.5" = {
       name = "immutable";
       packageName = "immutable";
-      version = "5.1.4";
+      version = "5.1.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/immutable/-/immutable-5.1.4.tgz";
-        sha512 = "p6u1bG3YSnINT5RQmx/yRZBpenIl30kVxkTLDyHLIMk0gict704Q9n+thfDI7lTRm9vXdDYutVzXhzcThxTnXA==";
+        url = "https://registry.npmjs.org/immutable/-/immutable-5.1.5.tgz";
+        sha512 = "t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==";
       };
     };
     "is-extglob-2.1.1" = {
@@ -337,13 +337,13 @@ let
         sha512 = "41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==";
       };
     };
-    "is-what-3.14.1" = {
+    "is-what-4.1.16" = {
       name = "is-what";
       packageName = "is-what";
-      version = "3.14.1";
+      version = "4.1.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/is-what/-/is-what-3.14.1.tgz";
-        sha512 = "sNxgpk9793nzSs7bA6JQJGeIuRBQhAaNGG77kzYQgMkrID+lS6SlK07K5LaptscDlSaIgH+GPFzf+d75FVxozA==";
+        url = "https://registry.npmjs.org/is-what/-/is-what-4.1.16.tgz";
+        sha512 = "ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==";
       };
     };
     "isarray-1.0.0" = {
@@ -364,13 +364,13 @@ let
         sha512 = "+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA==";
       };
     };
-    "less-4.5.1" = {
+    "less-4.6.4" = {
       name = "less";
       packageName = "less";
-      version = "4.5.1";
+      version = "4.6.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/less/-/less-4.5.1.tgz";
-        sha512 = "UKgI3/KON4u6ngSsnDADsUERqhZknsVZbnuzlRZXLQCmfC/MDld42fTydUE9B+Mla1AL6SJ/Pp6SlEFi/AVGfw==";
+        url = "https://registry.npmjs.org/less/-/less-4.6.4.tgz";
+        sha512 = "OJmO5+HxZLLw0RLzkqaNHzcgEAQG7C0y3aMbwtCzIUFZsLMNNq/1IdAdHEycQ58CwUO3jPTHmoN+tE5I7FQxNg==";
       };
     };
     "line-column-1.0.2" = {
@@ -454,13 +454,13 @@ let
         sha512 = "5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==";
       };
     };
-    "node-addon-api-8.5.0" = {
+    "node-addon-api-8.6.0" = {
       name = "node-addon-api";
       packageName = "node-addon-api";
-      version = "8.5.0";
+      version = "8.6.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz";
-        sha512 = "/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==";
+        url = "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.6.0.tgz";
+        sha512 = "gBVjCaqDlRUk0EwoPNKzIr9KkS9041G/q31IBShPs1Xz6UTA+EXdZADbzqAJQrpDRq71CIMnOP5VMut3SL0z5Q==";
       };
     };
     "node-gyp-build-4.8.4" = {
@@ -499,13 +499,13 @@ let
         sha512 = "JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==";
       };
     };
-    "postcss-8.5.6" = {
+    "postcss-8.5.8" = {
       name = "postcss";
       packageName = "postcss";
-      version = "8.5.6";
+      version = "8.5.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz";
-        sha512 = "3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==";
+        url = "https://registry.npmjs.org/postcss/-/postcss-8.5.8.tgz";
+        sha512 = "OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==";
       };
     };
     "postcss-less-6.0.0" = {
@@ -571,13 +571,13 @@ let
         sha512 = "5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==";
       };
     };
-    "sass-1.97.3" = {
+    "sass-1.98.0" = {
       name = "sass";
       packageName = "sass";
-      version = "1.97.3";
+      version = "1.98.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/sass/-/sass-1.97.3.tgz";
-        sha512 = "fDz1zJpd5GycprAbu4Q2PV/RprsRtKC/0z82z0JLgdytmcq0+ujJbJ/09bPGDxCLkKY3Np5cRAOcWiVkLXJURg==";
+        url = "https://registry.npmjs.org/sass/-/sass-1.98.0.tgz";
+        sha512 = "+4N/u9dZ4PrgzGgPlKnaaRQx64RO0JBKs9sDhQ2pLgN6JQZ25uPQZKQYaBJU48Kd5BxgXoJ4e09Dq7nMcOUW3A==";
       };
     };
     "source-map-js-1.2.1" = {
@@ -614,15 +614,6 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/tree-sitter-awk/-/tree-sitter-awk-0.7.2.tgz";
         sha512 = "Y9qGrM9a/AkeglOMSYzM0Tek5rox9WZmlV1/l3wyBJaMdpeMGsC3z4Jn+OvuevJO78gtmW1SuXfCva1f4veuTg==";
-      };
-    };
-    "tslib-2.8.1" = {
-      name = "tslib";
-      packageName = "tslib";
-      version = "2.8.1";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz";
-        sha512 = "oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==";
       };
     };
     "vscode-jsonrpc-6.0.0" = {
@@ -741,7 +732,7 @@ in
       sources."node-gyp-build-4.8.4"
       (sources."tree-sitter-0.21.1" // {
         dependencies = [
-          sources."node-addon-api-8.5.0"
+          sources."node-addon-api-8.6.0"
         ];
       })
       sources."tree-sitter-awk-0.7.2"
@@ -777,12 +768,12 @@ in
       sources."async-function-1.0.0"
       sources."async-generator-function-1.0.0"
       sources."asynckit-0.4.0"
-      sources."axios-1.13.5"
+      sources."axios-1.13.6"
       sources."braces-3.0.3"
       sources."call-bind-apply-helpers-1.0.2"
       sources."chokidar-4.0.3"
       sources."combined-stream-1.0.8"
-      sources."copy-anything-2.0.6"
+      sources."copy-anything-3.0.5"
       sources."culori-4.0.2"
       sources."delayed-stream-1.0.0"
       sources."dunder-proto-1.0.1"
@@ -804,14 +795,14 @@ in
       sources."has-symbols-1.1.0"
       sources."has-tostringtag-1.0.2"
       sources."hasown-2.0.2"
-      sources."immutable-5.1.4"
+      sources."immutable-5.1.5"
       sources."is-extglob-2.1.1"
       sources."is-glob-4.0.3"
       sources."is-number-7.0.0"
-      sources."is-what-3.14.1"
+      sources."is-what-4.1.16"
       sources."isarray-1.0.0"
       sources."isobject-2.1.0"
-      sources."less-4.5.1"
+      sources."less-4.6.4"
       sources."line-column-1.0.2"
       sources."math-intrinsics-1.1.0"
       sources."merge2-1.4.1"
@@ -822,7 +813,7 @@ in
       sources."parse-node-version-1.0.1"
       sources."picocolors-1.1.1"
       sources."picomatch-2.3.1"
-      sources."postcss-8.5.6"
+      sources."postcss-8.5.8"
       sources."postcss-less-6.0.0"
       sources."postcss-scss-4.0.9"
       sources."proxy-from-env-1.1.0"
@@ -830,10 +821,9 @@ in
       sources."readdirp-4.1.2"
       sources."reusify-1.1.0"
       sources."run-parallel-1.2.0"
-      sources."sass-1.97.3"
+      sources."sass-1.98.0"
       sources."source-map-js-1.2.1"
       sources."to-regex-range-5.0.1"
-      sources."tslib-2.8.1"
       sources."vscode-jsonrpc-8.2.0"
       sources."vscode-languageserver-9.0.1"
       sources."vscode-languageserver-protocol-3.17.5"

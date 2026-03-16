@@ -75,10 +75,29 @@
           ./nix/neovim.nix
         ];
         perSystem =
-          { config, pkgs, ... }:
+          {
+            config,
+            lib,
+            pkgs,
+            ...
+          }:
           {
             devShells.default =
               let
+                node2nix =
+                  (pkgs.node2nix.override {
+                    nodejs = pkgs.nodejs_latest;
+                  }).overrideAttrs
+                    (
+                      _: prev: {
+                        buildInputs = lib.remove pkgs.nodejs-slim (
+                          prev.buildInputs
+                          ++ (with pkgs; [
+                            nodejs_latest
+                          ])
+                        );
+                      }
+                    );
                 scripts = with pkgs; [
                   (writeScriptBin "update-srcs" ''
                     if [[ ! -f $PWD/flake.nix ]]; then
@@ -86,7 +105,7 @@
                       exit 1
                     fi
                     ${pkgs.nvfetcher}/bin/nvfetcher
-                    ${pkgs.node2nix}/bin/node2nix \
+                    ${node2nix}/bin/node2nix \
                       -i nix/pkgs/nodePackages/pkg-list.json \
                       -o nix/pkgs/nodePackages/pkgs.nix \
                       -c nix/pkgs/nodePackages/cmp.nix \
@@ -97,15 +116,18 @@
               in
               pkgs.mkShell {
                 packages =
-                  scripts
+                  config.pre-commit.settings.enabledPackages
+                  ++ scripts
+                  ++ [
+                    node2nix
+                  ]
                   ++ (with pkgs; [
                     lua-language-server
-                    node2nix
                     nvfetcher
                     stylua
                   ]);
                 shellHook = ''
-                  ${config.pre-commit.installationScript}
+                  ${config.pre-commit.shellHook}
                 '';
               };
           };
