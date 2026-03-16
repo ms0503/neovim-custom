@@ -1,4 +1,34 @@
 {
+    "awk-language-server": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "awk-language-server",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-LbV/OGzLaeYtGVk5/TqOg5GsUKbDRPWWsN1kMa4ESFM=",
+            "type": "url",
+            "url": "https://github.com/Beaglefoot/awk-language-server/archive/refs/tags/server-0.10.6.tar.gz"
+        },
+        "version": "0.10.6"
+    },
+    "css-variables-language-server": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "css-variables-language-server",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "css-variables-language-server-2.8.4.tar.gz",
+            "sha256": "sha256-pBubetH9LJGYmzMMTkxgrF1UVS6Ye2Rz4guQlHTjgo4=",
+            "type": "url",
+            "url": "https://github.com/vunguyentuan/vscode-css-variables/archive/refs/tags/css-variables-language-server%402.8.4.tar.gz"
+        },
+        "version": "2.8.4"
+    },
     "guihua-lua": {
         "cargoLock": null,
         "date": "2026-03-08",

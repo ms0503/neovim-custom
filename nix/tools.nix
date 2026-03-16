@@ -8,6 +8,7 @@ in
     arduino-language-server
     astro-language-server
     autotools-language-server
+    bash-language-server
     biome
     buf
     clang-tools
@@ -15,6 +16,7 @@ in
     delve
     deno
     docker-compose-language-service
+    dockerfile-language-server
     eslint
     gopls
     haskell-language-server
@@ -24,13 +26,16 @@ in
     lua-language-server
     marksman
     mesonlsp
+    neovim-node-client
     nginx-language-server
     nil
     nixfmt
     nushell
     ocamlformat
     omnisharp-roslyn
+    oxlint
     phpactor
+    prettier
     pyright
     ripgrep
     ruff
@@ -43,23 +48,15 @@ in
     taplo
     terraform-ls
     tinymist
+    typescript-language-server
     typstyle
+    vscode-langservers-extracted
     vue-language-server
     yaml-language-server
     zls
   ]
   ++ (with haskellPackages; [
     fourmolu
-  ])
-  ++ (with nodePackages_latest; [
-    "@astrojs/language-server"
-    "@tailwindcss/language-server"
-    bash-language-server
-    dockerfile-language-server
-    neovim
-    prettier
-    typescript-language-server
-    vscode-langservers-extracted
   ])
   ++ (with ocamlPackages; [
     ocaml-lsp
@@ -74,10 +71,10 @@ in
 )
 ++ (
   with myPkgs;
-  (with nodePackages; [
+  [
     awk-language-server
     css-variables-language-server
-  ])
+  ]
   ++ (with rubyPackages; [
     neovim
   ])

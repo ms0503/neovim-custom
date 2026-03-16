@@ -1,9 +1,10 @@
 {
   perSystem =
-    { lib, pkgs, ... }:
+    { pkgs, ... }:
     {
       legacyPackages =
         let
+          inherit (pkgs) callPackage;
           sources =
             builtins.mapAttrs
               (
@@ -25,18 +26,27 @@
               );
         in
         {
-          nodePackages = import ./nodePackages pkgs;
+          awk-language-server = callPackage ./awk-language-server {
+            source = sources.awk-language-server;
+            yarnDepsHash = "sha256-pp54hyYkcyhv+mwzyHwscjB4Ktz2IM+8ZPn2EgOPKQM=";
+          };
+          css-variables-language-server = callPackage ./css-variables-language-server {
+            npmDepsHash = "sha256-VMUGlQMnHhAtuWd/hdGn2jJN1z7bkNCRVRFF5EjNaFY=";
+            source = sources.css-variables-language-server;
+          };
           rubyPackages = import ./rubyPackages.nix pkgs;
           vimPlugins =
             (import ./vimPlugins {
               inherit (pkgs) vimUtils;
               sources = builtins.removeAttrs sources [
+                "awk-language-server"
+                "css-variables-language-server"
                 "guihua-lua"
               ];
             })
             // {
               guihua-lua = (
-                pkgs.callPackage ./vimPlugins/guihua-lua {
+                callPackage ./vimPlugins/guihua-lua {
                   inherit (pkgs) vimUtils;
                   source = sources.guihua-lua;
                 }

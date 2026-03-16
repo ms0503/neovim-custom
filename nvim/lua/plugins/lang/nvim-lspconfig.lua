@@ -93,6 +93,7 @@ local server_list = function(capabilities)
         nushell = {},
         ocamllsp = {},
         omnisharp = {},
+        oxlint = {},
         phpactor = {},
         pkgbuild_language_server = {},
         powershell_es = {},

@@ -6,6 +6,23 @@
   dockerTools,
 }:
 {
+  awk-language-server = {
+    pname = "awk-language-server";
+    version = "0.10.6";
+    src = fetchurl {
+      url = "https://github.com/Beaglefoot/awk-language-server/archive/refs/tags/server-0.10.6.tar.gz";
+      sha256 = "sha256-LbV/OGzLaeYtGVk5/TqOg5GsUKbDRPWWsN1kMa4ESFM=";
+    };
+  };
+  css-variables-language-server = {
+    pname = "css-variables-language-server";
+    version = "2.8.4";
+    src = fetchurl {
+      url = "https://github.com/vunguyentuan/vscode-css-variables/archive/refs/tags/css-variables-language-server%402.8.4.tar.gz";
+      name = "css-variables-language-server-2.8.4.tar.gz";
+      sha256 = "sha256-pBubetH9LJGYmzMMTkxgrF1UVS6Ye2Rz4guQlHTjgo4=";
+    };
+  };
   guihua-lua = {
     pname = "guihua-lua";
     version = "fdca486468a5d94676477917872767b5e67a2b4c";
