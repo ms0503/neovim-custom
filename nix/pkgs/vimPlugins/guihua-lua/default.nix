@@ -17,5 +17,6 @@ vimUtils.buildVimPlugin {
   '';
   patches = [
     ./fix-fzy-lua-native.patch
+    ./remove-non-existent-api-call.patch
   ];
 }
