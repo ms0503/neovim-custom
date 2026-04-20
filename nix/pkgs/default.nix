@@ -1,6 +1,6 @@
 {
   perSystem =
-    { pkgs, ... }:
+    { inputs', pkgs, ... }:
     {
       legacyPackages =
         let
@@ -26,21 +26,13 @@
               );
         in
         {
-          awk-language-server = callPackage ./awk-language-server {
-            source = sources.awk-language-server;
-            yarnDepsHash = "sha256-pp54hyYkcyhv+mwzyHwscjB4Ktz2IM+8ZPn2EgOPKQM=";
-          };
-          css-variables-language-server = callPackage ./css-variables-language-server {
-            npmDepsHash = "sha256-VMUGlQMnHhAtuWd/hdGn2jJN1z7bkNCRVRFF5EjNaFY=";
-            source = sources.css-variables-language-server;
-          };
+          awk-language-server = inputs'.awk-language-server.packages.default;
+          css-variables-language-server = inputs'.vscode-css-variables.packages.default;
           rubyPackages = import ./rubyPackages.nix pkgs;
           vimPlugins =
             (import ./vimPlugins {
               inherit (pkgs) vimUtils;
               sources = builtins.removeAttrs sources [
-                "awk-language-server"
-                "css-variables-language-server"
                 "guihua-lua"
               ];
             })

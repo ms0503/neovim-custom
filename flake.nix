@@ -1,5 +1,12 @@
 {
   inputs = {
+    awk-language-server = {
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:ms0503/awk-language-server";
+    };
     fenix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/fenix";
@@ -34,6 +41,13 @@
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
+    };
+    vscode-css-variables = {
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:ms0503/vscode-css-variables";
     };
   };
   outputs =
