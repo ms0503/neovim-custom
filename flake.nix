@@ -99,6 +99,7 @@
             devShells.default = pkgs.mkShell {
               packages =
                 config.pre-commit.settings.enabledPackages
+                ++ lib.attrValues config.treefmt.build.programs
                 ++ (with pkgs; [
                   lua-language-server
                   nvfetcher
