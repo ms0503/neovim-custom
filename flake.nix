@@ -96,31 +96,18 @@
             ...
           }:
           {
-            devShells.default =
-              let
-                scripts = with pkgs; [
-                  (writeScriptBin "update-srcs" ''
-                    if [[ ! -f $PWD/flake.nix ]]; then
-                      printf "Please run in flake root\n"
-                      exit 1
-                    fi
-                    ${pkgs.nvfetcher}/bin/nvfetcher
-                  '')
-                ];
-              in
-              pkgs.mkShell {
-                packages =
-                  config.pre-commit.settings.enabledPackages
-                  ++ scripts
-                  ++ (with pkgs; [
-                    lua-language-server
-                    nvfetcher
-                    stylua
-                  ]);
-                shellHook = ''
-                  ${config.pre-commit.shellHook}
-                '';
-              };
+            devShells.default = pkgs.mkShell {
+              packages =
+                config.pre-commit.settings.enabledPackages
+                ++ (with pkgs; [
+                  lua-language-server
+                  nvfetcher
+                  stylua
+                ]);
+              shellHook = ''
+                ${config.pre-commit.shellHook}
+              '';
+            };
           };
         systems = import systems;
       }
