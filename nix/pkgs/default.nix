@@ -10,6 +10,7 @@
       packages =
         let
           inherit (pkgs) callPackage;
+          rubyPackages = callPackage ./rubyPackages.nix { };
           sources =
             builtins.mapAttrs
               (
@@ -29,11 +30,6 @@
                     ;
                 }
               );
-        in
-        {
-          awk-language-server = inputs'.awk-language-server.packages.default;
-          css-variables-language-server = inputs'.vscode-css-variables.packages.default;
-          rubyPackages = callPackage ./rubyPackages.nix { } |> lib.recurseIntoAttrs;
           vimPlugins =
             (import ./vimPlugins {
               inherit (pkgs) vimUtils;
@@ -42,12 +38,10 @@
               ];
             })
             // {
-              guihua-lua = (
-                callPackage ./vimPlugins/guihua-lua {
-                  inherit (pkgs) vimUtils;
-                  source = sources.guihua-lua;
-                }
-              );
+              guihua-lua = callPackage ./vimPlugins/guihua-lua {
+                inherit (pkgs) vimUtils;
+                source = sources.guihua-lua;
+              };
               jsregexp = pkgs.stdenvNoCC.mkDerivation {
                 inherit (pkgs.luajitPackages.jsregexp) pname version;
                 installPhase = ''
@@ -59,8 +53,13 @@
                 '';
                 src = pkgs.luajitPackages.jsregexp;
               };
-            }
-            |> lib.recurseIntoAttrs;
+            };
+        in
+        rubyPackages
+        // vimPlugins
+        // {
+          awk-language-server = inputs'.awk-language-server.packages.default;
+          css-variables-language-server = inputs'.vscode-css-variables.packages.default;
         };
     };
 }

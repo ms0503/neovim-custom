@@ -69,16 +69,11 @@ in
     pynvim
   ])
 )
-++ (
-  with myPkgs;
-  [
-    awk-language-server
-    css-variables-language-server
-  ]
-  ++ (with rubyPackages; [
-    neovim
-  ])
-)
+++ (with myPkgs; [
+  awk-language-server
+  css-variables-language-server
+  neovim-ruby
+])
 ++ (with fenixPkgs; [
   rust-analyzer
 ])

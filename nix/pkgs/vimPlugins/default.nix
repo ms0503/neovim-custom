@@ -3,7 +3,7 @@
   vimUtils,
 }:
 builtins.mapAttrs (
-  k: v:
+  _: v:
   vimUtils.buildVimPlugin {
     inherit (v) pname src version;
   }

@@ -80,5 +80,5 @@ let
   };
 in
 {
-  inherit (gems) neovim;
+  neovim-ruby = gems.neovim;
 }

@@ -102,6 +102,6 @@ let
     vimdoc-ja
     which-key-nvim
   ];
-  vimPlugins = pkgs.vimPlugins // myPkgs.vimPlugins;
+  vimPlugins = pkgs.vimPlugins // myPkgs;
 in
 pkgListToAttr plugins
