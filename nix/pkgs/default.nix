@@ -12,24 +12,21 @@
           inherit (pkgs) callPackage;
           rubyPackages = callPackage ./rubyPackages.nix { };
           sources =
-            builtins.mapAttrs
-              (
-                _: pkg:
-                let
-                  version = if (builtins.hasAttr "date" pkg) then pkg.date else pkg.version;
-                in
-                pkg // { inherit version; }
-              )
-              (
-                import ../../_sources/generated.nix {
-                  inherit (pkgs)
-                    dockerTools
-                    fetchFromGitHub
-                    fetchgit
-                    fetchurl
-                    ;
-                }
-              );
+            (import ../../_sources/generated.nix {
+              inherit (pkgs)
+                dockerTools
+                fetchFromGitHub
+                fetchgit
+                fetchurl
+                ;
+            })
+            |> builtins.mapAttrs (
+              _: pkg:
+              let
+                version = if (builtins.hasAttr "date" pkg) then pkg.date else pkg.version;
+              in
+              pkg // { inherit version; }
+            );
           vimPlugins =
             (import ./vimPlugins {
               inherit (pkgs) vimUtils;

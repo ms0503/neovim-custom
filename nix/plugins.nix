@@ -1,27 +1,26 @@
-{ lib, neovimUtils, ... }@pkgs:
+pkgs@{ lib, neovimUtils, ... }:
 myPkgs:
 let
   normalizePname =
     pname:
-    builtins.replaceStrings
-      [
-        "-"
-        "."
-      ]
-      [
-        "_"
-        "_"
-      ]
-      (lib.toLower pname);
-  pkgListToAttr =
-    pkgList:
-    lib.foldl' (
-      acc: pkg:
-      acc
-      // {
-        "${normalizePname pkg.pname}" = pkg;
-      }
-    ) { } pkgList;
+    lib.toLower pname
+    |>
+      builtins.replaceStrings
+        [
+          "-"
+          "."
+        ]
+        [
+          "_"
+          "_"
+        ];
+  pkgListToAttr = lib.foldl' (
+    acc: pkg:
+    acc
+    // {
+      "${normalizePname pkg.pname}" = pkg;
+    }
+  ) { };
   plugins = with vimPlugins; [
     aerial-nvim
     alpha-nvim

@@ -8,18 +8,20 @@ let
   buildGems =
     gemset:
     let
-      builtGems = lib.mapAttrs (
-        gemName: initialAttrs:
-        let
-          attrs = functions.applyGemConfigs (
-            {
-              inherit gemName ruby;
-            }
-            // initialAttrs
-          );
-        in
-        buildRubyGem (functions.composeGemAttrs ruby builtGems gemName attrs)
-      ) realGemset;
+      builtGems =
+        realGemset
+        |> lib.mapAttrs (
+          gemName: initialAttrs:
+          let
+            attrs = functions.applyGemConfigs (
+              {
+                inherit gemName ruby;
+              }
+              // initialAttrs
+            );
+          in
+          buildRubyGem (functions.composeGemAttrs ruby builtGems gemName attrs)
+        );
       realGemset = if builtins.isAttrs gemset then gemset else import gemset;
     in
     builtGems;
@@ -32,21 +34,29 @@ let
         attrs;
     composeGemAttrs =
       ruby: gems: gemName: attrs:
-      (builtins.removeAttrs attrs [ "platforms" ])
+      (builtins.removeAttrs attrs [
+        "platforms"
+      ])
       // {
         inherit gemName ruby;
         inherit (attrs.source) type;
-        gemPath = builtins.map (name: gems.${name}) (attrs.dependencies or [ ]);
-        source = builtins.removeAttrs attrs.source [ "type" ];
+        gemPath = (attrs.dependencies or [ ]) |> builtins.map (name: gems.${name});
+        source = builtins.removeAttrs attrs.source [
+          "type"
+        ];
       };
   };
   gems = buildGems {
     msgpack = {
       dependencies = [ ];
-      groups = [ "default" ];
+      groups = [
+        "default"
+      ];
       platforms = [ ];
       source = {
-        remotes = [ "https://rubygems.org" ];
+        remotes = [
+          "https://rubygems.org"
+        ];
         sha256 = "/7BJefUeZAaCPAOr5Q4dosglxVo33uE4UYzdCdnTrqg=";
         type = "gem";
       };
@@ -54,10 +64,14 @@ let
     };
     multi_json = {
       dependencies = [ ];
-      groups = [ "default" ];
+      groups = [
+        "default"
+      ];
       platforms = [ ];
       source = {
-        remotes = [ "https://rubygems.org" ];
+        remotes = [
+          "https://rubygems.org"
+        ];
         sha256 = "H9BBOLbkqQAX6NG4BMA5AxOZhm/z+6u3girqNnx4YV0=";
         type = "gem";
       };
@@ -68,10 +82,14 @@ let
         "msgpack"
         "multi_json"
       ];
-      groups = [ "default" ];
+      groups = [
+        "default"
+      ];
       platforms = [ ];
       source = {
-        remotes = [ "https://rubygems.org" ];
+        remotes = [
+          "https://rubygems.org"
+        ];
         sha256 = "jWFwJ5hyIBEG3hqEwnzEClcewlhAV6PDNbJyHnMmgz4=";
         type = "gem";
       };
