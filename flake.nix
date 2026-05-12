@@ -13,7 +13,7 @@
     };
     flake-compat = {
       flake = false;
-      url = "github:edolstra/flake-compat";
+      url = "github:NixOS/flake-compat";
     };
     flake-parts = {
       inputs.nixpkgs-lib.follows = "nixpkgs";
