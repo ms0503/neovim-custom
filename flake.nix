@@ -99,7 +99,7 @@
               inherit system;
               config.allowUnfree = true;
             };
-            devShells.default = pkgs.mkShell {
+            devShells.shell = pkgs.mkShell {
               packages =
                 config.pre-commit.settings.enabledPackages
                 ++ lib.attrValues config.treefmt.build.programs
