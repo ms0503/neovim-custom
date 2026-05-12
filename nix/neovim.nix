@@ -14,8 +14,8 @@
           neovimConfig = pkgs.callPackage ./config.nix {
             inherit plugins;
           };
-          plugins = import ./plugins.nix pkgs self'.legacyPackages;
-          tools = import ./tools.nix pkgs self'.legacyPackages inputs';
+          plugins = import ./plugins.nix pkgs self'.packages;
+          tools = import ./tools.nix pkgs self'.packages inputs';
         in
         {
           config = neovimConfig;

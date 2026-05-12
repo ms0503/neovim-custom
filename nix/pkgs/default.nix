@@ -1,8 +1,13 @@
 {
   perSystem =
-    { inputs', pkgs, ... }:
     {
-      legacyPackages =
+      inputs',
+      lib,
+      pkgs,
+      ...
+    }:
+    {
+      packages =
         let
           inherit (pkgs) callPackage;
           sources =
@@ -28,7 +33,7 @@
         {
           awk-language-server = inputs'.awk-language-server.packages.default;
           css-variables-language-server = inputs'.vscode-css-variables.packages.default;
-          rubyPackages = import ./rubyPackages.nix pkgs;
+          rubyPackages = callPackage ./rubyPackages.nix { } |> lib.recurseIntoAttrs;
           vimPlugins =
             (import ./vimPlugins {
               inherit (pkgs) vimUtils;
@@ -54,7 +59,8 @@
                 '';
                 src = pkgs.luajitPackages.jsregexp;
               };
-            };
+            }
+            |> lib.recurseIntoAttrs;
         };
     };
 }

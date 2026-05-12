@@ -3,7 +3,6 @@
   defaultGemConfig,
   lib,
   ruby,
-  ...
 }:
 let
   buildGems =
