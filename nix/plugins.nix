@@ -1,5 +1,8 @@
-pkgs@{ lib, neovimUtils, ... }:
-myPkgs:
+{
+  lib,
+  myPkgs,
+  pkgs,
+}:
 let
   normalizePname =
     pname:

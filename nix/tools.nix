@@ -1,4 +1,8 @@
-pkgs: myPkgs: inputs':
+{
+  inputs',
+  myPkgs,
+  pkgs,
+}:
 let
   fenixPkgs = inputs'.fenix.packages;
 in
