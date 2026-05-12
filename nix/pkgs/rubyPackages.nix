@@ -20,7 +20,7 @@ let
               // initialAttrs
             );
           in
-          buildRubyGem (functions.composeGemAttrs ruby builtGems gemName attrs)
+          functions.composeGemAttrs ruby builtGems gemName attrs |> buildRubyGem
         );
       realGemset = if builtins.isAttrs gemset then gemset else import gemset;
     in
@@ -57,10 +57,10 @@ let
         remotes = [
           "https://rubygems.org"
         ];
-        sha256 = "/7BJefUeZAaCPAOr5Q4dosglxVo33uE4UYzdCdnTrqg=";
+        sha256 = "5kzgISAA0BaAn1BItI6zpl/7Fp2yIjj7S3JHL+yy1zI=";
         type = "gem";
       };
-      version = "1.7.5";
+      version = "1.8.0";
     };
     multi_json = {
       dependencies = [ ];
@@ -72,10 +72,10 @@ let
         remotes = [
           "https://rubygems.org"
         ];
-        sha256 = "H9BBOLbkqQAX6NG4BMA5AxOZhm/z+6u3girqNnx4YV0=";
+        sha256 = "5hJqMYCOO00Z9IPHdc6sNN8ZDf+mKt+2OhZe4UumgIA=";
         type = "gem";
       };
-      version = "1.15.0";
+      version = "1.21.1";
     };
     neovim = {
       dependencies = [
