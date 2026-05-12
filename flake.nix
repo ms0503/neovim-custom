@@ -52,10 +52,8 @@
   };
   outputs =
     inputs@{
-      fenix,
       flake-parts,
       nixpkgs,
-      self,
       systems,
       ...
     }:
@@ -93,9 +91,14 @@
             config,
             lib,
             pkgs,
+            system,
             ...
           }:
           {
+            _module.args.pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
             devShells.default = pkgs.mkShell {
               packages =
                 config.pre-commit.settings.enabledPackages
