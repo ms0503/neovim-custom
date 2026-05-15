@@ -36,7 +36,7 @@ stdenvNoCC.mkDerivation {
   inherit pname version;
   installPhase = ''
     install -dm755 "$out"
-    substituteAllInPlace ./init.lua
+    substituteAll ./init.lua "$out/init.lua"
     ln -s "$src/lua" "$out/lua"
   '';
   neovim_custom_config_path = preprocessed;
