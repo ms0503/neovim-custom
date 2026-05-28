@@ -3,14 +3,8 @@
 
 return {
     dependencies = {
-        {
-            dir = '@nvim_dap@',
-            name = 'nvim-dap',
-        },
-        {
-            dir = '@nvim_treesitter@',
-            name = 'nvim-treesitter',
-        },
+        'nvim-dap',
+        'nvim-treesitter',
     },
     dir = '@nvim_dap_virtual_text@',
     name = 'nvim-dap-virtual-text',

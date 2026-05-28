@@ -4,8 +4,7 @@
 return {
     config = true,
     dependencies = {
-        dir = '@nvim_dap@',
-        name = 'nvim-dap',
+        'nvim-dap',
     },
     dir = '@nvim_dap_go@',
     name = 'nvim-dap-go',

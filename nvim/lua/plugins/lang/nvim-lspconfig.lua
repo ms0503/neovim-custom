@@ -148,18 +148,9 @@ return {
         end
     end,
     dependencies = {
-        {
-            dir = '@neoconf_nvim@',
-            name = 'neoconf.nvim',
-        },
-        {
-            dir = '@schemastore_nvim@',
-            name = 'schemastore.nvim',
-        },
-        {
-            dir = '@ts_error_translator_nvim@',
-            name = 'ts-error-translator.nvim',
-        },
+        'neoconf.nvim',
+        'schemastore.nvim',
+        'ts-error-translator.nvim',
     },
     dir = '@nvim_lspconfig@',
     event = {

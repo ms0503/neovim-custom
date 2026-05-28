@@ -19,21 +19,9 @@ return {
         })
     end,
     dependencies = {
-        {
-            build = function()
-                vim.fn.system('cd lua/fzy && make')
-            end,
-            dir = '@guihua_lua@',
-            name = 'guihua.lua',
-        },
-        {
-            dir = '@nvim_lspconfig@',
-            name = 'nvim-lspconfig',
-        },
-        {
-            dir = '@nvim_treesitter@',
-            name = 'nvim-treesitter',
-        },
+        'guihua.lua',
+        'nvim-lspconfig',
+        'nvim-treesitter',
     },
     dir = '@go_nvim@',
     event = 'CmdlineEnter',

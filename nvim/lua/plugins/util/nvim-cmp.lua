@@ -58,84 +58,16 @@ return {
         })
     end,
     dependencies = {
-        {
-            dir = '@cmp_buffer@',
-            name = 'cmp-buffer',
-        },
-        {
-            dir = '@cmp_cmdline@',
-            name = 'cmp-cmdline',
-        },
-        {
-            dir = '@cmp_git@',
-            init = function()
-                table.insert(
-                    require('cmp').get_config().sources,
-                    { name = 'git' }
-                )
-            end,
-            name = 'cmp-git',
-        },
-        {
-            dir = '@cmp_nvim_lsp@',
-            name = 'cmp-nvim-lsp',
-        },
-        {
-            dir = '@cmp_path@',
-            name = 'cmp-path',
-        },
-        {
-            dir = '@cmp_vsnip@',
-            name = 'cmp-vsnip',
-        },
-        {
-            dependencies = {
-                dependencies = {
-                    {
-                        dir = '@nvim_dap@',
-                        name = 'nvim-dap',
-                    },
-                    {
-                        dir = '@nvim_nio@',
-                        name = 'nvim-nio',
-                    },
-                },
-                dir = '@nvim_dap_ui@',
-                name = 'nvim-dap-ui',
-            },
-            dir = '@lazydev_nvim@',
-            ft = 'lua',
-            name = 'lazydev.nvim',
-            opts = {
-                library = {
-                    'nvim-dap-ui',
-                },
-            },
-        },
-        {
-            dependencies = {
-                dependencies = {
-                    dir = '@jsregexp@',
-                    name = 'jsregexp',
-                },
-                dir = '@luasnip@',
-                name = 'luasnip',
-            },
-            dir = '@cmp_luasnip@',
-            name = 'cmp_luasnip',
-        },
-        {
-            dependencies = {
-                dir = '@tailwind_tools_nvim@',
-                name = 'tailwind-tools.nvim',
-            },
-            dir = '@lspkind_nvim@',
-            name = 'lspkind.nvim',
-        },
-        {
-            dir = '@nvim_highlight_colors@',
-            name = 'nvim-highlight-colors',
-        },
+        'cmp-buffer',
+        'cmp-cmdline',
+        'cmp-git',
+        'cmp-nvim-lsp',
+        'cmp-path',
+        'cmp-vsnip',
+        'cmp_luasnip',
+        'lazydev.nvim',
+        'lspkind.nvim',
+        'nvim-highlight-colors',
     },
     dir = '@nvim_cmp@',
     event = 'InsertEnter',

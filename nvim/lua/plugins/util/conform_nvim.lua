@@ -125,8 +125,7 @@ return {
         })
     end,
     dependencies = {
-        dir = '@neoconf_nvim@',
-        name = 'neoconf.nvim',
+        'neoconf.nvim',
     },
     dir = '@conform_nvim@',
     event = 'BufWritePre',

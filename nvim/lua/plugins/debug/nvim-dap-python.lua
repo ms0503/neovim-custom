@@ -6,8 +6,7 @@ return {
         require('dap-python').setup('python3')
     end,
     dependencies = {
-        dir = '@nvim_dap@',
-        name = 'nvim-dap',
+        'nvim-dap',
     },
     dir = '@nvim_dap_python@',
     name = 'nvim-dap-python',

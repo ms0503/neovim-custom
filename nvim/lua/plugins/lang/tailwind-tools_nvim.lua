@@ -124,8 +124,7 @@ return {
         })
     end,
     dependencies = {
-        dir = '@nvim_treesitter@',
-        name = 'nvim-treesitter',
+        'nvim-treesitter',
     },
     dir = '@tailwind_tools_nvim@',
     ft = {

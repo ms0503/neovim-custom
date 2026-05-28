@@ -3,8 +3,7 @@
 
 return {
     dependencies = {
-        dir = '@nvim_treesitter@',
-        name = 'nvim-treesitter',
+        'nvim-treesitter',
     },
     dir = '@hlchunk_nvim@',
     event = 'BufRead',

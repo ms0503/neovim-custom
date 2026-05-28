@@ -4,14 +4,8 @@
 return {
     config = true,
     dependencies = {
-        {
-            dir = '@nvim_lspconfig@',
-            name = 'nvim-lspconfig',
-        },
-        {
-            dir = '@plenary_nvim@',
-            name = 'plenary.nvim',
-        },
+        'nvim-lspconfig',
+        'plenary.nvim',
     },
     dir = '@typescript_tools_nvim@',
     name = 'typescript-tools.nvim',

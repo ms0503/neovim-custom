@@ -3,14 +3,8 @@
 
 return {
     dependencies = {
-        {
-            dir = '@nvim_web_devicons@',
-            name = 'nvim-web-devicons',
-        },
-        {
-            dir = '@vim_jb_lua@',
-            name = 'vim-jb.lua',
-        },
+        'nvim-web-devicons',
+        'vim-jb.lua',
     },
     dir = '@heirline_nvim@',
     event = 'BufEnter',

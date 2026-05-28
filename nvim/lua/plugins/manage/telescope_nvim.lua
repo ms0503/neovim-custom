@@ -38,47 +38,11 @@ return {
         })
     end,
     dependencies = {
-        {
-            dir = '@plenary_nvim@',
-            name = 'plenary.nvim',
-        },
-        {
-            dir = '@telescope_file_browser_nvim@',
-            name = 'telescope-file-browser.nvim',
-        },
-        {
-            dir = '@nvim_treesitter@',
-            name = 'nvim-treesitter',
-        },
-        {
-            dir = '@nvim_web_devicons@',
-            name = 'nvim-web-devicons',
-        },
-        {
-            config = true,
-            dependencies = {
-                {
-                    dir = '@mini_icons@',
-                    name = 'mini.icons',
-                },
-                {
-                    dir = '@nvim_web_devicons@',
-                    name = 'nvim-web-devicons',
-                },
-            },
-            dir = '@which_key_nvim@',
-            event = 'VeryLazy',
-            keys = {
-                {
-                    '<Leader>?',
-                    function()
-                        require('which-key').show({ global = false })
-                    end,
-                    desc = 'Buffer Local Keymaps (which-key)',
-                },
-            },
-            name = 'which-key.nvim',
-        },
+        'nvim-treesitter',
+        'nvim-web-devicons',
+        'plenary.nvim',
+        'telescope-file-browser.nvim',
+        'which-key.nvim',
     },
     dir = '@telescope_nvim@',
     name = 'telescope.nvim',

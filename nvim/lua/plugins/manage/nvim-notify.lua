@@ -3,8 +3,7 @@
 
 return {
     dependencies = {
-        dir = '@vim_jb_lua@',
-        name = 'vim-jb.lua',
+        'vim-jb.lua',
     },
     dir = '@nvim_notify@',
     name = 'nvim-notify',

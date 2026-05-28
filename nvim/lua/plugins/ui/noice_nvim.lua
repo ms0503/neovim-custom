@@ -3,18 +3,9 @@
 
 return {
     dependencies = {
-        {
-            dir = '@nui_nvim@',
-            name = 'nui.nvim',
-        },
-        {
-            dir = '@nvim_notify@',
-            name = 'nvim-notify',
-        },
-        {
-            dir = '@nvim_treesitter@',
-            name = 'nvim-treesitter',
-        },
+        'nui.nvim',
+        'nvim-notify',
+        'nvim-treesitter',
     },
     dir = '@noice_nvim@',
     event = 'VeryLazy',

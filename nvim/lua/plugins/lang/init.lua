@@ -3,6 +3,7 @@ return {
     require('plugins.lang.flutter-tools_nvim'),
     require('plugins.lang.go_nvim'),
     require('plugins.lang.hmts_nvim'),
+    require('plugins.lang.lazydev_nvim'),
     require('plugins.lang.lspkind_nvim'),
     require('plugins.lang.lspsaga_nvim'),
     require('plugins.lang.nvim-lspconfig'),
@@ -11,5 +12,6 @@ return {
     require('plugins.lang.nvim-ts-context-commentstring'),
     require('plugins.lang.rustaceanvim'),
     require('plugins.lang.tailwind-tools_nvim'),
+    require('plugins.lang.ts-error-translator_nvim'),
     require('plugins.lang.typescript-tools_nvim'),
 }

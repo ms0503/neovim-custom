@@ -6,18 +6,9 @@ local get_icon = require('utils').get_icon
 return {
     cmd = 'Neotree',
     dependencies = {
-        {
-            dir = '@nui_nvim@',
-            name = 'nui.nvim',
-        },
-        {
-            dir = '@nvim_web_devicons@',
-            name = 'nvim-web-devicons',
-        },
-        {
-            dir = '@plenary_nvim@',
-            name = 'plenary.nvim',
-        },
+        'nui.nvim',
+        'nvim-web-devicons',
+        'plenary.nvim',
     },
     dir = '@neo_tree_nvim@',
     name = 'neo-tree.nvim',

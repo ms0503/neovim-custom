@@ -4,8 +4,7 @@
 return {
     config = true,
     dependencies = {
-        dir = '@nvim_treesitter@',
-        name = 'nvim-treesitter',
+        'nvim-treesitter',
     },
     dir = '@nvim_ts_autotag@',
     event = {

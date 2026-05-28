@@ -3,8 +3,7 @@
 
 return {
     dependencies = {
-        dir = '@nvim_treesitter@',
-        name = 'nvim-treesitter',
+        'nvim-treesitter',
     },
     dir = '@nvim_ts_context_commentstring@',
     name = 'nvim-ts-context-commentstring',
