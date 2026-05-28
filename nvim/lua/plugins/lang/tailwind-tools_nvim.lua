@@ -1,5 +1,5 @@
 -- TailwindCSS integration
--- repo: https://github.com/lockasRanarison/tailwind-tools.nvim
+-- repo: https://github.com/luckasRanarison/tailwind-tools.nvim
 
 return {
     config = function(options)
