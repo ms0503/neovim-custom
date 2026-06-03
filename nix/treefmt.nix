@@ -11,9 +11,6 @@
           enable = true;
           excludes = [
             "_sources/generated.nix"
-            "nix/pkgs/nodePackages/cmp.nix"
-            "nix/pkgs/nodePackages/node-env.nix"
-            "nix/pkgs/nodePackages/pkgs.nix"
           ];
         };
         shellcheck = {
