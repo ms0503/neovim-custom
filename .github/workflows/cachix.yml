@@ -188,6 +188,9 @@ jobs:
       - name: "Install Nix"
         uses: "cachix/install-nix-action@v31"
         with:
+          extra_nix_config: |
+            accept-flake-config = true
+            experimental-features = flakes nix-command pipe-operators
           github_access_token: "${{ secrets.GITHUB_TOKEN }}"
           nix_path: "nixpkgs=channel:nixos-unstable"
       - name: "Use Cachix"
@@ -196,10 +199,7 @@ jobs:
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
           name: "ms0503"
           signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
-      - run: |
-          nix \
-            --extra-experimental-features 'flakes nix-command pipe-operators' \
-            build
+      - run: "nix build"
 name: "Upload binary cache to Cachix"
 on:
   pull_request:
