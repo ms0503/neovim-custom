@@ -17,6 +17,7 @@ in
       ];
       sessionVariables = optionalAttrs cfg.defaultEditor {
         EDITOR = "nvim";
+        VISUAL = "nvim";
       };
     };
   };
