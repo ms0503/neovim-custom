@@ -17,6 +17,7 @@ in
       ];
       variables = optionalAttrs cfg.defaultEditor {
         EDITOR = "nvim";
+        VISUAL = "nvim";
       };
     };
   };
