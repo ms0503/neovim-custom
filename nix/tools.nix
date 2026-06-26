@@ -4,7 +4,7 @@
   pkgs,
 }:
 let
-  fenixPkgs = inputs'.fenix.packages;
+  fenixPkgs = inputs'.fenix.packages.latest;
 in
 (
   with pkgs;
