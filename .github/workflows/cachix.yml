@@ -199,7 +199,7 @@ jobs:
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
           name: "ms0503"
           signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
-      - run: "nix build"
+      - run: "nix build --no-link . .#devShells.x86_64-linux.shell"
 name: "Upload binary cache to Cachix"
 on:
   pull_request:
