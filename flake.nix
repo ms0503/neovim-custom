@@ -116,7 +116,12 @@
           {
             _module.args.pkgs = import nixpkgs {
               inherit system;
-              config.allowUnfree = true;
+              config = {
+                allowUnfree = true;
+                permittedInsecurePackages = [
+                  "pnpm-9.15.9"
+                ];
+              };
             };
             devShells.shell = pkgs.mkShell {
               packages =
