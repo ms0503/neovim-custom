@@ -23,12 +23,12 @@ jobs:
         run: |
           nix flake update
           git add flake.lock
-          git commit -m "chore: update flakes"
+          git commit -m "chore: update flakes" || :
       - name: "Update tools"
         run: |
           nix run nixpkgs#nvfetcher
           git add _sources/
-          git commit -m "chore: update tools"
+          git commit -m "chore: update tools" || :
       - name: "Push to repository"
         run: |
           git push origin main
