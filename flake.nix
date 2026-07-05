@@ -119,6 +119,7 @@
               config = {
                 allowUnfree = true;
                 permittedInsecurePackages = [
+                  "pnpm-10.34.0"
                   "pnpm-9.15.9"
                 ];
               };
