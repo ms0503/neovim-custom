@@ -14,11 +14,11 @@ let
       |> builtins.map builtins.toString
       |> builtins.concatStringsSep ",";
   };
-  pname = "neovim-custom-config";
+  name = "neovim-custom-config";
   preprocessed = stdenvNoCC.mkDerivation (
     envVars
     // {
-      inherit pname version;
+      inherit name;
       installPhase = ''
         install -dm755 "$out"
         for f in $(find . -type f); do
@@ -30,10 +30,9 @@ let
       src = ../nvim;
     }
   );
-  version = "latest";
 in
 stdenvNoCC.mkDerivation {
-  inherit pname version;
+  inherit name;
   installPhase = ''
     install -dm755 "$out"
     substituteAll ./init.lua "$out/init.lua"
