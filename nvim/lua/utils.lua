@@ -63,6 +63,20 @@ local icons = {
     WordFile = '󰈭',
 }
 
+--- Append value to table, but immutable manipulation
+---
+---@param tbl table
+---@param value any
+---@return table
+function M.append_immutable(tbl, value)
+    local result = {}
+    for i, v in ipairs(tbl) do
+        result[i] = v
+    end
+    table.insert(result, value)
+    return result
+end
+
 --- Filter array, like JavaScript's Array.prototype.filter
 ---
 ---@generic T
