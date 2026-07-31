@@ -100,19 +100,12 @@
           );
         };
         imports = [
-          ./nix/treefmt.nix
-          ./nix/git-hooks.nix
+          ./nix/shell
           ./nix/pkgs
           ./nix/neovim.nix
         ];
         perSystem =
-          {
-            config,
-            lib,
-            pkgs,
-            system,
-            ...
-          }:
+          { system, ... }:
           {
             _module.args.pkgs = import nixpkgs {
               inherit system;
@@ -123,19 +116,6 @@
                   "pnpm-9.15.9"
                 ];
               };
-            };
-            devShells.shell = pkgs.mkShell {
-              packages =
-                config.pre-commit.settings.enabledPackages
-                ++ lib.attrValues config.treefmt.build.programs
-                ++ (with pkgs; [
-                  lua-language-server
-                  nvfetcher
-                  stylua
-                ]);
-              shellHook = ''
-                ${config.pre-commit.shellHook}
-              '';
             };
           };
         systems = import systems;
