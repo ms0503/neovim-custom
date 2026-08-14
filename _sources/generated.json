@@ -22,7 +22,7 @@
     },
     "schemastore-nvim": {
         "cargoLock": null,
-        "date": "2026-08-12",
+        "date": "2026-08-13",
         "extract": null,
         "name": "schemastore-nvim",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "B0o",
             "repo": "SchemaStore.nvim",
-            "rev": "6bcdcb22f02b43b990b650b3ab40c65aa193c3f8",
-            "sha256": "sha256-HXPZVqK3dm9pu2wtybDGrORYcGCuak8Hopw4OxDpAcA=",
+            "rev": "3067d706e9738fbed404fa0397199c9d1921fd1c",
+            "sha256": "sha256-dhwm+cBRoPSNK3C2ebJKLhgEKMnGWxPNOzwxS5RoAKY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6bcdcb22f02b43b990b650b3ab40c65aa193c3f8"
+        "version": "3067d706e9738fbed404fa0397199c9d1921fd1c"
     },
     "ts-error-translator-nvim": {
         "cargoLock": null,
