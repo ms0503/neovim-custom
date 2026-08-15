@@ -20,15 +20,15 @@
   };
   schemastore-nvim = {
     pname = "schemastore-nvim";
-    version = "3067d706e9738fbed404fa0397199c9d1921fd1c";
+    version = "7e3f6dd6ef6da93f74974521c81d8d5bff0443c5";
     src = fetchFromGitHub {
       owner = "B0o";
       repo = "SchemaStore.nvim";
-      rev = "3067d706e9738fbed404fa0397199c9d1921fd1c";
+      rev = "7e3f6dd6ef6da93f74974521c81d8d5bff0443c5";
       fetchSubmodules = false;
-      sha256 = "sha256-dhwm+cBRoPSNK3C2ebJKLhgEKMnGWxPNOzwxS5RoAKY=";
+      sha256 = "sha256-nefchLDV6Q3JpngwJ+pOOQFQikVEzM5btWqvZpyI+o8=";
     };
-    date = "2026-08-13";
+    date = "2026-08-14";
   };
   ts-error-translator-nvim = {
     pname = "ts-error-translator-nvim";
