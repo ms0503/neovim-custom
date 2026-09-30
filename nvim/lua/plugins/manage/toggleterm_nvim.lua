@@ -4,6 +4,18 @@
 return {
     cmd = 'ToggleTerm',
     dir = '@toggleterm_nvim@',
+    keys = {
+        {
+            [[<C-\>]],
+            '<Cmd>ToggleTerm<Cr>',
+            desc = 'Toggle terminal',
+        },
+        {
+            '<C-¥>',
+            '<Cmd>ToggleTerm<Cr>',
+            desc = 'Toggle terminal',
+        },
+    },
     name = 'toggleterm.nvim',
     opts = {
         direction = 'float',
