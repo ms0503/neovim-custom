@@ -111,7 +111,7 @@ local server_list = function(capabilities)
                 formatterMode = 'typstyle',
             },
         },
-        ts_ls = {},
+        tsc = {},
         vuels = {},
         yamlls = {
             settings = {
@@ -144,7 +144,7 @@ return {
         if is_node_repo then
             vim.lsp.enable('denols', false)
         else
-            vim.lsp.enable('ts_ls', false)
+            vim.lsp.enable('tsc', false)
         end
     end,
     dependencies = {

@@ -52,7 +52,6 @@ in
     taplo
     terraform-ls
     tinymist
-    typescript-language-server
     typstyle
     vscode-langservers-extracted
     vue-language-server
