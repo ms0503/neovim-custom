@@ -23,15 +23,21 @@ jobs:
         run: |
           nix flake update
           git add flake.lock
-          git commit -m "chore: update flakes" || :
       - name: "Update tools"
         run: |
           nix run nixpkgs#nvfetcher
           git add _sources/
-          git commit -m "chore: update tools" || :
+      - name: "Commit"
+        run: |
+          msg="chore: update flakes and tools"
+          if [[ $(git log -n 1 --pretty=%s) = "$msg" ]]; then
+            git commit --amend -m "$msg" || :
+          else
+            git commit -m "$msg" || :
+          fi
       - name: "Push to repository"
         run: |
-          git push origin main
+          git push --force-with-lease origin main
 name: "Update Nix Flakes and tools"
 on:
   workflow_dispatch:
