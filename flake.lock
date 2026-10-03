@@ -11,11 +11,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1791033873,
-        "narHash": "sha256-XZpv4+7x2rz4L45orL7Y9nTDsA+iEq243WQaPDe0d84=",
+        "lastModified": 1791054417,
+        "narHash": "sha256-AZt0DG3dayCrHV3qrgI0g3VDK1GDNNNO90/VURFlTx0=",
         "owner": "ms0503",
         "repo": "awk-language-server",
-        "rev": "8bda668339374be3dcd26f97c4e06c2e03851ea4",
+        "rev": "0782929a02e70b6aef190c552b701ab977fe2d8a",
         "type": "github"
       },
       "original": {
