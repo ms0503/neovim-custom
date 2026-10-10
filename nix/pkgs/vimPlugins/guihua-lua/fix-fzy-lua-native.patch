@@ -1,0 +1,5 @@
+--- a/lua/fzy/fzy-lua-native.lua
++++ b/lua/fzy/fzy-lua-native.lua
+@@ -1,1 +1,1 @@
+-return require('.init')
++return require('fzy')

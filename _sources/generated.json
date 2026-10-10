@@ -1,0 +1,101 @@
+{
+    "guihua-lua": {
+        "cargoLock": null,
+        "date": "2026-07-03",
+        "extract": null,
+        "name": "guihua-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ray-x",
+            "repo": "guihua.lua",
+            "rev": "4c513d5dac550af77034cced421967b393261509",
+            "sha256": "sha256-e0Almh8wWGp5NxHX48Y4XGEUHtPCYOXi4BIlfeSzaIs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "4c513d5dac550af77034cced421967b393261509"
+    },
+    "schemastore-nvim": {
+        "cargoLock": null,
+        "date": "2026-10-15",
+        "extract": null,
+        "name": "schemastore-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "B0o",
+            "repo": "SchemaStore.nvim",
+            "rev": "7fca30f2890a6acf9d21d194876c6ac960d92070",
+            "sha256": "sha256-MAm4hVrZRYXNSBeUKlVr3GuDOkSXrvxYzGzJ0dQ9Vrs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "7fca30f2890a6acf9d21d194876c6ac960d92070"
+    },
+    "ts-error-translator-nvim": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "ts-error-translator-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-SSLrY2+0shDy/gvZeFmMGlLEZdtbMQT7XBS0WvF8X98=",
+            "type": "url",
+            "url": "https://github.com/dmmulroy/ts-error-translator.nvim/archive/refs/tags/v2.0.1.tar.gz"
+        },
+        "version": "2.0.1"
+    },
+    "vim-jb-lua": {
+        "cargoLock": null,
+        "date": "2025-02-13",
+        "extract": null,
+        "name": "vim-jb-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ms0503",
+            "repo": "vim-jb.lua",
+            "rev": "c3ab5d8039e137070fc48a2e9b7931d9dedaa9fa",
+            "sha256": "sha256-TuQgrhN/4hDn3iKF2jPWdq4KBchx1CMo8hM9tcKRMM4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "c3ab5d8039e137070fc48a2e9b7931d9dedaa9fa"
+    },
+    "vimdoc-ja": {
+        "cargoLock": null,
+        "date": "2026-10-17",
+        "extract": null,
+        "name": "vimdoc-ja",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vim-jp",
+            "repo": "vimdoc-ja",
+            "rev": "ea64b98cd7ad66e77ab3aa0df99651d7b2a019b5",
+            "sha256": "sha256-yim9OHd5Y1LjSYwZ3Sy3ULOc2AOkPcFWp9n2H15tG/c=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "ea64b98cd7ad66e77ab3aa0df99651d7b2a019b5"
+    }
+}

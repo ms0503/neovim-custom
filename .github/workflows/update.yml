@@ -1,0 +1,43 @@
+jobs:
+  update:
+    permissions:
+      contents: "write"
+    runs-on: "ubuntu-24.04"
+    steps:
+      - name: "Checkout repository"
+        uses: "actions/checkout@v6"
+      - name: "Install Nix"
+        uses: "cachix/install-nix-action@v31"
+        with:
+          extra_nix_config: |
+            accept-flake-config = true
+            experimental-features = flakes nix-command pipe-operators
+          github_access_token: "${{ secrets.GITHUB_TOKEN }}"
+          nix_path: "nixpkgs=channel:nixos-unstable"
+      - name: "Configure Git"
+        run: |
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+      - name: "Update Nix Flakes"
+        run: |
+          nix flake update
+          git add flake.lock
+      - name: "Update tools"
+        run: |
+          nix run nixpkgs#nvfetcher
+          git add _sources/
+      - name: "Commit"
+        run: |
+          msg="chore: update flakes and tools"
+          if [[ $(git log -n 1 --pretty=%s) = "$msg" ]]; then
+            git commit --amend -m "$msg" || :
+          else
+            git commit -m "$msg" || :
+          fi
+      - name: "Push to repository"
+        run: |
+          git push --force-with-lease origin main
+name: "Update Nix Flakes and tools"
+on:
+  workflow_dispatch:
