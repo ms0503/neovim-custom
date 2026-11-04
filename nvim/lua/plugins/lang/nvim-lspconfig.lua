@@ -9,6 +9,15 @@ local server_list = function(capabilities)
     local schemastore = require('schemastore')
     return {
         arduino_language_server = {
+            cmd = {
+                'arduino-language-server',
+                '-clangd',
+                '@clang_tools@/bin/clangd-unwrapped',
+                '-cli',
+                '@arduino_cli@/bin/arduino-cli',
+                '-cli-config',
+                vim.fn.expand('~/.arduino15/arduino-cli.yaml'),
+            },
             on_init = function(client)
                 client.server_capabilities.documentSymbolProvider = nil
             end,
@@ -28,6 +37,26 @@ local server_list = function(capabilities)
                 'objc',
                 'objcpp',
             },
+            root_dir = function(bufnr, on_dir)
+                local filename = vim.api.nvim_buf_get_name(bufnr)
+                if filename == '' then
+                    return
+                end
+                local ino_files = vim.fs.find(function(name)
+                    return name:match('%.ino$') ~= nil
+                end, {
+                    limit = 1,
+                    path = filename,
+                    type = 'file',
+                    upward = true,
+                })
+                if 0 < #ino_files then
+                    return
+                end
+                local clangd_cfg = require('lspconfig.types.lsp.clangd')
+                local root = vim.fs.root(bufnr, clangd_cfg.root_markers)
+                on_dir(root or vim.fs.dirname(filename))
+            end,
         },
         cmake = {},
         css_variables = {},

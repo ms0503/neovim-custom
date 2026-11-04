@@ -1,4 +1,6 @@
 {
+  arduino-cli,
+  clang-tools,
   lib,
   plugins,
   sqlite,
@@ -7,6 +9,8 @@
 }:
 let
   envVars = plugins // {
+    arduino_cli = arduino-cli;
+    clang_tools = clang-tools;
     treesitter_parsers =
       vimPlugins.nvim-treesitter-parsers
       |> lib.filterAttrs (key: _: !(lib.hasPrefix "override" key))
