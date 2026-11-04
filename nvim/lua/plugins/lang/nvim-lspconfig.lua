@@ -99,7 +99,6 @@ local server_list = function(capabilities)
         omnisharp = {},
         oxlint = {},
         phpactor = {},
-        pkgbuild_language_server = {},
         powershell_es = {},
         prismals = {},
         pyright = {},
@@ -116,7 +115,6 @@ local server_list = function(capabilities)
             },
         },
         tsc = {},
-        vuels = {},
         yamlls = {
             settings = {
                 yaml = {

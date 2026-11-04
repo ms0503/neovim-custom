@@ -54,7 +54,6 @@ in
     tinymist
     typstyle
     vscode-langservers-extracted
-    vue-language-server
     yaml-language-server
     zls
   ]
