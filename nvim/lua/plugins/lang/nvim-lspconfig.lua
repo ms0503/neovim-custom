@@ -8,7 +8,11 @@ local keys = utils.keys
 local server_list = function(capabilities)
     local schemastore = require('schemastore')
     return {
-        arduino_language_server = {},
+        arduino_language_server = {
+            on_init = function(client)
+                client.server_capabilities.documentSymbolProvider = nil
+            end,
+        },
         astro = {},
         autotools_ls = {},
         awk_ls = {},
