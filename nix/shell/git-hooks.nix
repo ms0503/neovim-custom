@@ -10,8 +10,7 @@
         check.enable = true;
         settings = {
           hooks = {
-            actionlint.enable = true;
-            check-json.enable = true;
+            actionlint.enable = false; # treefmt
             check-toml.enable = true;
             markdownlint = {
               enable = true;
@@ -22,6 +21,8 @@
                 MD033 = false;
               };
             };
+            mdformat.enable = false; # treefmt
+            nixfmt.enable = false; # treefmt
             treefmt = {
               enable = true;
               package = config.treefmt.build.wrapper;

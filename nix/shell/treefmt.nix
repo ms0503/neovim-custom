@@ -7,6 +7,19 @@
     { lib, ... }:
     lib.optionalAttrs (inputs.treefmt-nix ? flakeModule) {
       treefmt.programs = {
+        actionlint.enable = true;
+        mdformat = {
+          enable = true;
+          plugins =
+            ps: with ps; [
+              mdformat-gfm
+            ];
+          settings = {
+            end-of-line = "lf";
+            number = true;
+            wrap = 80;
+          };
+        };
         nixfmt = {
           enable = true;
           excludes = [
