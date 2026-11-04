@@ -93,7 +93,12 @@ return {
                 json = prettier_like_formatters,
                 jsonc = prettier_like_formatters,
                 lua = { 'stylua' },
-                markdown = prettier_like_formatters,
+                markdown = function(bufnr)
+                    return utils.append_immutable(
+                        prettier_like_formatters(bufnr),
+                        'mdformat'
+                    )
+                end,
                 nix = { 'nixfmt' },
                 ocaml = { 'ocamlformat' },
                 proto = { 'buf' },
